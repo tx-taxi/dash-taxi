@@ -1,0 +1,61 @@
+{
+  "scope": "Actual native page after historical scroll3200; dynamic page hidden to prevent overlap with recycled static page",
+  "measurements": [
+    {
+      "hidden": true,
+      "display": "none",
+      "blocks": [
+        {
+          "x": 0,
+          "text": " 2544491 ~0 duff/B0.00  - 524 duff/B ‎0.006 DASH 13 transactions5 minu"
+        },
+        {
+          "x": 0,
+          "text": " 2544490 ~0 duff/B0.00  - 524 duff/B ‎0.001 DASH 11 transactions7 minu"
+        }
+      ]
+    },
+    {
+      "hidden": false,
+      "display": "inline",
+      "blocks": [
+        {
+          "x": -1510,
+          "text": " \n2544481\n~1 duff/B\n0.00 - 524 duff/B\n‎0.001 DASH\n10 transactions\n25 m"
+        },
+        {
+          "x": -1355,
+          "text": " \n2544480\n~10 duff/B\n0.00 - 524 duff/B\n‎0.001 DASH\n7 transactions\n27 m"
+        }
+      ]
+    },
+    {
+      "hidden": false,
+      "display": "inline",
+      "blocks": [
+        {
+          "x": 40,
+          "text": " \n2544471\n~3 duff/B\n0.00 - 524 duff/B\n‎0.001 DASH\n10 transactions\n50 m"
+        },
+        {
+          "x": 195,
+          "text": " \n2544470\n~4 duff/B\n0.00 - 524 duff/B\n‎0.002 DASH\n79 transactions\n51 m"
+        }
+      ]
+    },
+    {
+      "hidden": false,
+      "display": "inline",
+      "blocks": [
+        {
+          "x": 1590,
+          "text": " \n2544461\n~5 duff/B\n1.00 - 524 duff/B\n‎0.001 DASH\n7 transactions\n2 hou"
+        },
+        {
+          "x": 1745,
+          "text": " \n2544460\n~2 duff/B\n0.00 - 524 duff/B\n‎0.001 DASH\n19 transactions\n2 ho"
+        }
+      ]
+    }
+  ]
+}

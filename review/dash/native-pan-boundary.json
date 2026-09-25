@@ -1,0 +1,47 @@
+{
+  "scope": "Actual native page settled at first static boundary scroll1800; inspect screenshot for gaps and duplicate blocks",
+  "measurements": [
+    {
+      "hidden": false,
+      "display": "inline",
+      "blocks": [
+        {
+          "x": -1736,
+          "text": "\u00a0\n2544491\n~0 duff/B\n0.00 - 524 duff/B\n\u200e0.006 DASH\n13 transactions\n5 mi"
+        },
+        {
+          "x": -1581,
+          "text": "\u00a0\n2544490\n~0 duff/B\n0.00 - 524 duff/B\n\u200e0.001 DASH\n11 transactions\n7 mi"
+        }
+      ]
+    },
+    {
+      "hidden": false,
+      "display": "inline",
+      "blocks": [
+        {
+          "x": -186,
+          "text": "\u00a0\n2544481\n~1 duff/B\n0.00 - 524 duff/B\n\u200e0.001 DASH\n10 transactions\n25 m"
+        },
+        {
+          "x": -31,
+          "text": "\u00a0\n2544480\n~10 duff/B\n0.00 - 524 duff/B\n\u200e0.001 DASH\n7 transactions\n27 m"
+        }
+      ]
+    },
+    {
+      "hidden": false,
+      "display": "inline",
+      "blocks": [
+        {
+          "x": 1364,
+          "text": "\u00a0\n2544471\n~3 duff/B\n0.00 - 524 duff/B\n\u200e0.001 DASH\n10 transactions\n50 m"
+        },
+        {
+          "x": 1519,
+          "text": "\u00a0\n2544470\n~4 duff/B\n0.00 - 524 duff/B\n\u200e0.002 DASH\n79 transactions\n51 m"
+        }
+      ]
+    }
+  ]
+}

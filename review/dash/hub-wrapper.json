@@ -1,0 +1,19 @@
+{
+  "scope": "Real snapshot, controlled connection states, owner-approved hub-only centering; native source unchanged",
+  "results": [
+    {
+      "width": 1440,
+      "divider": 720,
+      "flipped": 720,
+      "offlineReconnectRecovery": true,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "divider": 195,
+      "flipped": 195,
+      "offlineReconnectRecovery": true,
+      "errors": []
+    }
+  ]
+}

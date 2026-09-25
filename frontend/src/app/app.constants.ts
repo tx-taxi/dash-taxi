@@ -43,8 +43,8 @@ export const defaultMempoolFeeColors = [
 // Keep fee-level ordering while giving the Dash theme its blue data palette.
 export const dashMempoolFeeColors = defaultMempoolFeeColors.map((_, index, colors) => {
   const fraction = index / (colors.length - 1);
-  return [0x34, 0x5d, 0x9d].map((channel, i) =>
-    Math.round(channel + ([0x78, 0x9d, 0xe0][i] - channel) * fraction).toString(16).padStart(2, '0')
+  return [0x00, 0x78, 0xbf].map((channel, i) =>
+    Math.round(channel + ([0x83, 0xd7, 0xff][i] - channel) * fraction).toString(16).padStart(2, '0')
   ).join('');
 });
 

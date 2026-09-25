@@ -1,6 +1,6 @@
 {
   "chain": "dash",
-  "commit": "4520d9a4a0fc3816571a2cf5cfa6b442cc7bf5b8",
-  "status": "Dash native local source; bounded acceptance in review/dash/README.md",
+  "commit": "e0179588c309818fe8c668ea36adeb7e7e1d7fb4",
+  "status": "Audit-cleaned native local source; bounded evidence in review/design-cleanup/README.md; provider limits remain explicit",
   "ancestor": "LTC 6ba310ede + hub2519326f9"
 }

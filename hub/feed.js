@@ -20,6 +20,7 @@ export function startFeed({onSnapshot,onStatus,signal}) {
    if(Array.isArray(data.blocks) && data.blocks.every(block))snapshot.blocks=[...data.blocks].reverse();
    else if(block(data.block))snapshot.block=data.block;
    if(Array.isArray(data['mempool-blocks']))snapshot.mempoolBlocks=data['mempool-blocks'];
+   else if(snapshot.blocks) snapshot.mempoolBlocks=[]; // DASH has no projected block feed.
    if(data.da && typeof data.da==='object')snapshot.difficultyAdjustment=data.da;
    const hasData=Object.hasOwn(snapshot,'blocks') || Object.hasOwn(snapshot,'block') || Object.hasOwn(snapshot,'mempoolBlocks');
    if(hasData){
@@ -27,7 +28,9 @@ export function startFeed({onSnapshot,onStatus,signal}) {
     onSnapshot(snapshot);
    }
    // Regular stats keep a loaded, quiet chain live; they cannot initialize an empty view.
-   status(haveData && receivedData?'live':haveData?'stale':'loading');
+   const freshness=data['provider-freshness'];
+   if(freshness && Number.isFinite(freshness.observedAt))lastData=freshness.observedAt;
+   status(freshness && freshness.state!=='live' ? (haveData?'stale':'unavailable') : haveData && receivedData?'live':haveData?'stale':'loading');
   };
   current.onerror=()=>{};
   current.onclose=()=>{

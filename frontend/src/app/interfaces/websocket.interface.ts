@@ -4,6 +4,7 @@ import { Transaction } from '@interfaces/electrs.interface';
 import { Acceleration, BlockExtended, DifficultyAdjustment, RbfTree, TransactionStripped } from '@interfaces/node-api.interface';
 
 export interface WebsocketResponse {
+  'provider-freshness'?: {state: 'live' | 'stale' | 'unavailable'; observedAt: number | null};
   backend?: 'esplora' | 'electrum' | 'none';
   block?: BlockExtended;
   blocks?: BlockExtended[];

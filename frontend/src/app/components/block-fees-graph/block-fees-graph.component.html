@@ -1,16 +1,16 @@
 
 
 <div class="full-container" [class.widget]="widget">
-  <ng-container *ngIf="widget && (statsObservable$ | async)"></ng-container>
+  <ng-container *ngIf="statsObservable$ | async"></ng-container>
   <div class="card-header mb-0 mb-md-4" [class.d-none]="widget">
     <div class="d-flex d-md-block align-items-baseline">
       <span i18n="mining.block-fees">Block Fees</span>
       <button class="btn p-0 ps-2" style="margin: 0 0 4px 0px" (click)="onSaveChart()">
         <fa-icon [icon]="['fas', 'download']" [fixedWidth]="true"></fa-icon>
       </button>
-    </div>  
+    </div>
 
-    <p *ngIf="statsObservable$ | async" class="text-secondary">Latest 10 observed blocks with complete fee data. Individual block fees in DASH; no historical fiat series.</p>
+
   </div>
 
   <div class="chart" *browserOnly echarts [initOpts]="chartInitOptions" [options]="chartOptions"

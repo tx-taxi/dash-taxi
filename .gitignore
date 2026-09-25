@@ -11,3 +11,5 @@ docker/backend/start_ci.sh
 adapter/node_modules/
 
 /adapter/node_modules
+
+/hub/dist/

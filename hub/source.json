@@ -1,6 +1,6 @@
 {
   "chain": "dash",
-  "commit": "6ba310edebe7fa33f4643ff4eecdbca3d1041fc7",
-  "status": "modified local DASH candidate, hash manifest is actual source authority",
+  "commit": "75724cc1091112034bc86a320e0e8e98a4150369",
+  "status": "Dash native local source; bounded acceptance in review/dash/README.md",
   "ancestor": "LTC 6ba310ede + hub2519326f9"
 }

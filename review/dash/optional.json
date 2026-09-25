@@ -1,0 +1,14 @@
+{
+  "requests": [],
+  "errors": [],
+  "health": {
+    "primary": "https://explorer.dash.org/insight-api",
+    "lastSuccess": 1790301500728,
+    "lastFailure": null,
+    "websocket": "live",
+    "degraded": false,
+    "recentFailures": 0,
+    "stale": false,
+    "cacheEntries": 0
+  }
+}

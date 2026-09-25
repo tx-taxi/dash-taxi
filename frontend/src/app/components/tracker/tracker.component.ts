@@ -197,8 +197,7 @@ export class TrackerComponent implements OnInit, OnDestroy {
     this.fetchCpfpSubscription = this.fetchCpfp$
       .pipe(
         switchMap((txId) =>
-          this.apiService
-            .getCpfpinfo$(txId)
+          of(null)
             .pipe(retryWhen((errors) => errors.pipe(
               mergeMap((error) => {
                 if (!this.tx?.status || this.tx.status.confirmed) {
@@ -225,15 +224,14 @@ export class TrackerComponent implements OnInit, OnDestroy {
     this.fetchRbfSubscription = this.fetchRbfHistory$
     .pipe(
       switchMap((txId) =>
-        this.apiService
-          .getRbfHistory$(txId)
+        of(null)
       ),
       catchError(() => {
         return of(null);
       })
     ).subscribe((rbfResponse) => {
-      this.rbfInfo = rbfResponse?.replacements;
-      this.rbfReplaces = rbfResponse?.replaces || null;
+      this.rbfInfo = null;
+      this.rbfReplaces = null;
       if (this.rbfInfo) {
         // link to the latest pending version
         this.latestReplacement = this.rbfInfo.tx.txid;

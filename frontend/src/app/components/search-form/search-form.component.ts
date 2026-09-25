@@ -452,8 +452,10 @@ export class SearchFormComponent implements OnInit {
         this.searchTarget(this.targetForCandidate(this.resolvedCandidate()!), searchText);
       } else if (options?.candidates.length) {
         this.searchRouter(searchText);
-      } else {
+      } else if (this.regexAddress.test(searchText) || this.regexTransaction.test(searchText)) {
         this.searchSourceChain(searchText);
+      } else {
+        this.searchRouter(searchText);
       }
     });
   }

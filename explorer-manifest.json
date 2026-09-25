@@ -9,10 +9,11 @@
     "commit": "6ba310edebe7fa33f4643ff4eecdbca3d1041fc7"
   },
   "visualReference": {
-    "repository": "tx-taxi/xmr-taxi",
-    "commit": null
+    "repository": "tx-taxi/ltc-taxi",
+    "commit": "6ba310edebe7fa33f4643ff4eecdbca3d1041fc7",
+    "note": "Literal inherited native components; parent reconciles approved BTC/LTC deployment provenance"
   },
-  "status": "local-review-candidate-core-verified",
+  "status": "local-review-verified-supported-scope",
   "local": {
     "url": "http://127.0.0.1:4370",
     "ports": [
@@ -171,17 +172,19 @@
         "review/dash/lifecycle.json",
         "review/dash/provider-outage.json",
         "review/dash/search.json",
-        "review/dash/graph.json"
+        "review/dash/graph.json",
+        "review/dash/search-routing.json",
+        "review/dash/search-extra.json",
+        "review/dash/confirmation.json",
+        "review/dash/optional.json"
       ],
-      "status": "bounded core verified; exact limitations in report"
+      "status": "bounded native local acceptance complete; live and controlled evidence distinguished"
     }
   ],
   "unresolved": [
     "Complete pending pool and forecasts unavailable; node notification sample explicitly scoped",
     "No independent indexed provider fallback; controlled outage/stale/recovery verified",
-    "Historical fiat and non-USD unavailable; current USD verified",
-    "Full cross-chain search/outage matrix not independently certified",
-    "Rare pending-to-confirmed detail transition implemented but not directly observed"
+    "Historical fiat and non-USD unavailable; current USD verified"
   ],
   "productionRequested": false
 }

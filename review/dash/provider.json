@@ -1,5 +1,5 @@
 {
-  "at": "2026-09-25T01:48:24.494Z",
+  "at": "2026-09-25T01:54:58.403Z",
   "historical": {
     "id": "00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2",
     "height": 100000,
@@ -241,6 +241,130 @@
     ]
   },
   "latest": [
+    {
+      "id": "0000000000000009be95ca742125939ebbef32bebb8d3d33cbc0814850dfb939",
+      "height": 2544487,
+      "version": 536870912,
+      "timestamp": 1790301224,
+      "tx_count": 2,
+      "size": 615,
+      "weight": 2460,
+      "merkle_root": "a9c55828c812b5366a51d506de157c9dfaa9f72b4864c9d7d35362d71116e736",
+      "previousblockhash": "000000000000002c752fa6361cc6907dfd47735808ad3ba8b95c4323e78895d3",
+      "difficulty": 95346627.61057127,
+      "nonce": 1076634228,
+      "bits": 422382478,
+      "extras": {
+        "totalFees": 100000,
+        "medianFee": 523.5602094240837,
+        "minFee": 523.5602094240837,
+        "maxFee": 523.5602094240837,
+        "feeRange": [
+          523.5602094240837
+        ],
+        "reward": 184925292,
+        "pool": {
+          "id": 0,
+          "name": "AntMiner",
+          "slug": "antminer",
+          "minerNames": null
+        }
+      }
+    },
+    {
+      "id": "000000000000002c752fa6361cc6907dfd47735808ad3ba8b95c4323e78895d3",
+      "height": 2544486,
+      "version": 536870912,
+      "timestamp": 1790301181,
+      "tx_count": 22,
+      "size": 18842,
+      "weight": 75368,
+      "merkle_root": "a2fe06afe55182d7bfbe1c920a4fda660531bc3711a7b4f47f522291e2ba703f",
+      "previousblockhash": "0000000000000024d6b711c4ea4573f197fc40f3c128734bd86d0f25d5311859",
+      "difficulty": 96084197.55308309,
+      "nonce": 1914801734,
+      "bits": 422359817,
+      "extras": {
+        "totalFees": 157666,
+        "medianFee": 0,
+        "minFee": 0,
+        "maxFee": 523.5602094240837,
+        "feeRange": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1.0044444444444445,
+          1.008888888888889,
+          2.0085470085470085,
+          52.35602094240838,
+          52.63157894736842,
+          103.82035928143712,
+          108.22155688622755,
+          523.5602094240837
+        ],
+        "reward": 184925292,
+        "pool": {
+          "id": 0,
+          "name": "Discus Fish",
+          "slug": "discus-fish",
+          "minerNames": null
+        }
+      }
+    },
+    {
+      "id": "0000000000000024d6b711c4ea4573f197fc40f3c128734bd86d0f25d5311859",
+      "height": 2544485,
+      "version": 536870912,
+      "timestamp": 1790300947,
+      "tx_count": 16,
+      "size": 12547,
+      "weight": 50188,
+      "merkle_root": "887ec81a138d145f26dde1ef5d20639d80c9e45a806c98e61c72c0b238471455",
+      "previousblockhash": "00000000000000179c44c15d770d7d3ae0ae7ae77ba759abbbf2480924789616",
+      "difficulty": 98834884.56826954,
+      "nonce": 3849556196,
+      "bits": 422278288,
+      "extras": {
+        "totalFees": 119520,
+        "medianFee": 5.2356020942408374,
+        "minFee": 0,
+        "maxFee": 523.5602094240837,
+        "feeRange": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3.048780487804878,
+          5.2356020942408374,
+          5.2356020942408374,
+          5.2356020942408374,
+          5.2356020942408374,
+          10,
+          10,
+          52.35602094240838,
+          523.5602094240837
+        ],
+        "reward": 184925292,
+        "pool": {
+          "id": 0,
+          "name": "AntMiner",
+          "slug": "antminer",
+          "minerNames": null
+        }
+      }
+    },
     {
       "id": "00000000000000179c44c15d770d7d3ae0ae7ae77ba759abbbf2480924789616",
       "height": 2544484,
@@ -502,172 +626,60 @@
           "minerNames": null
         }
       }
-    },
-    {
-      "id": "000000000000001288e41c064e0bf4e1d92a6d5edb8efb91eacd1812c7ef6211",
-      "height": 2544477,
-      "version": 536870912,
-      "timestamp": 1790299680,
-      "tx_count": 11,
-      "size": 10387,
-      "weight": 41548,
-      "merkle_root": "6e452c77a78c93bc2e62c01cc0f29e7c2af9c76772e58f6a2c4180fd9cb469c7",
-      "previousblockhash": "000000000000000d50d960daa6edb4ca04dabbcab3ff776e3e19e7af65a4bfe1",
-      "difficulty": 119957297.4634422,
-      "nonce": 3809560806,
-      "bits": 421776824,
-      "extras": {
-        "totalFees": 110719,
-        "medianFee": 1,
-        "minFee": 0,
-        "maxFee": 523.5602094240837,
-        "feeRange": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1.008888888888889,
-          1.1814159292035398,
-          59.880239520958085,
-          523.5602094240837
-        ],
-        "reward": 184925292,
-        "pool": {
-          "id": 0,
-          "name": "ViaBTC",
-          "slug": "viabtc",
-          "minerNames": null
-        }
-      }
-    },
-    {
-      "id": "000000000000000d50d960daa6edb4ca04dabbcab3ff776e3e19e7af65a4bfe1",
-      "height": 2544476,
-      "version": 536870912,
-      "timestamp": 1790299532,
-      "tx_count": 16,
-      "size": 14729,
-      "weight": 58916,
-      "merkle_root": "b4ea43d339bda41f741370a297641aed2b5abcf34c5f2d1db9967077aaeef9cb",
-      "previousblockhash": "000000000000001fcdc5acfedd7d96b6e491a2ce40822f4dafd535973d617d93",
-      "difficulty": 124206279.6866763,
-      "nonce": 2694867766,
-      "bits": 421696555,
-      "extras": {
-        "totalFees": 146140,
-        "medianFee": 1.0044247787610618,
-        "minFee": 0,
-        "maxFee": 523.5602094240837,
-        "feeRange": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1.0044247787610618,
-          1.0103420843277646,
-          1.1919642857142858,
-          25.26178010471204,
-          44.44444444444444,
-          59.880239520958085,
-          117.07185628742515,
-          523.5602094240837
-        ],
-        "reward": 184925292,
-        "pool": {
-          "id": 0,
-          "name": "AntMiner",
-          "slug": "antminer",
-          "minerNames": null
-        }
-      }
-    },
-    {
-      "id": "000000000000001fcdc5acfedd7d96b6e491a2ce40822f4dafd535973d617d93",
-      "height": 2544475,
-      "version": 536870912,
-      "timestamp": 1790299388,
-      "tx_count": 4,
-      "size": 3249,
-      "weight": 12996,
-      "merkle_root": "c06cf8291a677ee8624ada5da839f091c78d0ff169676b6702c8ac71a5f2e0cf",
-      "previousblockhash": "00000000000000005caa4e31059134d67a87f85c9f8bc4834da521e9bbff87d2",
-      "difficulty": 126836701.9127795,
-      "nonce": 2762585536,
-      "bits": 421649558,
-      "extras": {
-        "totalFees": 101005,
-        "medianFee": 1.5876777251184835,
-        "minFee": 0,
-        "maxFee": 523.5602094240837,
-        "feeRange": [
-          0,
-          1.5876777251184835,
-          523.5602094240837
-        ],
-        "reward": 184925292,
-        "pool": {
-          "id": 0,
-          "name": "AntMiner",
-          "slug": "antminer",
-          "minerNames": null
-        }
-      }
     }
   ],
   "init": {
     "transactions": [
       {
-        "txid": "f217a1d681e05c55ead72b1c54e0b99d3131bfde8a1eccf2ae4ed008f18e04e4",
-        "fee": 10000,
+        "txid": "62003ab8aaaf25a048b49ab006233fc0b441b75a64c20131c8cad86a03cd550c",
+        "fee": 0,
+        "vsize": 1820,
+        "value": 10000100
+      },
+      {
+        "txid": "33fec36ab0330ab28c09d372a59a6c7dd928418557fed03373542a5e1a8dffd7",
+        "fee": 0,
+        "vsize": 1277,
+        "value": 700007
+      },
+      {
+        "txid": "dd2b6105f2c941b356d71980480492920ec9eb4d6080a069f39ad547e93db487",
+        "fee": 0,
+        "vsize": 2904,
+        "value": 160001600
+      },
+      {
+        "txid": "215be04dce224e3386d66b12bdb0e7e89ca09ba7f42edb1b19c02b0e3b13c7b9",
+        "fee": 226,
+        "vsize": 226,
+        "value": 213876495
+      },
+      {
+        "txid": "ccefe23d9dfc9550a54e7b0fdfcdc064fb10e703bd4460104f945535ef81a0b0",
+        "fee": 100000,
         "vsize": 191,
-        "value": 30000
+        "value": 40427491
+      },
+      {
+        "txid": "3666dce80e49c7a8f1809accd21b513c777054657c69f628e8a0b1482384caf1",
+        "fee": 226,
+        "vsize": 225,
+        "value": 13436187109
+      },
+      {
+        "txid": "cf3267f39fd4f880f8ac85e55d2b4bc8dacd445d2fe5ede995d8f35e61765ac2",
+        "fee": 0,
+        "vsize": 1640,
+        "value": 900009
+      },
+      {
+        "txid": "67f6c100362c6667dcfe85fd0b390bcd5fe0e5be5be0b7bfd8125b670a67c94a",
+        "fee": 0,
+        "vsize": 1459,
+        "value": 800008
       }
     ],
     "blocks": [
-      {
-        "id": "000000000000001288e41c064e0bf4e1d92a6d5edb8efb91eacd1812c7ef6211",
-        "height": 2544477,
-        "version": 536870912,
-        "timestamp": 1790299680,
-        "tx_count": 11,
-        "size": 10387,
-        "weight": 41548,
-        "merkle_root": "6e452c77a78c93bc2e62c01cc0f29e7c2af9c76772e58f6a2c4180fd9cb469c7",
-        "previousblockhash": "000000000000000d50d960daa6edb4ca04dabbcab3ff776e3e19e7af65a4bfe1",
-        "difficulty": 119957297.4634422,
-        "nonce": 3809560806,
-        "bits": 421776824,
-        "extras": {
-          "totalFees": 110719,
-          "medianFee": 1,
-          "minFee": 0,
-          "maxFee": 523.5602094240837,
-          "feeRange": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            1,
-            1.008888888888889,
-            1.1814159292035398,
-            59.880239520958085,
-            523.5602094240837
-          ],
-          "reward": 184925292,
-          "pool": {
-            "id": 0,
-            "name": "ViaBTC",
-            "slug": "viabtc",
-            "minerNames": null
-          }
-        }
-      },
       {
         "id": "00000000000000029ee406f62a53e42f7377fb91bf32c82da7225b9c9dbad7e0",
         "height": 2544478,
@@ -929,10 +941,134 @@
             "minerNames": null
           }
         }
+      },
+      {
+        "id": "0000000000000024d6b711c4ea4573f197fc40f3c128734bd86d0f25d5311859",
+        "height": 2544485,
+        "version": 536870912,
+        "timestamp": 1790300947,
+        "tx_count": 16,
+        "size": 12547,
+        "weight": 50188,
+        "merkle_root": "887ec81a138d145f26dde1ef5d20639d80c9e45a806c98e61c72c0b238471455",
+        "previousblockhash": "00000000000000179c44c15d770d7d3ae0ae7ae77ba759abbbf2480924789616",
+        "difficulty": 98834884.56826954,
+        "nonce": 3849556196,
+        "bits": 422278288,
+        "extras": {
+          "totalFees": 119520,
+          "medianFee": 5.2356020942408374,
+          "minFee": 0,
+          "maxFee": 523.5602094240837,
+          "feeRange": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3.048780487804878,
+            5.2356020942408374,
+            5.2356020942408374,
+            5.2356020942408374,
+            5.2356020942408374,
+            10,
+            10,
+            52.35602094240838,
+            523.5602094240837
+          ],
+          "reward": 184925292,
+          "pool": {
+            "id": 0,
+            "name": "AntMiner",
+            "slug": "antminer",
+            "minerNames": null
+          }
+        }
+      },
+      {
+        "id": "000000000000002c752fa6361cc6907dfd47735808ad3ba8b95c4323e78895d3",
+        "height": 2544486,
+        "version": 536870912,
+        "timestamp": 1790301181,
+        "tx_count": 22,
+        "size": 18842,
+        "weight": 75368,
+        "merkle_root": "a2fe06afe55182d7bfbe1c920a4fda660531bc3711a7b4f47f522291e2ba703f",
+        "previousblockhash": "0000000000000024d6b711c4ea4573f197fc40f3c128734bd86d0f25d5311859",
+        "difficulty": 96084197.55308309,
+        "nonce": 1914801734,
+        "bits": 422359817,
+        "extras": {
+          "totalFees": 157666,
+          "medianFee": 0,
+          "minFee": 0,
+          "maxFee": 523.5602094240837,
+          "feeRange": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1.0044444444444445,
+            1.008888888888889,
+            2.0085470085470085,
+            52.35602094240838,
+            52.63157894736842,
+            103.82035928143712,
+            108.22155688622755,
+            523.5602094240837
+          ],
+          "reward": 184925292,
+          "pool": {
+            "id": 0,
+            "name": "Discus Fish",
+            "slug": "discus-fish",
+            "minerNames": null
+          }
+        }
+      },
+      {
+        "id": "0000000000000009be95ca742125939ebbef32bebb8d3d33cbc0814850dfb939",
+        "height": 2544487,
+        "version": 536870912,
+        "timestamp": 1790301224,
+        "tx_count": 2,
+        "size": 615,
+        "weight": 2460,
+        "merkle_root": "a9c55828c812b5366a51d506de157c9dfaa9f72b4864c9d7d35362d71116e736",
+        "previousblockhash": "000000000000002c752fa6361cc6907dfd47735808ad3ba8b95c4323e78895d3",
+        "difficulty": 95346627.61057127,
+        "nonce": 1076634228,
+        "bits": 422382478,
+        "extras": {
+          "totalFees": 100000,
+          "medianFee": 523.5602094240837,
+          "minFee": 523.5602094240837,
+          "maxFee": 523.5602094240837,
+          "feeRange": [
+            523.5602094240837
+          ],
+          "reward": 184925292,
+          "pool": {
+            "id": 0,
+            "name": "AntMiner",
+            "slug": "antminer",
+            "minerNames": null
+          }
+        }
       }
     ],
     "conversions": {
-      "USD": 62.776092289999994
+      "USD": 62.826653439999994
     },
     "loadingIndicators": {
       "blocks": 100
@@ -940,132 +1076,30 @@
     "backend": "dash-insight",
     "gitCommit": "dash-local",
     "dashNetwork": {
-      "difficulty": 108582616.5401319,
+      "difficulty": 95346627.61057127,
       "blockInterval": 157.5,
       "reward": 184925292
     }
   },
   "summary": [
     {
-      "txid": "bbc7fe6c0be30ec381d9556154203c562b3c12757fc870ff3b20a2d9f22b2a9b",
+      "txid": "49265cd2584065d4f6ed77e12e70507afa337c1ada0d2ad17b4db8c491e7456b",
       "fee": 0,
-      "vsize": 355,
-      "value": 164510187
+      "vsize": 343,
+      "value": 164478041
     },
     {
-      "txid": "17f9ec6b4aa14be813e0a602da07482675db0446de375d8f1fe713aa5a6055b5",
-      "fee": 0,
-      "vsize": 734,
-      "value": 400004000
-    },
-    {
-      "txid": "5d748c21a7694cdf872791747d8b53c1fcc49c73b8cd7078a8fecb94e2e54131",
-      "fee": 0,
-      "vsize": 915,
-      "value": 500005000
-    },
-    {
-      "txid": "6a33090648e266ac0171473bc159d95a481362f4f8a4a42f80a7b453dddb27ae",
-      "fee": 0,
-      "vsize": 915,
-      "value": 500005000
-    },
-    {
-      "txid": "5459c44da8643b309f7fbe9f3e159799b6d9e6a82ea44f503ba04cb0d3b91723",
-      "fee": 0,
-      "vsize": 1278,
-      "value": 700007
-    },
-    {
-      "txid": "c7dc3cd320a7a9272bcf97d82d29e2283c864b50db2e0ca266bc1e0b6ceba199",
-      "fee": 0,
-      "vsize": 1097,
-      "value": 600006
-    },
-    {
-      "txid": "852cf2205d7a9445c9040ce70f3a77ec13e29c3f7a039f6212b4567062af4aaf",
-      "fee": 0,
-      "vsize": 1277,
-      "value": 70000700
-    },
-    {
-      "txid": "bda8f9dfde1a9f2bb161a5ecfe336040a16bb74c458ed0fdf60e25e5a9e16a8e",
-      "fee": 0,
-      "vsize": 1820,
-      "value": 1000010
-    },
-    {
-      "txid": "c3c21fc7bd471a8fbe0fa61aea7815d9985645e2219edd1d994b61235ed2b232",
-      "fee": 0,
-      "vsize": 2001,
-      "value": 11000110
-    },
-    {
-      "txid": "d681f8eb7992b53fa762bdcc52d7f6d71be1f7ca79cd6306134291663184708e",
+      "txid": "bffbe004a742c8fb7dd79d4ca8ef4bd54b4937bf0bb7998148b318b70c840971",
       "fee": 100000,
       "vsize": 191,
-      "value": 40827491
-    },
-    {
-      "txid": "f786fa7873912c99cedfab7641b2db0dd1e6a546799940f84e4cd064db048995",
-      "fee": 10000,
-      "vsize": 191,
-      "value": 10000
-    },
-    {
-      "txid": "36191d61448ff4dd2a6212da64a5ebd214a0a8c5046ea52f76778508a5e7a2b3",
-      "fee": 2260,
-      "vsize": 225,
-      "value": 3123885856
-    },
-    {
-      "txid": "3625a94e4300a4ffa9e760093b2f9503be8d8321a0618625d0b5035a53119549",
-      "fee": 7840,
-      "vsize": 781,
-      "value": 335423018
-    },
-    {
-      "txid": "a3b198d1bbed6803cdc168200339963e42247d4c37786672f06275fac2057a31",
-      "fee": 1216,
-      "vsize": 488,
-      "value": 369998784
-    },
-    {
-      "txid": "d0698df662a3ba7338136aa3e3026d4bffb215e8eb6a7ad54b64b4a78a853ab7",
-      "fee": 454,
-      "vsize": 225,
-      "value": 11494558656
-    },
-    {
-      "txid": "33d54f5a876c7762896daf97c55243f9b9c4b0df9b1a7354b5094cbaf8637cb8",
-      "fee": 454,
-      "vsize": 225,
-      "value": 4925941920
-    },
-    {
-      "txid": "52f3c4b55a8b1fdae7479b253525c3ce37737ff7bcfa95221abc784b3e6192f3",
-      "fee": 978,
-      "vsize": 485,
-      "value": 981679096
-    },
-    {
-      "txid": "bf73ecff48c5c58ef5ddd14dac767aa492285fbd20b56a32bf6af9b89c14aba9",
-      "fee": 374,
-      "vsize": 373,
-      "value": 100898323021
-    },
-    {
-      "txid": "363b3dee58794ab5101911553921e5ca8381b6615e27b63fe82471ac36d90267",
-      "fee": 8570,
-      "vsize": 8569,
-      "value": 7518166611
+      "value": 40527491
     }
   ],
   "feed": {
     "state": "live",
-    "startedAt": 1790300887584,
-    "lastEvent": 1790300895413,
-    "count": 1,
+    "startedAt": 1790301151789,
+    "lastEvent": 1790301287968,
+    "count": 8,
     "scope": "Insight node notifications observed since this process started; incomplete pool"
   }
 }

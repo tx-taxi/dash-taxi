@@ -22,7 +22,7 @@ export class BlockchainBlocksComponent implements OnInit, OnChanges, OnDestroy {
   @Input() static: boolean = false;
   @Input() offset: number = 0;
   @Input() height: number = 0; // max height of blocks in chunk (dynamic blocks only)
-  @Input() count: number = 8; // number of blocks in this chunk (dynamic blocks only)
+  @Input() count: number = 10; // number of blocks in this chunk (dynamic blocks only)
   @Input() loadingTip: boolean = false;
   @Input() connected: boolean = true;
   @Input() minimal: boolean = false;
@@ -85,7 +85,7 @@ export class BlockchainBlocksComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnInit() {
-    this.dynamicBlocksAmount = Math.min(8, this.stateService.env.KEEP_BLOCKS_AMOUNT);
+    this.dynamicBlocksAmount = this.stateService.env.KEEP_BLOCKS_AMOUNT;
 
     this.blockDisplayMode = this.stateService.blockDisplayMode$.value as 'size' | 'fees';
     this.blockDisplayModeSubscription = this.stateService.blockDisplayMode$

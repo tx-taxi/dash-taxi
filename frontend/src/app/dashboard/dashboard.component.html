@@ -2,7 +2,7 @@
 <div class="col"><app-difficulty></app-difficulty></div>
 <div class="col card-wrapper"><div class="main-title">Pending Transactions</div><div class="card"><div class="card-body less-padding"><p class="text-secondary">Live notifications observed since connection; this is a node sample. Global pool totals and confirmation estimates are unavailable.</p><app-recent-transactions-list [widget]="true"></app-recent-transactions-list></div></div></div>
 <div class="col"><ng-container *ngTemplateOutlet="latestBlocks"></ng-container></div>
-<div class="col"><div class="card"><div class="card-body"><h5 class="card-title">Dash Core</h5><p>Amounts use DASH or duffs (100,000,000 duffs per DASH). Fees use duffs per byte.</p><p>Block rewards include miner and masternode payments. InstantSend and ChainLocks differ from block confirmations.</p><p class="text-secondary">Local candidate: pending, historical mining charts, remain unresolved.</p></div></div></div>
+<div class="col"><div class="card"><div class="card-body"><h5 class="card-title">Dash Core</h5><p>Amounts use DASH or duffs (100,000,000 duffs per DASH). Fees use duffs per byte.</p><p>Block rewards include miner and masternode payments. InstantSend and ChainLocks differ from block confirmations.</p><p class="text-secondary">Pending transactions show recent node observations. Mining charts cover the latest 10 blocks.</p></div></div></div>
 </div></div><ng-template #latestBlocks>
         <div class="card">
           <div class="card-body">

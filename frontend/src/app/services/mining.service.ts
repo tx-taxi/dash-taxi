@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, EMPTY } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { PoolsStats, SinglePoolStats } from '@interfaces/node-api.interface';
 import { ApiService } from '@app/services/api.service';
@@ -49,20 +49,8 @@ export class MiningService {
    * Generate pool ranking stats
    */
   public getMiningStats(interval: string): Observable<MiningStats> {
-    // returned cached data fetched within the last 5 minutes
-    if (this.cache[interval] && this.cache[interval].lastUpdated > (Date.now() - (5 * 60000))) {
-      return of(this.cache[interval].data);
-    } else {
-      return this.apiService.listPools$(interval).pipe(
-        map(response => this.generateMiningStats(response)),
-        tap(stats => {
-          this.cache[interval] = {
-            lastUpdated: Date.now(),
-            data: stats,
-          };
-        })
-      );
-    }
+    // Dash provider exposes recent blocks, not historical pool-share statistics.
+    return EMPTY;
   }
 
   /**

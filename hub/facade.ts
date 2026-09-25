@@ -1,7 +1,7 @@
 import {BehaviorSubject, ReplaySubject, Subject} from 'rxjs';
 import {dashMempoolFeeColors} from '@app/app.constants';
 export class StateService {
- env={KEEP_BLOCKS_AMOUNT:8,ROOT_NETWORK:'',BASE_MODULE:'mempool',BLOCK_WEIGHT_UNITS:8000000,MEMPOOL_BLOCKS_AMOUNT:8}; network=''; isBrowser=true; blockVSize=1000000; latestBlockHeight=0;
+ env={KEEP_BLOCKS_AMOUNT:10,ROOT_NETWORK:'',BASE_MODULE:'mempool',BLOCK_WEIGHT_UNITS:8000000,MEMPOOL_BLOCKS_AMOUNT:8}; network=''; isBrowser=true; blockVSize=1000000; latestBlockHeight=0;
  blocks$=new ReplaySubject<any[]>(1); blocksSubject$=this.blocks$; chainTip$=new ReplaySubject<number>(1);
  mempoolBlocks$=new ReplaySubject<any[]>(1); difficultyAdjustment$=new ReplaySubject<any>(1);
  blockDisplayMode$=new BehaviorSubject('fees'); timeLtr=new BehaviorSubject(false); connectionState$=new BehaviorSubject(2);

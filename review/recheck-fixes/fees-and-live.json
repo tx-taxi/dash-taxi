@@ -1,0 +1,91 @@
+{
+  "controlled": [
+    "—",
+    "‎0.00 DASH"
+  ],
+  "graph": {
+    "width": 410,
+    "height": 410,
+    "tiles": [
+      {
+        "txid": "6ab56181a415b234cf2c143444072d74044c198f83c6b39c076719722d83abeb",
+        "x": 346,
+        "y": 146,
+        "s": 63
+      },
+      {
+        "txid": "ec8d13fb913910e1c7e70a042cf39a006c38378ef6fdfffc96d9d731ae27e89b",
+        "x": 346,
+        "y": 211,
+        "s": 63
+      },
+      {
+        "txid": "e25c878d05fe99ffba66c62db805373903f9eed7f83a7c2ce99e182b6b901ada",
+        "x": 336,
+        "y": 276,
+        "s": 73
+      },
+      {
+        "txid": "d22d76994cf395622c67fd34b8eae50710e7e11ab417dda49a2f37eb2cae3084",
+        "x": 351,
+        "y": 351,
+        "s": 58
+      },
+      {
+        "txid": "7fbfd693c58636b4212e7abe776614efc9d77d14563207ca389f62518819fe44",
+        "x": 6,
+        "y": 81,
+        "s": 328
+      }
+    ],
+    "allInside": true
+  },
+  "clicked": "http://127.0.0.1:4370/tx/ec8d13fb913910e1c7e70a042cf39a006c38378ef6fdfffc96d9d731ae27e89b",
+  "stream": [
+    {
+      "at": 1790314085356,
+      "tip": 2544563,
+      "ids": [
+        "6ab56181a415b234cf2c143444072d74044c198f83c6b39c076719722d83abeb",
+        "ec8d13fb913910e1c7e70a042cf39a006c38378ef6fdfffc96d9d731ae27e89b",
+        "e25c878d05fe99ffba66c62db805373903f9eed7f83a7c2ce99e182b6b901ada",
+        "d22d76994cf395622c67fd34b8eae50710e7e11ab417dda49a2f37eb2cae3084",
+        "7fbfd693c58636b4212e7abe776614efc9d77d14563207ca389f62518819fe44"
+      ],
+      "freshness": {
+        "state": "live",
+        "observedAt": 1790314073525
+      }
+    },
+    {
+      "at": 1790314087244,
+      "tip": 2544563,
+      "ids": [
+        "6ab56181a415b234cf2c143444072d74044c198f83c6b39c076719722d83abeb",
+        "ec8d13fb913910e1c7e70a042cf39a006c38378ef6fdfffc96d9d731ae27e89b",
+        "e25c878d05fe99ffba66c62db805373903f9eed7f83a7c2ce99e182b6b901ada",
+        "d22d76994cf395622c67fd34b8eae50710e7e11ab417dda49a2f37eb2cae3084",
+        "7fbfd693c58636b4212e7abe776614efc9d77d14563207ca389f62518819fe44"
+      ],
+      "freshness": {
+        "state": "live",
+        "observedAt": 1790314087239
+      }
+    },
+    {
+      "at": 1790314101265,
+      "tip": 2544563,
+      "ids": [
+        "6ab56181a415b234cf2c143444072d74044c198f83c6b39c076719722d83abeb",
+        "ec8d13fb913910e1c7e70a042cf39a006c38378ef6fdfffc96d9d731ae27e89b",
+        "e25c878d05fe99ffba66c62db805373903f9eed7f83a7c2ce99e182b6b901ada",
+        "d22d76994cf395622c67fd34b8eae50710e7e11ab417dda49a2f37eb2cae3084",
+        "7fbfd693c58636b4212e7abe776614efc9d77d14563207ca389f62518819fe44"
+      ],
+      "freshness": {
+        "state": "live",
+        "observedAt": 1790314101260
+      }
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+[
+  {
+    "width": 1440,
+    "theme": "default",
+    "graph": {
+      "autofit": true,
+      "blockLimit": 2000000,
+      "scale": 0.23532821201085302,
+      "tiles": [
+        {
+          "vsize": 225,
+          "position": {
+            "x": 51,
+            "y": 91,
+            "s": 158
+          }
+        },
+        {
+          "vsize": 225,
+          "position": {
+            "x": 51,
+            "y": 251,
+            "s": 158
+          }
+        },
+        {
+          "vsize": 340,
+          "position": {
+            "x": 211,
+            "y": 61,
+            "s": 198
+          }
+        },
+        {
+          "vsize": 192,
+          "position": {
+            "x": 261,
+            "y": 261,
+            "s": 148
+          }
+        }
+      ],
+      "sampleExtent": 982
+    },
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "theme": "original",
+    "graph": {
+      "autofit": true,
+      "blockLimit": 2000000,
+      "scale": 0.23532821201085302,
+      "tiles": [
+        {
+          "vsize": 225,
+          "position": {
+            "x": 51,
+            "y": 91,
+            "s": 158
+          }
+        },
+        {
+          "vsize": 225,
+          "position": {
+            "x": 51,
+            "y": 251,
+            "s": 158
+          }
+        },
+        {
+          "vsize": 340,
+          "position": {
+            "x": 211,
+            "y": 61,
+            "s": 198
+          }
+        },
+        {
+          "vsize": 192,
+          "position": {
+            "x": 261,
+            "y": 261,
+            "s": 148
+          }
+        }
+      ],
+      "sampleExtent": 982
+    },
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "controlledOptional503": {
+      "error": null,
+      "transactions": 25,
+      "pending": 1,
+      "loading": false
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "theme": "default",
+    "graph": {
+      "autofit": true,
+      "blockLimit": 2000000,
+      "scale": 0.2136328914435207,
+      "tiles": [
+        {
+          "vsize": 225,
+          "position": {
+            "x": 40.76744186046511,
+            "y": 72.58139534883719,
+            "s": 133.2093023255814
+          }
+        },
+        {
+          "vsize": 225,
+          "position": {
+            "x": 40.76744186046511,
+            "y": 207.79069767441862,
+            "s": 133.2093023255814
+          }
+        },
+        {
+          "vsize": 340,
+          "position": {
+            "x": 175.97674418604652,
+            "y": 52.69767441860466,
+            "s": 165.02325581395348
+          }
+        },
+        {
+          "vsize": 192,
+          "position": {
+            "x": 219.72093023255817,
+            "y": 219.72093023255817,
+            "s": 121.27906976744185
+          }
+        }
+      ],
+      "sampleExtent": 982
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "theme": "original",
+    "graph": {
+      "autofit": true,
+      "blockLimit": 2000000,
+      "scale": 0.2136328914435207,
+      "tiles": [
+        {
+          "vsize": 225,
+          "position": {
+            "x": 40.76744186046511,
+            "y": 72.58139534883719,
+            "s": 133.2093023255814
+          }
+        },
+        {
+          "vsize": 225,
+          "position": {
+            "x": 40.76744186046511,
+            "y": 207.79069767441862,
+            "s": 133.2093023255814
+          }
+        },
+        {
+          "vsize": 340,
+          "position": {
+            "x": 175.97674418604652,
+            "y": 52.69767441860466,
+            "s": 165.02325581395348
+          }
+        },
+        {
+          "vsize": 192,
+          "position": {
+            "x": 219.72093023255817,
+            "y": 219.72093023255817,
+            "s": 121.27906976744185
+          }
+        }
+      ],
+      "sampleExtent": 982
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "controlledOptional503": {
+      "error": null,
+      "transactions": 25,
+      "pending": 1,
+      "loading": false
+    },
+    "errors": []
+  }
+]

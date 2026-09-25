@@ -3,6 +3,7 @@
   [isLoading]="(isLoading$ | async) || !stateService.isBrowser"
   [resolution]="resolution"
   [blockLimit]="stateService.blockVSize"
+  [autofit]="observedTransactions !== null"
   [orientation]="timeLtr ? 'right' : 'left'"
   [flip]="true"
   [showFilters]="showFilters"

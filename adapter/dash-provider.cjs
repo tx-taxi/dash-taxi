@@ -1,8 +1,10 @@
 'use strict';
 // Dash Core chain adapter. All monetary fields become integer duffs once, at this boundary.
 const BASE=process.env.DASH_PROVIDER||'https://explorer.dash.org/insight-api';
+const {DataStore}=require('./data-store.cjs');
+const store=new DataStore();
 const cache=new Map(),active=new Map();let lastSuccess=0,lastFailure=null;
-async function get(p,ttl=10000){const old=cache.get(p);if(old&&Date.now()-old.at<ttl)return old.data;if(active.has(p))return active.get(p);const task=(async()=>{try{const r=await fetch(BASE+p,{headers:{'User-Agent':'tx.taxi Dash explorer/0.1','Accept':'application/json'},signal:AbortSignal.timeout(8000)});if(!r.ok)throw Object.assign(new Error('Dash provider HTTP '+r.status),{status:r.status});const data=await r.json();lastSuccess=Date.now();cache.set(p,{at:Date.now(),data});if(cache.size>600)cache.delete(cache.keys().next().value);return data;}catch(e){lastFailure={at:Date.now(),message:e.message};throw e;}finally{active.delete(p)}})();active.set(p,task);return task;}
+async function get(p,ttl=10000){const old=cache.get(p)||store.get('provider:'+p);if(old&&Date.now()-old.at<ttl){cache.set(p,old);return old.data;}if(active.has(p))return active.get(p);const task=(async()=>{try{const r=await fetch(BASE+p,{headers:{'User-Agent':'tx.taxi Dash explorer/0.1','Accept':'application/json'},signal:AbortSignal.timeout(8000)});if(!r.ok)throw Object.assign(new Error('Dash provider HTTP '+r.status),{status:r.status});const data=await r.json();lastSuccess=Date.now();const record={at:Date.now(),data};cache.set(p,record);store.put('provider:'+p,record);if(cache.size>600)cache.delete(cache.keys().next().value);return data;}catch(e){lastFailure={at:Date.now(),message:e.message};throw e;}finally{active.delete(p)}})();active.set(p,task);return task;}
 function atomic(v){const str=typeof v==='number'?v.toFixed(8):String(v??0);const negative=str.startsWith('-');const [a,b='']=str.replace(/^-/,'').split('.');return Number((negative?-1n:1n)*(BigInt(a)*100000000n+BigInt((b+'00000000').slice(0,8))));}
 function fee(t){if(t.isCoinBase||[6,7].includes(t.type))return 0;if(t.type===9){if(!/^[0-9a-f]{290}$/i.test(t.extraPayload||''))return null;return Buffer.from(t.extraPayload,'hex').readUInt32LE(9);}return t.fees==null?null:atomic(t.fees);}
 
@@ -27,6 +29,7 @@ async function api(path){const url=new URL(path,'http://local');const p=url.path
  if((m=p.match(/^\/api\/tx\/([^/]+)(?:\/(status|hex|outspends))?$/))){const t=await get('/tx/'+m[1],10000);if(m[2]==='status')return tx(t).status;if(m[2]==='hex')return (await get('/rawtx/'+m[1],300000)).rawtx;if(m[2]==='outspends')return t.vout.map(o=>({spent:!!o.spentTxId,...(o.spentTxId?{txid:o.spentTxId,vin:o.spentIndex,status:{confirmed:!!o.spentHeight,block_height:o.spentHeight}}:{})}));return tx(t)}
  if((m=p.match(/^\/api\/address\/([^/]+)\/txs(?:\/chain(?:\/([^/]+))?)?$/)))return addressTxs(m[1],m[2]);
  if((m=p.match(/^\/api\/address\/([^/]+)$/))){const a=await get('/addr/'+m[1]+'?noTxList=1');return {address:a.addrStr,chain_stats:{funded_txo_count:null,funded_txo_sum:a.totalReceivedSat,spent_txo_count:null,spent_txo_sum:a.totalSentSat,tx_count:a.txAppearances},mempool_stats:{funded_txo_count:null,funded_txo_sum:a.unconfirmedBalanceSat>0?a.unconfirmedBalanceSat:0,spent_txo_count:null,spent_txo_sum:a.unconfirmedBalanceSat<0?-a.unconfirmedBalanceSat:0,tx_count:a.unconfirmedAppearances}}}
+ if(p==='/api/v1/transaction-times')return url.searchParams.getAll('txId[]').slice(0,100).map(id=>incomingSeen.has(id)?Math.floor(incomingSeen.get(id)/1000):null);
  if(p==='/api/dash/feed')return module.exports.feedHealth();
  if(p==='/api/v1/statistics/2h')return incomingSamples.slice().reverse();
  if(p==='/api/mempool/recent'&&feedState!=='live')throw Object.assign(new Error('Insight node notifications are unavailable; reconnecting'),{status:503});
@@ -40,7 +43,7 @@ async function api(path){const url=new URL(path,'http://local');const p=url.path
 }
 async function snapshot(){const bs=await blocks();for(const b of bs){const raw=await rawBlock(b.id);for(const id of raw.tx)observed.delete(id)}const pending=await observedPending();const sample=recordIncoming();return {...(sample?{'live-2h-chart':sample}:{}),transactions:pending.map(t=>({txid:t.txid,fee:t.fee,vsize:t.size,value:t.vout.reduce((a,b)=>a+b.value,0)})),blocks:[...bs].reverse(),conversions:await prices(),loadingIndicators:{blocks:100},backend:'dash-insight',gitCommit:'dash-local',dashNetwork:{difficulty:bs[0].difficulty,blockInterval:157.5,reward:bs[0].extras.reward}}}
 async function prices(){try{const data=await get('/currency',60000);return {USD:data.data.dash_usd,time:Math.floor(cache.get('/currency').at/1000)}}catch{return {}}}
-module.exports={fee,prices,api,snapshot,atomic,tx,block,blocks,get,health:()=>({lastSuccess,lastFailure})};
+module.exports={store,fee,prices,api,snapshot,atomic,tx,block,blocks,get,health:()=>({lastSuccess,lastFailure})};
 // Insight's inv feed observes transactions reaching that node; it is not a complete global pool.
 const incomingSamples=[],incomingEvents=[],incomingSeen=new Map();
 function recordIncoming(){if(feedState!=='live')return null;const now=Date.now(),elapsed=Math.min(60,(now-feedStartedAt)/1000);while(incomingEvents.length&&incomingEvents[0].at<now-60000)incomingEvents.shift();for(const [id,at] of incomingSeen)if(at<now-7200000)incomingSeen.delete(id);const sample={added:Math.floor(now/1000),vbytes_per_second:elapsed>0?incomingEvents.reduce((sum,e)=>sum+e.size,0)/elapsed:0};if(incomingSamples.at(-1)?.added!==sample.added)incomingSamples.push(sample);while(incomingSamples.length&&incomingSamples[0].added<now/1000-7200)incomingSamples.shift();return sample;}

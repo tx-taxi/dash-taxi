@@ -56,7 +56,8 @@
             </ng-template>
             <div [attr.data-cy]="'bitcoin-block-' + offset + '-index-' + i + '-total-fees'" *ngIf="blockDisplayMode === 'fees'; else noMiningInfo"
               class="block-size">
-              <app-amount [satoshis]="block.extras?.totalFees ?? 0" digitsInfo="1.2-3" [noFiat]="true"></app-amount>
+              <app-amount *ngIf="block.extras?.totalFees != null; else unknownTotalFees" [satoshis]="block.extras.totalFees" digitsInfo="1.2-3" [noFiat]="true"></app-amount>
+              <ng-template #unknownTotalFees>—</ng-template>
             </div>
             <ng-template #noMiningInfo>
             <div [attr.data-cy]="'bitcoin-block-' + offset + '-index-' + i + 'block-size'"

@@ -218,6 +218,7 @@ export class BlockOverviewGraphComponent implements AfterViewInit, OnDestroy, On
     this.filtersAvailable = filtersAvailable;
     if (this.scene) {
       this.clearUpdateQueue();
+      this.fitSample(transactions, sort);
       this.scene.setup(transactions, sort);
       this.readyNextFrame = true;
       this.start();
@@ -228,6 +229,7 @@ export class BlockOverviewGraphComponent implements AfterViewInit, OnDestroy, On
   enter(transactions: TransactionStripped[], direction: string): void {
     if (this.scene) {
       this.clearUpdateQueue();
+      this.fitSample(transactions, false);
       this.scene.enter(transactions, direction);
       this.start();
       this.updateSearchHighlight();
@@ -246,10 +248,15 @@ export class BlockOverviewGraphComponent implements AfterViewInit, OnDestroy, On
   replace(transactions: TransactionStripped[], direction: string, sort: boolean = true, startTime?: number): void {
     if (this.scene) {
       this.clearUpdateQueue();
+      this.fitSample(transactions || [], sort);
       this.scene.replace(transactions || [], direction, sort, startTime);
       this.start();
       this.updateSearchHighlight();
     }
+  }
+
+  private fitSample(transactions: TransactionStripped[], sort: boolean): void {
+    if (this.autofit && this.scene) this.scene.fitTransactions(transactions, sort);
   }
 
   // collates deferred updates into a set of consistent pending changes

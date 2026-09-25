@@ -55,8 +55,8 @@
         </td>
       </tr>
       <tr *only-vsize>
-        <td class="label" i18n="transaction.vsize|Transaction Virtual Size">Virtual size</td>
-        <td class="value fixed-unit-color" [innerHTML]="'&lrm;' + (vsize | vbytes: 2)"></td>
+        <td class="label" i18n="transaction.size|Transaction Size">Size</td>
+        <td class="value fixed-unit-color" [innerHTML]="'&lrm;' + (vsize | bytes: 2)"></td>
       </tr>
       <tr *only-weight>
         <td class="label" i18n="transaction.weight|Transaction Weight">Weight</td>

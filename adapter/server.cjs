@@ -138,9 +138,9 @@ server.on('upgrade',(req,socket,head)=>{
   upstream.on('upgrade',(r,s,h)=>{const close=()=>{s.destroy();socket.destroy();};s.on('error',close);socket.on('error',close);s.on('close',()=>socket.destroy());socket.on('close',()=>s.destroy());if(socket.destroyed){s.destroy();return;}socket.write('HTTP/1.1 101 Switching Protocols\r\n'+Object.entries(r.headers).map(([k,v])=>`${k}: ${v}`).join('\r\n')+'\r\n\r\n');if(h.length)socket.write(h);if(head.length)s.write(head);s.pipe(socket).pipe(s);});upstream.on('error',()=>socket.destroy());upstream.end();
  }
 });
-wss.on('connection',client=>{
- let busy=false;let timer;let trackedTx=null;let trackedAddress=null;let seenAddress=null;async function refresh(){if(busy)return;busy=true;try{const d=await dashProvider.snapshot();if(trackedTx){try{d.tx=await dashProvider.api('/api/tx/'+trackedTx);}catch{}}if(trackedAddress){try{const txs=await dashProvider.api('/api/address/'+trackedAddress+'/txs');if(seenAddress)d['address-transactions']=txs.filter(t=>!seenAddress.has(t.txid));seenAddress=new Set(txs.map(t=>t.txid));}catch{}}health.lastSuccess=Date.now();health.websocket='live';if(client.readyState===1)client.send(JSON.stringify(d));}catch(e){health.websocket='unavailable';if(client.readyState===1)client.close(1013,'Provider unavailable');}finally{busy=false}}
- client.on('message',raw=>{let m;try{m=JSON.parse(raw)}catch{return}if(m['track-tx']){trackedTx=m['track-tx']==='stop'?null:m['track-tx'];if(trackedTx)refresh();}if(Object.hasOwn(m,'track-address')){trackedAddress=m['track-address']||null;seenAddress=null;}if(m.action==='ping'&&client.readyState===1)client.send(JSON.stringify({pong:true}));if(m.action==='init')refresh();});
- timer=setInterval(refresh,15000);client.on('close',()=>clearInterval(timer));client.on('error',()=>clearInterval(timer));
-});
+const {SnapshotFeed}=require('./snapshot-feed.cjs');
+const sharedFeed=new SnapshotFeed({provider:dashProvider,store:dashProvider.store,health});
+wss.on('connection',client=>sharedFeed.attach(client));
+sharedFeed.start();
+
 server.listen(Number(process.env.PORT||4370),'127.0.0.1',()=>console.log('DASH explorer on 127.0.0.1:'+ (process.env.PORT||4370)));

@@ -129,21 +129,8 @@ export class BlockchainComponent implements OnInit, OnDestroy, OnChanges {
 
   onResize(): void {
     const width = this.containerWidth || window.innerWidth;
-    if (width >= 768) {
-      if (this.stateService.isLiquid()) {
-        this.dividerOffset = 420;
-      } else {
-        this.dividerOffset = width * 0.5;
-      }
-    } else {
-      if (this.stateService.isLiquid()) {
-        this.dividerOffset = width * 0.5;
-      } else {
-        this.dividerOffset = width * 0.95;
-      }
-    }
-    // No complete pending-pool projection: preserve native blocks, start at the viewport edge.
-    this.dividerOffset = 24;
+    // Keep the native divider centered even without a projected pending pool.
+    this.dividerOffset = width * 0.5;
     this.updateStyle();
   }
 }

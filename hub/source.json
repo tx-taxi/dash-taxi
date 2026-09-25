@@ -1,6 +1,6 @@
 {
   "chain": "dash",
-  "commit": "e0179588c309818fe8c668ea36adeb7e7e1d7fb4",
-  "status": "Audit-cleaned native local source; bounded evidence in review/design-cleanup/README.md; provider limits remain explicit",
+  "commit": "fe97dd024e9a62e6f17653d6e323043c050d408b",
+  "status": "Independent recheck corrected local candidate; review/recheck-fixes and provider limits apply",
   "ancestor": "LTC 6ba310ede + hub2519326f9"
 }

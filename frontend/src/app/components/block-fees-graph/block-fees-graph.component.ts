@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, Inject, Input, LOCALE_ID, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, Input, LOCALE_ID, OnInit, OnDestroy } from '@angular/core';
 import { echarts, EChartsOption } from '@app/graphs/echarts';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { ThemeService } from '@app/services/theme.service';
 import { map, share, startWith, switchMap, tap } from 'rxjs/operators';
 import { ApiService } from '@app/services/api.service';
 import { SeoService } from '@app/services/seo.service';
@@ -29,7 +30,10 @@ import { StateService } from '@app/services/state.service';
   standalone: false,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BlockFeesGraphComponent implements OnInit {
+export class BlockFeesGraphComponent implements OnInit, OnDestroy {
+  private themeSubscription: Subscription;
+  private lastData: any;
+  @Input() widget = false;
   @Input() right: number | string = 45;
   @Input() left: number | string = 75;
 
@@ -52,6 +56,8 @@ export class BlockFeesGraphComponent implements OnInit {
   constructor(
     @Inject(LOCALE_ID) public locale: string,
     private seoService: SeoService,
+    private themeService: ThemeService,
+    private cd: ChangeDetectorRef,
     private apiService: ApiService,
     private formBuilder: UntypedFormBuilder,
     private storageService: StorageService,
@@ -67,8 +73,9 @@ export class BlockFeesGraphComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.seoService.setTitle($localize`:@@6c453b11fd7bd159ae30bc381f367bc736d86909:Block Fees`);
-    this.seoService.setDescription($localize`:@@meta.description.bitcoin.graphs.block-fees:See the average mining fees earned per Dash block visualized in DASH and USD over time.`);
+    this.themeSubscription=this.themeService.themeState$.subscribe(state=>{if(!state.loading && this.lastData){this.prepareChartOptions(this.lastData);this.cd.markForCheck();}});
+    if (!this.widget) this.seoService.setTitle($localize`:@@6c453b11fd7bd159ae30bc381f367bc736d86909:Block Fees`);
+    if (!this.widget) this.seoService.setDescription($localize`:@@meta.description.bitcoin.graphs.block-fees:See actual transaction fees for the latest observed Dash blocks, denominated in DASH.`);
     this.miningWindowPreference = this.miningService.getDefaultTimespan('1m');
     this.radioGroupForm = this.formBuilder.group({ dateSpan: this.miningWindowPreference });
     this.radioGroupForm.controls.dateSpan.setValue(this.miningWindowPreference);
@@ -109,7 +116,10 @@ export class BlockFeesGraphComponent implements OnInit {
       );
   }
 
+  ngOnDestroy(): void { this.themeSubscription?.unsubscribe(); }
+
   prepareChartOptions(data) {
+    this.lastData=data;
     const feesBtcLabel = $localize`:@@graphs.blockFees.feesBtc:Fees DASH`;
     const feesFiatLabel = $localize`:@@graphs.blockFees.feesFiat:Fees ${this.currency}:currency:`;
 
@@ -130,8 +140,8 @@ export class BlockFeesGraphComponent implements OnInit {
       title: title,
       color: [
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          { offset: 0, color: '#FDD835' },
-          { offset: 1, color: '#FB8C00' },
+          { offset: 0, color: this.themeService.theme === 'original' ? '#FDD835' : '#008de4' },
+          { offset: 1, color: this.themeService.theme === 'original' ? '#FB8C00' : '#72c9ff' },
         ]),
         new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           { offset: 0, color: '#C0CA33' },
@@ -142,8 +152,8 @@ export class BlockFeesGraphComponent implements OnInit {
       grid: {
         top: 30,
         bottom: 80,
-        right: this.right,
-        left: this.left,
+        right: this.isMobile() ? 10 : this.right,
+        left: this.isMobile() ? 8 : this.left,
         containLabel: true,
       },
       tooltip: {
@@ -182,9 +192,10 @@ export class BlockFeesGraphComponent implements OnInit {
       xAxis: data.blockFees.length === 0 ? undefined :
       {
         type: 'time',
-        splitNumber: this.isMobile() ? 5 : 10,
+        splitNumber: this.isMobile() || this.widget ? 3 : 8,
         axisLabel: {
           hideOverlap: true,
+          showMaxLabel: false,
         }
       },
       legend: data.blockFees.length === 0 ? undefined : {
@@ -213,7 +224,7 @@ export class BlockFeesGraphComponent implements OnInit {
           axisLabel: {
             color: 'rgb(110, 112, 121)',
             formatter: (val) => {
-              return `${val} DASH`;
+              return `${Number(val.toPrecision(3))}`;
             }
           },
           splitLine: {
@@ -299,7 +310,7 @@ export class BlockFeesGraphComponent implements OnInit {
     if (nativeOptions.legend) nativeOptions.legend.data = nativeOptions.legend.data.slice(0, 1);
     if (nativeOptions.series) nativeOptions.series = nativeOptions.series.slice(0, 1);
     if (nativeOptions.yAxis) nativeOptions.yAxis = nativeOptions.yAxis.slice(0, 1);
-    nativeOptions.color = ['var(--primary)'];
+    nativeOptions.color = [this.themeService.theme === 'original' ? '#FDD835' : '#008de4'];
   }
 
   onChartInit(ec) {

@@ -16,18 +16,7 @@
   .item {
     padding: 0 5px;
     width: 100%;
-    &:nth-child(1) {
-      display: none;
-      @media (min-width: 485px) {
-        display: table-cell;
-      }
-      @media (min-width: 768px) {
-        display: none;
-      }
-      @media (min-width: 992px) {
-        display: table-cell;
-      }
-    }
+
   }
   .card-text {
     font-size: 18px;
@@ -253,3 +242,4 @@
 .inactive {
   color: var(--transparent-fg);
 }
+@media(max-width:484px){.difficulty-stats .secondary-metric{display:none}.difficulty-stats .card-text{font-size:16px}}

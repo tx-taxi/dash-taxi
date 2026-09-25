@@ -1,0 +1,35 @@
+{
+  "root": {
+    "pendingTiles": 4,
+    "sample": 4,
+    "blockLimit": 2000000
+  },
+  "first": [
+    {
+      "added": 1790305643,
+      "vbytes_per_second": 224.35780652213518
+    }
+  ],
+  "second": [
+    {
+      "added": 1790305657,
+      "vbytes_per_second": 220.0267171323611
+    },
+    {
+      "added": 1790305643,
+      "vbytes_per_second": 224.35780652213518
+    }
+  ],
+  "feed": {
+    "state": "live",
+    "startedAt": 1790305621694,
+    "lastEvent": 1790305654748,
+    "count": 6,
+    "scope": "Insight node notifications observed since the latest connection; incomplete pool"
+  },
+  "metric": {
+    "client": 318,
+    "scroll": 318
+  },
+  "errors": []
+}

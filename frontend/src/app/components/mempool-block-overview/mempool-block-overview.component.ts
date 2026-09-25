@@ -20,6 +20,7 @@ import { FilterMode, GradientMode } from '@app/shared/filters.utils';
 })
 export class MempoolBlockOverviewComponent implements OnInit, OnDestroy, OnChanges, AfterViewInit {
   @Input() index: number;
+  @Input() observedTransactions: TransactionStripped[] | null = null;
   @Input() resolution = 86;
   @Input() showFilters: boolean = false;
   @Input() overrideColors: ((tx: TxView) => Color) | null = null;
@@ -58,6 +59,7 @@ export class MempoolBlockOverviewComponent implements OnInit, OnDestroy, OnChang
   }
 
   ngAfterViewInit(): void {
+    if (this.observedTransactions !== null) { this.replaceBlock(this.observedTransactions); return; }
     this.blockSub = this.stateService.mempoolBlockUpdate$.subscribe((update) => {
       // process update
       if (isMempoolDelta(update)) {
@@ -107,7 +109,8 @@ export class MempoolBlockOverviewComponent implements OnInit, OnDestroy, OnChang
   }
 
   ngOnChanges(changes): void {
-    if (changes.index) {
+    if (changes.observedTransactions && this.blockGraph) this.replaceBlock(this.observedTransactions || []);
+    if (changes.index && this.observedTransactions === null) {
       this.firstLoad = true;
       if (this.blockGraph) {
         this.blockGraph.clear(changes.index.currentValue > changes.index.previousValue ? this.chainDirection : this.poolDirection);
@@ -122,7 +125,7 @@ export class MempoolBlockOverviewComponent implements OnInit, OnDestroy, OnChang
 
   ngOnDestroy(): void {
     this.blockGraph?.destroy();
-    this.blockSub.unsubscribe();
+    this.blockSub?.unsubscribe();
     this.timeLtrSubscription.unsubscribe();
     this.websocketService.stopTrackMempoolBlock();
   }

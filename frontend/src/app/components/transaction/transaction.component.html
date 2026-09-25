@@ -200,7 +200,7 @@
             <tbody>
               <tr>
                 <td i18n="transaction.version">Version</td>
-                <td [innerHTML]="'&lrm;' + (tx.version | number)"></td></tr><tr *ngIf="tx.dash"><td>Dash transaction type</td><td>{{tx.dash.type === 9 ? 'Platform withdrawal' : tx.dash.type === 6 ? 'Quorum commitment' : tx.dash.type === 5 ? 'Coinbase' : tx.dash.type === 0 ? 'Classic transfer' : tx.dash.type}}</td></tr><tr *ngIf="tx.dash"><td>InstantSend</td><td>{{tx.dash.instantSend ? 'Locked (provider observation)' : 'Not reported'}}</td>
+                <td [innerHTML]="'&lrm;' + (tx.version | number)"></td></tr><tr *ngIf="tx.dash"><td class="wrap-cell">Dash transaction type</td><td class="wrap-cell">{{tx.dash.type === 9 ? 'Platform withdrawal' : tx.dash.type === 6 ? 'Quorum commitment' : tx.dash.type === 5 ? 'Coinbase' : tx.dash.type === 0 ? 'Classic transfer' : tx.dash.type}}</td></tr><tr *ngIf="tx.dash"><td>InstantSend</td><td class="wrap-cell">{{tx.dash.instantSend ? 'Locked (provider observation)' : 'Not reported'}}</td>
               </tr>
               <tr>
                 <td i18n="transaction.locktime">Locktime</td>

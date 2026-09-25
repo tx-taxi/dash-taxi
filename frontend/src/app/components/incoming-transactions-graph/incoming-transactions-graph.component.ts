@@ -138,27 +138,12 @@ export class IncomingTransactionsGraphComponent implements OnInit, OnChanges, On
       data: this.data.series[0],
       type: 'line',
       smooth: false,
-      showSymbol: false,
-      symbol: 'none',
+      showSymbol: this.data.series[0].length < 2,
+      symbol: 'circle',
       lineStyle: {
         width: 3,
       },
-      markLine: {
-        silent: true,
-        symbol: 'none',
-        lineStyle: {
-          color: 'var(--fg)',
-          opacity: 1,
-          width: 2,
-        },
-        data: [{
-          yAxis: 6667,
-          label: {
-            show: false,
-            color: 'var(--fg)',
-          }
-        }],
-      }
+
     });
     if (this.template !== 'widget') {
       seriesGraph.push({
@@ -242,7 +227,7 @@ export class IncomingTransactionsGraphComponent implements OnInit, OnChanges, On
             itemFormatted += `<div class="item">
                   <div class="indicator-container">${colorSpan(bestItem.color)}</div>
                   <div class="grow"></div>
-                  <div class="value">${formatNumber(bestItem.value[1], this.locale, '1.0-0')} <span class="symbol">vB/s</span></div>
+                  <div class="value">${formatNumber(bestItem.value[1], this.locale, '1.0-0')} <span class="symbol">B/s</span></div>
                 </div>`;
           }
           return `<div class="tx-wrapper-tooltip-chart ${(this.template === 'advanced') ? 'tx-wrapper-tooltip-chart-advanced' : ''}" 
@@ -274,13 +259,13 @@ export class IncomingTransactionsGraphComponent implements OnInit, OnChanges, On
             cappedMax = Math.round(this.medianVbytesPerSecond * OUTLIERS_MEDIAN_MULTIPLIER);
           }
           // always show the clearing rate line, plus a small margin
-          return Math.max(1800, cappedMax);
+          return Math.max(1, Math.ceil(cappedMax * 1.1));
         },
         type: 'value',
         axisLabel: {
           fontSize: 11,
           formatter: (value): string => {
-            return this.weightMode ? (value * 4).toString() : value.toString();
+            return Number(value.toPrecision(3)).toString();
           }
         },
         splitLine: {
@@ -292,43 +277,7 @@ export class IncomingTransactionsGraphComponent implements OnInit, OnChanges, On
         }
       },
       series: seriesGraph,
-      visualMap: {
-        show: false,
-        top: 50,
-        right: 10,
-        pieces: [{
-          gt: 0,
-          lte: 6667,
-          color: this.themeService.theme === 'default' ? '#789de0' : '#7CB342'
-        },
-        {
-          gt: 6667,
-          lte: 2000,
-          color: '#FDD835'
-        },
-        {
-          gt: 2000,
-          lte: 2500,
-          color: '#FFB300'
-        },
-        {
-          gt: 2500,
-          lte: 3000,
-          color: '#FB8C00'
-        },
-        {
-          gt: 3000,
-          lte: 3500,
-          color: '#F4511E'
-        },
-        {
-          gt: 3500,
-          color: '#D81B60'
-        }],
-        outOfRange: {
-          color: '#999'
-        }
-      },
+      color: [this.themeService.theme === 'default' ? '#008de4' : '#7CB342'],
     };
   }
 

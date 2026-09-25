@@ -1,0 +1,24 @@
+# DASH design cleanup — local verification
+
+2026-09-25 UTC. Baseline audited DASH 847c3b98b. Reference composition: current BTC ab3ea4e26 / LTC 05c674599 and the kit design audit. Root integrator owns shared search/divider/loading and hub export changes; those are outside this commit.
+
+Implemented A01/A02/A05/A08/A09/A12/A13/A16/A17/A18/A19 as applicable to DASH. Actual native dashboard card, pending treemap, incoming graph, difficulty SVG/progress/counter, fee graph, transaction detail wrapping, calculator, footer selector and legal templates are reused. No replacement component library or production registration.
+
+Data mapping:
+- Pending treemap consumes explicit latest100 Insight node observations. It does not subscribe to a projected-block API. Native 2,000,000-byte block scale remains unchanged, so a small observed sample genuinely occupies very little space. Final browser inspection found four rendered transaction tiles for four API observations.
+- Incoming graph consumes deduplicated real Insight tx/txlock notification bytes over the trailing60seconds (bounded to elapsed connection time initially). Retains at most2hours of observed samples; actual websocket snapshots publish updates. No implied global rate, fabricated clearing threshold or historic series. Reconnection clears pending observations; failure is an unavailable state, not an empty pool.
+- Network SVG represents difficulty of the latest observed blocks relative to their maximum, with actual difficulty/recent interval counters. It does not claim a Bitcoin epoch. Mobile keeps the primary value visible. Rewards retain the native counter/progress geometry but label the latest actual coinbase outputs; no halving countdown.
+- Mining restores the supported native fee graph in compact widget mode with recent actual fees. Coinbase/reward rows fit390px (318px inner viewport and318px content); pool column has native responsive priority. Historic hashrate and pool dominance remain unavailable and explicitly described.
+- Current fiat tooltips distinguish current-rate conversion from historical valuation. Calculator timestamp is actual local receipt time of the provider price, labeled received. Unsupported historical-date selection shows unavailable and returning to today recovers. Production config also disables unsupported historical-price service.
+
+Verification:
+- Angular incremental builds compile successfully; adapter syntax check and Angular compiler command passed.
+- `observations.json`: planned20captures, root/mining/graph/calculator/historical transaction ×1440/390 ×default/Original. Transaction type/InstantSend and hex action fit actual mobile cells. Historical transaction stays focused at block100000. No page errors or out-of-viewport table cells in this first pass.
+- `affected.json`:12targeted recaptures after chart-axis, palette and mobile mining refinements, plus reward-tab screenshots. A recorded localStorage exception originated in the capture init script executing in a sandboxed frame, not application code; capture scripts now guard storage access. `final-check.json` rechecks with corrected harness: no page errors, actual4sample/4treemap tiles, live stream sample timestamp advances1790305643→1790305657, node feed live with6observations, and mining table fits318/318.
+- Screenshots actually opened: root/mining/calculator/transaction desktop and mobile in both themes, full fee chart desktop/default and mobile/both themes, reward mobile/default, controlled feed-failure. These show readable counters, unclipped detail values, native chart/counter composition and reversible palettes. The dataset is genuinely sparse; do not interpret sparse treemap pixels as missing source data or rescale with an invented denominator.
+- `functional.json`: all six reachable docs/About/legal routes rendered without EOF/Bitcoin-native residue; controlled pending endpoint503 shows retry and reconnect states, real endpoint restoration recovers; historical-price-unavailable → current-price recovery passes. The calendar transition is a controlled component date update, not a claimed datepicker interaction test.
+- Native/original fee graph uses actual theme state and repaints. Chart labels/gutters were checked after initial screenshots exposed an inherited clearing threshold and crowded fee-axis labels.
+
+Bounds: this is the requested audit cleanup and affected-surface verification, not new certification of every special transaction type, global mempool completeness, archival hashrate, or provider uptime. Previous historical/address acceptance remains separate. Some initial recaptures coincide with the adapter's development restarts; final check confirms live recovery. Parent owns full search/navigation and chain-owned hub export acceptance.
+
+Running: http://127.0.0.1:4370 (gateway), Angular watch4371. Start `bash scripts/local-start.sh`; stop `bash scripts/local-stop.sh`. No deploy or push.

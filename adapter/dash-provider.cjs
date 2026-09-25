@@ -1,5 +1,6 @@
 'use strict';
 // Dash Core chain adapter. All monetary fields become integer duffs once, at this boundary.
+const {pendingSummary}=require('./pending-summary.cjs');
 const BASE=process.env.DASH_PROVIDER||'https://explorer.dash.org/insight-api';
 const {DataStore}=require('./data-store.cjs');
 const store=new DataStore();
@@ -41,7 +42,7 @@ async function api(path){const url=new URL(path,'http://local');const p=url.path
  if(p==='/api/v1/init-data')return snapshot();
  throw Object.assign(new Error('This provider does not expose this capability'),{status:503});
 }
-async function snapshot(){const bs=await blocks();for(const b of bs){const raw=await rawBlock(b.id);for(const id of raw.tx)observed.delete(id)}const pending=await observedPending();const sample=recordIncoming();return {...(sample?{'live-2h-chart':sample}:{}),transactions:pending.map(t=>({txid:t.txid,fee:t.fee,vsize:t.size,value:t.vout.reduce((a,b)=>a+b.value,0)})),blocks:[...bs].reverse(),conversions:await prices(),loadingIndicators:{blocks:100},backend:'dash-insight',gitCommit:'dash-local',dashNetwork:{difficulty:bs[0].difficulty,blockInterval:157.5,reward:bs[0].extras.reward}}}
+async function snapshot(){const bs=await blocks();for(const b of bs){const raw=await rawBlock(b.id);for(const id of raw.tx)observed.delete(id)}const pending=await observedPending();const sample=recordIncoming();return {'mempool-blocks':feedState==='live'?pendingSummary(pending):[],...(sample?{'live-2h-chart':sample}:{}),transactions:pending.map(t=>({txid:t.txid,fee:t.fee,vsize:t.size,value:t.vout.reduce((a,b)=>a+b.value,0)})),blocks:[...bs].reverse(),conversions:await prices(),loadingIndicators:{blocks:100},backend:'dash-insight',gitCommit:'dash-local',dashNetwork:{difficulty:bs[0].difficulty,blockInterval:150,reward:bs[0].extras.reward}}}
 async function prices(){try{const data=await get('/currency',60000);return {USD:data.data.dash_usd,time:Math.floor(cache.get('/currency').at/1000)}}catch{return {}}}
 module.exports={store,fee,prices,api,snapshot,atomic,tx,block,blocks,get,health:()=>({lastSuccess,lastFailure})};
 // Insight's inv feed observes transactions reaching that node; it is not a complete global pool.

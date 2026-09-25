@@ -1,6 +1,6 @@
 /** Chain-owned native explorer transport; snapshot age and stream liveness are distinct. */
 export function startFeed({onSnapshot,onStatus,signal}) {
- const endpoint='ws://127.0.0.1:4370/api/v1/ws';
+ const endpoint=/^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? 'ws://127.0.0.1:4370/api/v1/ws' : 'wss://dash.tx.taxi/api/v1/ws';
  let socket,retry,watchdog,initial,lastMessage=0,lastData=0,attempt=0,stopped=false,haveData=false;
  const status=(state,error)=>onStatus?.({state,updatedAt:lastData||null,error});
  const block=value=>value && typeof value==='object' && Number.isSafeInteger(value.height) && typeof value.id==='string';
@@ -20,7 +20,7 @@ export function startFeed({onSnapshot,onStatus,signal}) {
    if(Array.isArray(data.blocks) && data.blocks.every(block))snapshot.blocks=[...data.blocks].reverse();
    else if(block(data.block))snapshot.block=data.block;
    if(Array.isArray(data['mempool-blocks']))snapshot.mempoolBlocks=data['mempool-blocks'];
-   else if(snapshot.blocks) snapshot.mempoolBlocks=[]; // DASH has no projected block feed.
+   else if(snapshot.blocks) snapshot.mempoolBlocks=[]; // Older retained snapshots may predate observed pending summaries.
    if(data.da && typeof data.da==='object')snapshot.difficultyAdjustment=data.da;
    const hasData=Object.hasOwn(snapshot,'blocks') || Object.hasOwn(snapshot,'block') || Object.hasOwn(snapshot,'mempoolBlocks');
    if(hasData){

@@ -24,7 +24,7 @@ export function readHubSnapshot(value: unknown, chainId: string, now = Date.now(
     }
     if (!snapshot.mempoolBlocks.every((block: any) => block && nonnegative(block.blockSize)
       && nonnegative(block.blockVSize) && Number.isSafeInteger(block.nTx) && block.nTx >= 0
-      && nonnegative(block.totalFees) && nonnegative(block.medianFee) && fees(block.feeRange))) return null;
+      && (block.totalFees === null || nonnegative(block.totalFees)) && (block.medianFee === null || nonnegative(block.medianFee)) && fees(block.feeRange))) return null;
     if (snapshot.difficultyAdjustment !== undefined && (!snapshot.difficultyAdjustment
       || !nonnegative(snapshot.difficultyAdjustment.adjustedTimeAvg)
       || !Number.isFinite(snapshot.difficultyAdjustment.timeOffset))) return null;

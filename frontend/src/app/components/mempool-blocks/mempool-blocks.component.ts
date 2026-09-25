@@ -168,7 +168,7 @@ export class MempoolBlocksComponent implements OnInit, OnChanges, OnDestroy {
         .pipe(
           map((mempoolBlocks) => {
             if (!mempoolBlocks.length) {
-              return [{ index: 0, blockSize: 0, blockVSize: 0, feeRange: [0, 0], medianFee: 0, nTx: 0, totalFees: 0 }];
+              return [];
             }
             return mempoolBlocks;
           }),
@@ -396,10 +396,15 @@ export class MempoolBlocksComponent implements OnInit, OnChanges, OnDestroy {
     this.mempoolBlocksFull.forEach((block, i) => this.mempoolBlockStyles.push(this.getStyleForMempoolBlock(block, i)));
   }
 
+  openObservedPending(event: MouseEvent): void {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    document.getElementById('pending-transactions')?.scrollIntoView({block: 'center'});
+  }
+
   getStyleForMempoolBlock(mempoolBlock: MempoolBlock, index: number) {
     const emptyBackgroundSpacePercentage = Math.max(100 - mempoolBlock.blockVSize / this.stateService.blockVSize * 100, 0);
     const usedBlockSpace = 100 - emptyBackgroundSpacePercentage;
-    const backgroundGradients = [`repeating-linear-gradient(to right,  var(--mempool-block-loading), var(--mempool-block-loading) ${emptyBackgroundSpacePercentage}%`];
+    const backgroundGradients = [`repeating-linear-gradient(to right,  var(--secondary), var(--secondary) ${emptyBackgroundSpacePercentage}%`];
     const gradientColors = [];
 
     const trimmedFeeRange = index === 0 ? mempoolBlock.feeRange.slice(0, -1) : mempoolBlock.feeRange;
@@ -419,7 +424,7 @@ export class MempoolBlocksComponent implements OnInit, OnChanges, OnDestroy {
 
     return {
       'right': this.containerOffset + index * this.blockOffset + 'px',
-      'background': backgroundGradients.join(',') + ')'
+      'background': gradientColors.length ? backgroundGradients.join(',') + ')' : `linear-gradient(to right, var(--secondary) ${emptyBackgroundSpacePercentage}%, var(--mempool-block-top) ${emptyBackgroundSpacePercentage}%)`
     };
   }
 

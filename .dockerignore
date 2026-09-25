@@ -19,3 +19,5 @@ frontend/cypress/videos
 .local
 review
 **/mempool-frontend-config.json
+
+adapter/data

@@ -77,7 +77,12 @@
             </div>
           </ng-container>
         </div>
-        <div class="animated" *ngIf="block.extras?.pool != undefined && showPools">
+        <ng-template #payoutAddress>
+          <div class="animated" *ngIf="showPools && block.extras?.pool?.address">
+            <a class="badge" [routerLink]="['/address' | relativeUrl, block.extras.pool.address]" [title]="block.extras.pool.address">{{ block.extras.pool.address | slice:0:8 }}…{{ block.extras.pool.address | slice:-6 }}</a>
+          </div>
+        </ng-template>
+        <div class="animated" *ngIf="showPools && hasAttributedPool(block); else payoutAddress">
           <a [attr.data-cy]="'bitcoin-block-' + offset + '-index-' + i + '-pool'" class="badge" [class.miner-name]="block.extras.pool.minerNames?.length > 1 && block.extras.pool.minerNames[1] != ''" [routerLink]="[('/mining/pool/' + block.extras.pool.slug) | relativeUrl]">
             <ng-container *ngIf="block.extras.pool.minerNames?.length > 1 && block.extras.pool.minerNames[1] != ''; else centralisedPool">
               <app-mining-pool [slug]="block.extras.pool.slug" [name]="block.extras.pool.minerNames[1]" [logoStyle]="'filter: grayscale(100%) brightness(1.5);'" [showName]="false"></app-mining-pool>

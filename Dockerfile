@@ -13,13 +13,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends fonts-dejavu-co
 COPY adapter/package.json adapter/package-lock.json ./adapter/
 RUN cd adapter && npm ci --omit=dev
 COPY adapter ./adapter
-COPY frontend/src/resources/branding/ltc-dark-navbar.svg ./frontend/src/resources/branding/ltc-dark-navbar.svg
+COPY frontend/src/resources/branding/dash-dark-navbar.svg ./frontend/src/resources/branding/dash-dark-navbar.svg
+COPY frontend/src/resources/mining-pools/default.svg ./frontend/src/resources/mining-pools/default.svg
 COPY --from=frontend-builder /app/frontend/dist/mempool/browser ./public
 COPY --from=frontend-builder /app/frontend/src/resources ./public/resources
-ENV LTC_HOST=0.0.0.0
-ENV LTC_STATIC_ROOT=/app/public
-ENV LTC_SITE_ORIGIN=https://ltc.tx.taxi
-ENV LTC_ROUTER_ORIGIN=https://tx.taxi
+ENV DASH_HOST=0.0.0.0
+ENV DASH_STATIC_ROOT=/app/public
+ENV DASH_SITE_ORIGIN=https://dash.tx.taxi
+ENV DASH_ROUTER_ORIGIN=https://tx.taxi
+ENV DASH_DATA_DIR=/data/dash
+RUN mkdir -p /data/dash && chown -R node:node /data/dash
 ENV PORT=8080
 USER node
 EXPOSE 8080

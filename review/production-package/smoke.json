@@ -1,0 +1,49 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 367696,
+    "title": "dash.tx.taxi - Dash Explorer",
+    "skeleton": true
+  },
+  {
+    "path": "/resources/config.js",
+    "status": 200,
+    "type": "application/javascript",
+    "bytes": 1161,
+    "dashOrigin": true,
+    "routerOrigin": true,
+    "localOrigin": false
+  },
+  {
+    "path": "/resources/branding/dash-dark-navbar.svg",
+    "status": 200,
+    "type": "image/svg+xml",
+    "bytes": 15456
+  },
+  {
+    "path": "/resources/mining-pools/default.svg",
+    "status": 200,
+    "type": "image/svg+xml",
+    "bytes": 1234
+  },
+  {
+    "path": "/og.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 58077
+  },
+  {
+    "path": "/healthz",
+    "status": 200,
+    "type": "application/json",
+    "bytes": 184
+  },
+  {
+    "path": "/api/v1/init-data",
+    "status": 200,
+    "type": "application/json",
+    "bytes": 7260
+  }
+]

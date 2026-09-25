@@ -1,5 +1,5 @@
 <ng-container *ngIf="(loadingBlocks$ | async) === false; else loadingBlocks" [class.minimal]="minimal">
-  <div class="mempool-blocks-container" [class.time-ltr]="timeLtr" [style.--block-size]="blockWidth+'px'" *ngIf="(difficultyAdjustments$ | async) as da;">
+  <div class="mempool-blocks-container" [class.time-ltr]="timeLtr" [style.--block-size]="blockWidth+'px'">
     <div class="flashing" *ngIf="(mempoolBlocks$ | async) as mempoolBlocks">
       <ng-template ngFor let-projectedBlock [ngForOf]="mempoolBlocks" let-i="index" [ngForTrackBy]="trackByFn">
         <div
@@ -8,20 +8,20 @@
           [style.right]="mempoolBlockStyles[i].right"
         ></div>
         <div @blockEntryTrigger [@.disabled]="i > 0 || !animateEntry" [attr.data-cy]="'mempool-block-' + i" class="bitcoin-block text-center mempool-block" [class.hide-block]="count && i >= count" id="mempool-block-{{ i }}" [ngStyle]="mempoolBlockStyles[i]" [class.blink-bg]="projectedBlock.blink" [style]="blockTransformation">
-          <a draggable="false" [routerLink]="[getHref(i) | relativeUrl]"
+          <a draggable="false" [routerLink]="['/' | relativeUrl]" fragment="pending-transactions" (click)="openObservedPending($event)" title="Observed pending transactions — a node sample, not a next-block prediction" aria-label="View observed pending transactions"
             class="blockLink" [ngClass]="{'disabled': (this.stateService.blockScrolling$ | async)}">&nbsp;</a>
           <div class="block-body">
             <ng-container *ngIf="!minimal">
               <div [attr.data-cy]="'mempool-block-' + i + '-fees'" class="fees">
-                ~<app-fee-rate [fee]="projectedBlock.medianFee" unitClass="" rounding="1.0-0"></app-fee-rate>
+                <ng-container *ngIf="projectedBlock.medianFee != null; else unknownFee">~<app-fee-rate [fee]="projectedBlock.medianFee" unitClass="" rounding="1.0-0"></app-fee-rate></ng-container><ng-template #unknownFee>—</ng-template>
               </div>
-              <div [attr.data-cy]="'mempool-block-' + i + '-fee-span'" class="fee-span">
+              <div [attr.data-cy]="'mempool-block-' + i + '-fee-span'" class="fee-span" [style.visibility]="projectedBlock.feeRange.length ? null : 'hidden'">
                 <app-fee-rate [fee]="projectedBlock.feeRange[0]" [showUnit]="false" unitClass=""></app-fee-rate>
                 -
                 <app-fee-rate [fee]="projectedBlock.feeRange[projectedBlock.feeRange.length - 1]" unitClass=""></app-fee-rate>
               </div>
               <div *ngIf="blockDisplayMode === 'fees'; else noMiningInfo" class="block-size">
-                <app-amount [attr.data-cy]="'mempool-block-' + i + '-total-fees'" [satoshis]="projectedBlock.totalFees" digitsInfo="1.2-3" [noFiat]="true"></app-amount>
+                <app-amount *ngIf="projectedBlock.totalFees != null; else unknownTotal" [attr.data-cy]="'mempool-block-' + i + '-total-fees'" [satoshis]="projectedBlock.totalFees" digitsInfo="1.2-3" [noFiat]="true"></app-amount><ng-template #unknownTotal>—</ng-template>
               </div>
               <ng-template #noMiningInfo>
                 <div class="block-size" [innerHTML]="'&lrm;' + (projectedBlock.blockSize | bytes: 2)"></div>
@@ -31,20 +31,7 @@
                 <ng-template #transactionsSingular let-i i18n="shared.transaction-count.singular">{{ i }} transaction</ng-template>
                 <ng-template #transactionsPlural let-i i18n="shared.transaction-count.plural">{{ i }} transactions</ng-template>
               </div>
-              <div [attr.data-cy]="'mempool-block-' + i + '-time'" class="time-difference" *ngIf="projectedBlock.blockVSize <= stateService.blockVSize; else mergedBlock">
-                <ng-template [ngIf]="network === 'liquid' || network === 'liquidtestnet'" [ngIfElse]="timeDiffMainnet">
-                  <app-time kind="until" [time]="(1 * i) + now + 61000" [fastRender]="false" [fixedRender]="true" [precision]="1" minUnit="minute"></app-time>
-                </ng-template>
-                <ng-template #timeDiffMainnet>
-                  <app-time kind="until" [time]="da.adjustedTimeAvg * (i + 1) + now + da.timeOffset" [fastRender]="false" [fixedRender]="true" [precision]="1" minUnit="minute"></app-time>
-                </ng-template>
-              </div>
-              <ng-template #mergedBlock>
-                <div [attr.data-cy]="'mempool-block-' + i + '-blocks'" class="time-difference">
-                  <b>(<ng-container *ngTemplateOutlet="blocksPlural; context: {$implicit: projectedBlock.blockVSize / stateService.blockVSize | ceil }"></ng-container>)</b>
-                  <ng-template #blocksPlural let-i i18n="shared.blocks">{{ i }} <span class="shared-block">blocks</span></ng-template>
-                </div>
-              </ng-template>
+              <div class="time-difference" title="Estimated next block interval; observed transactions are not guaranteed inclusion"><app-time kind="until" [time]="now + 150000" [fastRender]="false" [fixedRender]="true" [precision]="1" minUnit="minute"></app-time></div>
             </ng-container>
           </div>
           <span class="animated-border"></span>

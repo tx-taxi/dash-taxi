@@ -57,10 +57,10 @@ async function metadata(path) {
   if(kind==='block' && /^\d+$/.test(id)) {const h=await api('/api/block-height/'+id);if(h.status===200)p='/api/v1/block/'+h.data;}
   const r=await api(p);
   if(r.status===200) {
-   if(kind==='tx')description=`${r.data.status?.confirmed?'Confirmed':'Pending'} Dash transaction. Fee: ${(r.data.fee/1e8).toFixed(8)} DASH. Dash Core transaction.`;
+   if(kind==='tx')description=`${r.data.status?.confirmed?'Confirmed':'Pending'} Dash transaction. Fee: ${Number.isFinite(r.data.fee)?(r.data.fee/1e8).toFixed(8)+' DASH':'unavailable'}. Dash Core transaction.`;
    if(kind==='block')description=`Dash block ${r.data.height}. ${r.data.tx_count} transactions. Mined ${new Date(r.data.timestamp*1000).toISOString()}.`;
    if(kind==='address')description=`Dash address with ${r.data.chain_stats?.tx_count ?? 'indexed'} confirmed transactions. Indexed Dash Core history.`;
-   if(kind==='tx')cardDescription=`${r.data.status?.confirmed?'Confirmed':'Pending'} transaction · Fee: ${(r.data.fee/1e8).toFixed(8)} DASH`;
+   if(kind==='tx')cardDescription=`${r.data.status?.confirmed?'Confirmed':'Pending'} transaction · Fee: ${Number.isFinite(r.data.fee)?(r.data.fee/1e8).toFixed(8)+' DASH':'unavailable'}`;
    if(kind==='block')cardDescription=`Block ${r.data.height} · ${r.data.tx_count} transaction${r.data.tx_count===1?'':'s'} · ${new Date(r.data.timestamp*1000).toISOString().slice(0,10)}`;
    if(kind==='address')cardDescription=`${r.data.chain_stats?.tx_count ?? 'Indexed'} confirmed transaction${r.data.chain_stats?.tx_count===1?'':'s'}`;
   } else description='Dash entity data is temporarily unavailable. Retry to retrieve current details.';
@@ -143,4 +143,5 @@ const sharedFeed=new SnapshotFeed({provider:dashProvider,store:dashProvider.stor
 wss.on('connection',client=>sharedFeed.attach(client));
 sharedFeed.start();
 
-server.listen(Number(process.env.PORT||4370),'127.0.0.1',()=>console.log('DASH explorer on 127.0.0.1:'+ (process.env.PORT||4370)));
+const HOST=process.env.DASH_HOST||'127.0.0.1';
+server.listen(Number(process.env.PORT||4370),HOST,()=>console.log('DASH explorer on '+HOST+':'+(process.env.PORT||4370)));

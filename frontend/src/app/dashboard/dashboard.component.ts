@@ -99,6 +99,9 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.stateService.focusSearchInputDesktop();
+    if (this.stateService.isBrowser && location.hash === '#pending-transactions') {
+      requestAnimationFrame(() => document.getElementById('pending-transactions')?.scrollIntoView({block: 'center'}));
+    }
   }
 
   ngOnDestroy(): void {

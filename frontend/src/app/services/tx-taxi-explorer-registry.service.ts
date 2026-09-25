@@ -12,6 +12,7 @@ interface RouterBrandAsset {
 }
 
 interface RouterExplorerSite {
+  localReviewOrigin?: string;
   origin: string;
   host: string;
   searchPlaceholder?: string;
@@ -187,7 +188,7 @@ export class TxTaxiExplorerRegistryService {
           chainId: chain.id,
           name: chain.name,
           symbol: chain.nativeSymbol,
-          origin: site.origin,
+          origin: this.routerOrigin === 'http://127.0.0.1:4340' && ['http://127.0.0.1:4351','http://127.0.0.1:4361','http://127.0.0.1:4370'].includes(site.localReviewOrigin || '') ? site.localReviewOrigin! : site.origin,
           host: site.host,
           accentColor: chain.brand.accentColor,
           searchPlaceholder: site.searchPlaceholder || `Search ${chain.name}`,

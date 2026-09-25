@@ -68,7 +68,7 @@ export class BlockFeesGraphComponent implements OnInit {
 
   ngOnInit(): void {
     this.seoService.setTitle($localize`:@@6c453b11fd7bd159ae30bc381f367bc736d86909:Block Fees`);
-    this.seoService.setDescription($localize`:@@meta.description.bitcoin.graphs.block-fees:See the average mining fees earned per Litecoin block visualized in LTC and USD over time.`);
+    this.seoService.setDescription($localize`:@@meta.description.bitcoin.graphs.block-fees:See the average mining fees earned per Dash block visualized in DASH and USD over time.`);
     this.miningWindowPreference = this.miningService.getDefaultTimespan('1m');
     this.radioGroupForm = this.formBuilder.group({ dateSpan: this.miningWindowPreference });
     this.radioGroupForm.controls.dateSpan.setValue(this.miningWindowPreference);
@@ -89,7 +89,7 @@ export class BlockFeesGraphComponent implements OnInit {
           this.storageService.setValue('miningWindowPreference', timespan);
           this.timespan = timespan;
           this.isLoading = true;
-          return this.apiService.getHistoricalBlockFees$(timespan)
+          return this.apiService.getHistoricalBlockFees$('recent')
             .pipe(
               tap((response) => {
                 this.prepareChartOptions({
@@ -110,7 +110,7 @@ export class BlockFeesGraphComponent implements OnInit {
   }
 
   prepareChartOptions(data) {
-    const feesBtcLabel = $localize`:@@graphs.blockFees.feesBtc:Fees LTC`;
+    const feesBtcLabel = $localize`:@@graphs.blockFees.feesBtc:Fees DASH`;
     const feesFiatLabel = $localize`:@@graphs.blockFees.feesFiat:Fees ${this.currency}:currency:`;
 
     let title: object;
@@ -144,6 +144,7 @@ export class BlockFeesGraphComponent implements OnInit {
         bottom: 80,
         right: this.right,
         left: this.left,
+        containLabel: true,
       },
       tooltip: {
         show: !this.isMobile(),
@@ -168,7 +169,7 @@ export class BlockFeesGraphComponent implements OnInit {
 
           for (const tick of data) {
             if (tick.seriesIndex === 0) {
-              tooltip += `${tick.marker} ${feesBtcLabel}: ${formatNumber(tick.data[1], this.locale, '1.3-3')} LTC<br>`;
+              tooltip += `${tick.marker} ${feesBtcLabel}: ${formatNumber(tick.data[1], this.locale, '1.3-3')} DASH<br>`;
             } else if (tick.seriesIndex === 1) {
               tooltip += `${tick.marker} ${feesFiatLabel}: ${this.fiatCurrencyPipe.transform(tick.data[1], null, this.currency) }<br>`;
             }
@@ -212,7 +213,7 @@ export class BlockFeesGraphComponent implements OnInit {
           axisLabel: {
             color: 'rgb(110, 112, 121)',
             formatter: (val) => {
-              return `${val} LTC`;
+              return `${val} DASH`;
             }
           },
           splitLine: {
@@ -245,7 +246,7 @@ export class BlockFeesGraphComponent implements OnInit {
           name: feesBtcLabel,
           data: data.blockFees,
           type: 'line',
-          smooth: 0.25,
+          smooth: false,
           symbol: 'none',
           lineStyle: {
             width: 1,
@@ -259,7 +260,7 @@ export class BlockFeesGraphComponent implements OnInit {
           name: feesFiatLabel,
           data: data.blockFeesFiat,
           type: 'line',
-          smooth: 0.25,
+          smooth: false,
           symbol: 'none',
           lineStyle: {
             width: 2,
@@ -293,6 +294,12 @@ export class BlockFeesGraphComponent implements OnInit {
         },
       }],
     };
+    // The available series is actual per-block DASH fees, not historical fiat.
+    const nativeOptions: any = this.chartOptions;
+    if (nativeOptions.legend) nativeOptions.legend.data = nativeOptions.legend.data.slice(0, 1);
+    if (nativeOptions.series) nativeOptions.series = nativeOptions.series.slice(0, 1);
+    if (nativeOptions.yAxis) nativeOptions.yAxis = nativeOptions.yAxis.slice(0, 1);
+    nativeOptions.color = ['var(--primary)'];
   }
 
   onChartInit(ec) {

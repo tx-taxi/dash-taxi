@@ -52,6 +52,8 @@ export class DifficultyComponent implements OnInit {
   isLoadingWebSocket$: Observable<boolean>;
   difficultyEpoch$: Observable<EpochProgress>;
 
+  dashBlocks$ = this.stateService.blocks$;
+
   mode: 'difficulty' | 'halving' = 'difficulty';
   userSelectedMode: boolean = false;
 

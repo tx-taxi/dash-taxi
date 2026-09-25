@@ -638,7 +638,7 @@ export class TransactionComponent implements OnInit, AfterViewInit, OnDestroy {
           this.seoService.setTitle(
             $localize`:@@bisq.transaction.browser-title:Transaction: ${this.txId}:INTERPOLATION:`
           );
-          const network = this.stateService.network === 'liquid' || this.stateService.network === 'liquidtestnet' ? 'Liquid' : 'Litecoin';
+          const network = this.stateService.network === 'liquid' || this.stateService.network === 'liquidtestnet' ? 'Liquid' : 'Dash';
           const seoDescription = seoDescriptionNetwork(this.stateService.network);
           this.seoService.setDescription($localize`:@@meta.description.bitcoin.transaction:Get real-time status, addresses, fees, script info, and more for ${network}${seoDescription} transaction with txid ${this.txId}.`);
           this.resetTransaction();
@@ -1002,11 +1002,11 @@ export class TransactionComponent implements OnInit, AfterViewInit, OnDestroy {
 
   setFeatures(): void {
     if (this.tx) {
-      this.segwitEnabled = !this.tx.status.confirmed || isFeatureActive(this.stateService.network, this.tx.status.block_height, 'segwit');
-      this.taprootEnabled = !this.tx.status.confirmed || isFeatureActive(this.stateService.network, this.tx.status.block_height, 'taproot');
-      this.rbfEnabled = !this.tx.status.confirmed || isFeatureActive(this.stateService.network, this.tx.status.block_height, 'rbf');
+      this.segwitEnabled = false;
+      this.taprootEnabled = false;
+      this.rbfEnabled = false;
       const txHeight = this.tx.status?.block_height || (this.stateService.latestBlockHeight >= 0 ? this.stateService.latestBlockHeight + 1 : null);
-      this.tx.flags = getTransactionFlags(this.tx, null, null, txHeight, this.stateService.network);
+      this.tx.flags = this.tx.dash?.type ? 0n : getTransactionFlags(this.tx, null, null, txHeight, this.stateService.network);
       this.filters = this.tx.flags ? toFilters(this.tx.flags).filter(f => f.txPage) : [];
       this.checkAccelerationEligibility();
     } else {

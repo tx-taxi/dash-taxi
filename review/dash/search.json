@@ -1,0 +1,10 @@
+{
+  "scope": "Actual local registry, delayed initial stream, current height, source marker/local new-tab target, typing and Escape",
+  "earlyHeight": "http://127.0.0.1:4370/block/100000",
+  "opened": "Dash\ndash.tx.taxi\nOpened",
+  "doge": "http://127.0.0.1:4351",
+  "typingOpen": true,
+  "escapeClosed": true,
+  "overflow": false,
+  "errors": []
+}

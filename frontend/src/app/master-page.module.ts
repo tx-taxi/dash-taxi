@@ -28,7 +28,6 @@ const routes: Routes = [
     path: '',
     component: MasterPageComponent,
     children: [
-      { path: "cab/:chain/:kind/:value", component: CrossChainRedirectComponent },
       {
         path: 'mining/blocks',
         redirectTo: 'blocks',
@@ -164,14 +163,14 @@ if (window['__env']?.customize?.dashboard?.widgets?.some(w => w.component ==='si
   });
 }
 
-// LTC local route contract: upstream write tools/services lack a Litecoin provider contract.
-function retainLitecoinRoutes(items: any[]): void {
+// DASH local route contract: upstream write tools/services lack a Dash provider contract.
+function retainDashRoutes(items: any[]): void {
   for (let i = items.length - 1; i >= 0; i--) {
     if (/^(tx\/(push|test)|pushtx|stratum|lightning|acceleration|monitoring|nodes|faucet|sp\/|wallet|widget\/wallet|status|treasuries)/.test(items[i].path || '') || items[i].path === 'mining/block-health') items.splice(i, 1);
-    else if (items[i].children) retainLitecoinRoutes(items[i].children);
+    else if (items[i].children) retainDashRoutes(items[i].children);
   }
 }
-retainLitecoinRoutes(routes);
+retainDashRoutes(routes);
 
 @NgModule({
   imports: [

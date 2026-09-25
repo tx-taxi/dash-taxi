@@ -31,7 +31,7 @@ export class BlockchainComponent implements OnInit, OnDestroy, OnChanges {
   blockDisplayMode: 'size' | 'fees';
 
   dividerOffset: number | null = null;
-  mempoolOffset: number | null = null;
+  mempoolOffset: number | null = 0;
   positionStyle = {
     transform: 'translateX(1280px)',
   };
@@ -142,6 +142,8 @@ export class BlockchainComponent implements OnInit, OnDestroy, OnChanges {
         this.dividerOffset = width * 0.95;
       }
     }
+    // No complete pending-pool projection: preserve native blocks, start at the viewport edge.
+    this.dividerOffset = 24;
     this.updateStyle();
   }
 }

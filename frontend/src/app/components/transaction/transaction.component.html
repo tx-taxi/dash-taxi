@@ -124,7 +124,8 @@
 
       <div class="box">
         <div class="graph-container" #graphContainer>
-          <tx-bowtie-graph
+          <p *ngIf="tx.dash?.type === 9" class="p-3">Platform credit pool withdrawal. This special transaction has no Core inputs; the outputs below receive funds unlocked from Platform.</p>
+          <tx-bowtie-graph *ngIf="tx.dash?.type !== 9"
             [tx]="tx"
             [cached]="isCached"
             [width]="graphWidth"
@@ -181,10 +182,7 @@
                 <td i18n="block.size">Size</td>
                 <td [innerHTML]="'&lrm;' + (tx.size | bytes: 2)"></td>
               </tr>
-              <tr>
-                <td i18n="transaction.vsize|Transaction Virtual Size">Virtual size</td>
-                <td [innerHTML]="'&lrm;' + (tx.weight / 4 | vbytes: 2)"></td>
-              </tr>
+
               <tr *ngIf="adjustedVsize != null">
                 <td><ng-container i18n="transaction.adjusted-vsize|Transaction Adjusted VSize">Adjusted vsize</ng-container>
                   <a class="info-link" [routerLink]="['/docs/faq/' | relativeUrl]" fragment="what-is-adjusted-vsize">
@@ -193,10 +191,7 @@
                 </td>
                 <td [innerHTML]="'&lrm;' + (adjustedVsize | vbytes: 2)"></td>
               </tr>
-              <tr>
-                <td i18n="block.weight">Weight</td>
-                <td [innerHTML]="'&lrm;' + (tx.weight | wuBytes: 2)"></td>
-              </tr>
+
             </tbody>
           </table>
         </div>
@@ -205,7 +200,7 @@
             <tbody>
               <tr>
                 <td i18n="transaction.version">Version</td>
-                <td [innerHTML]="'&lrm;' + (tx.version | number)"></td>
+                <td [innerHTML]="'&lrm;' + (tx.version | number)"></td></tr><tr *ngIf="tx.dash"><td>Dash transaction type</td><td>{{tx.dash.type === 9 ? 'Platform withdrawal' : tx.dash.type === 6 ? 'Quorum commitment' : tx.dash.type === 5 ? 'Coinbase' : tx.dash.type === 0 ? 'Classic transfer' : tx.dash.type}}</td></tr><tr *ngIf="tx.dash"><td>InstantSend</td><td>{{tx.dash.instantSend ? 'Locked (provider observation)' : 'Not reported'}}</td>
               </tr>
               <tr>
                 <td i18n="transaction.locktime">Locktime</td>

@@ -1,0 +1,27 @@
+{
+  "at": "2026-09-25T01:46:13.853Z",
+  "scope": "Controlled fixture transport; real provider values, synthetic incoming height; independent of public availability",
+  "historicalFocus": {
+    "before": "Block\n100000",
+    "after": "Block\n100000"
+  },
+  "offlineVisible": true,
+  "recovered": true,
+  "originalPersisted": "original",
+  "entityTitle": "Block 100000: 00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2 - dash.tx.taxi - Dash Explorer",
+  "rootTitle": "dash.tx.taxi - Dash Explorer",
+  "metadata": {
+    "canonical": "https://dash.tx.taxi",
+    "og": "http://127.0.0.1:4370/og.png?v=4&path=%2F",
+    "twitter": "http://127.0.0.1:4370/og.png?v=4&path=%2F"
+  },
+  "silentInitialOffline": true,
+  "errors": [],
+  "silentLogs": [
+    "[webpack-dev-server] Trying to reconnect...",
+    "WebSocket response timeout, force closing",
+    "trying to reconnect websocket in 3396.7949739065743 seconds",
+    "reconnecting websocket"
+  ],
+  "silentObservation": "Reran after Angular watch rebuild completed; preceding run reset by HMR during timed observation"
+}

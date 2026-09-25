@@ -292,12 +292,12 @@
 
 <ng-template #utxoRow>
   <td i18n="address.confirmed-utxos">Confirmed UTXOs</td>
-  <td class="wrap-cell">{{ chainStats.utxos }}</td>
+  <td class="wrap-cell">Unavailable</td>
 </ng-template>
 
 <ng-template #pendingUtxoRow>
   <td i18n="address.pending-utxos" class="fst-italic">Pending UTXOs</td>
-  <td class="fst-italic wrap-cell">{{ mempoolStats.utxos > 0 ? '+' : ''}}{{ mempoolStats.utxos }}</td>
+  <td class="fst-italic wrap-cell">Unavailable</td>
 </ng-template>
 
 <ng-template #volumeRow>
@@ -309,7 +309,7 @@
   <td i18n="address.type">Type</td>
   <td class="wrap-cell">
     <span placement="bottom" class="badge bg-primary">
-      <app-address-type [address]="addressTypeInfo"></app-address-type>
+      {{ addressString.startsWith('X') ? 'P2PKH' : addressString.startsWith('7') ? 'P2SH' : 'UNKNOWN' }}
     </span>
     <button *ngIf="showTaprootPsbtButton()" type="button" class="btn btn-sm taproot-psbt-btn" (click)="taprootPsbtExpanded = !taprootPsbtExpanded" i18n-ngbTooltip="address.taproot-psbt-add-unpublished-spend-paths" ngbTooltip="Add unpublished spending paths">
       <fa-icon [icon]="['fas', 'code-fork']" [fixedWidth]="true"></fa-icon>

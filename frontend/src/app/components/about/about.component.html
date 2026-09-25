@@ -1,27 +1,27 @@
 <div class="container-xl about-page">
   <div class="intro">
-    <h1 class="visually-hidden">About ltc.tx.taxi</h1>
-    <img src="/resources/branding/ltc-dark-full.svg" alt="ltc.tx.taxi Litecoin explorer" class="mempool-logo">
+    <h1 class="visually-hidden">About dash.tx.taxi</h1>
+    <img src="/resources/branding/dash-dark-full.svg" alt="dash.tx.taxi Dash explorer" class="mempool-logo">
     <div class="version">
-      <span>ltc.tx.taxi - Litecoin block and mempool explorer</span>
+      <span>dash.tx.taxi - Dash block and mempool explorer</span>
       <span class="version-sub">A tx.taxi explorer built from <a href="https://github.com/mempool/mempool" target="_blank" rel="noopener noreferrer">mempool/mempool</a></span>
     </div>
   </div>
 
   <div class="about-text">
-    <h5>About ltc.tx.taxi</h5>
-    <p>ltc.tx.taxi is the Litecoin explorer in the tx.taxi multi-chain family. It preserves Mempool's proven interface for inspecting blocks, transactions, addresses, mining activity, fee estimates, and the live Litecoin mempool while using a Litecoin-specific tx.taxi identity.</p>
+    <h5>About dash.tx.taxi</h5>
+    <p>dash.tx.taxi is the Dash explorer in the tx.taxi multi-chain family. It preserves Mempool's proven interface for inspecting blocks, transactions, addresses, mining activity, fee estimates, and the live Dash mempool while using a Dash-specific tx.taxi identity.</p>
 
     <h5>Bitcoin-native data</h5>
-    <p>Values are denominated in LTC, litoshis, or the selected fiat currency. Fee rates remain lit/vB, transaction sizes remain vB or weight units, and all block, address, mining, concepts shown by the interface retain their Litecoin meaning.</p>
+    <p>Values are denominated in DASH, duffs, or the selected fiat currency. Fee rates remain duff/B, transaction sizes use bytes, and all block, address, mining, concepts shown by the interface retain their Dash meaning.</p>
 
-    <h5>MWEB coverage</h5><p>This explorer shows transparent-chain transactions and indexed addresses. Private MWEB amounts and recipient history are not publicly observable. HogEx transactions connect the extension block to the transparent chain.</p><h5>Infrastructure</h5>
-    <p>The explorer reads public Litecoin network data through its configured backend. Explorer results are informational and can differ from another node's view of the mempool. Always verify payment details in your wallet and use your own node when independent verification matters.</p>
+    <h5>Dash Core coverage</h5><p>Historical blocks and indexed address histories come from Dash Core data. InstantSend observations are shown separately from block confirmations. ChainLock status is not supplied by this provider. Platform state and identities are outside the Core transaction index.</p><h5>Infrastructure</h5>
+    <p>The explorer reads public Dash network data through its configured backend. Explorer results are informational and can differ from another node's view of the mempool. Always verify payment details in your wallet and use your own node when independent verification matters.</p>
   </div>
 
   <div class="contributors" id="links">
     <h5>Project links</h5>
-    <p><a [routerLink]="['/docs']">ltc.tx.taxi documentation</a></p>
+    <p><a [routerLink]="['/docs']">dash.tx.taxi documentation</a></p>
     <p><a href="https://github.com/mempool/mempool" target="_blank" rel="noopener noreferrer">Upstream project and contributors</a></p>
     <p><a href="https://t.me/hiss" target="_blank" rel="noopener noreferrer">Contact the tx.taxi maintainer</a></p>
   </div>

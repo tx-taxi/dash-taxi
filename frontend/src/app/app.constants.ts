@@ -40,8 +40,8 @@ export const defaultMempoolFeeColors = [
   'ae005b',
 ];
 
-// Keep fee-level ordering while giving the Litecoin theme its blue data palette.
-export const litecoinMempoolFeeColors = defaultMempoolFeeColors.map((_, index, colors) => {
+// Keep fee-level ordering while giving the Dash theme its blue data palette.
+export const dashMempoolFeeColors = defaultMempoolFeeColors.map((_, index, colors) => {
   const fraction = index / (colors.length - 1);
   return [0x34, 0x5d, 0x9d].map((channel, i) =>
     Math.round(channel + ([0x78, 0x9d, 0xe0][i] - channel) * fraction).toString(16).padStart(2, '0')

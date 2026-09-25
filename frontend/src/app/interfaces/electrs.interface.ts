@@ -3,6 +3,7 @@ import { IChannel } from '@interfaces/node-api.interface';
 import { ParsedTaproot } from '../shared/transaction.utils';
 
 export interface Transaction {
+  dash?: {type: number; instantSend: boolean; extraPayload: string | null};
   txid: string;
   version: number;
   locktime: number;

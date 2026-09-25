@@ -171,7 +171,7 @@ export class BlockComponent implements OnInit, OnDestroy {
               block.extras.minFee = this.getMinBlockFee(block);
               block.extras.maxFee = this.getMaxBlockFee(block);
               if (block?.extras?.reward != undefined) {
-                this.fees = block.extras.reward / 100000000 - this.blockSubsidy;
+                this.fees = block.extras.totalFees == null ? undefined : block.extras.totalFees / 100000000;
               }
             }
           } else if (block.height === this.block?.height) {
@@ -287,12 +287,12 @@ export class BlockComponent implements OnInit, OnDestroy {
         if( this.stateService.network === 'liquid' || this.stateService.network === 'liquidtestnet' ) {
           this.seoService.setDescription($localize`:@@meta.description.liquid.block:See size, weight, fee range, included transactions, and more for Liquid${seoDescriptionNetwork(this.stateService.network)} block ${block.height}:BLOCK_HEIGHT: (${block.id}:BLOCK_ID:).`);
         } else {
-          this.seoService.setDescription($localize`:@@meta.description.bitcoin.block:See size, weight, fee range, included transactions, audit (expected v actual), and more for Litecoin${seoDescriptionNetwork(this.stateService.network)} block ${block.height}:BLOCK_HEIGHT: (${block.id}:BLOCK_ID:).`);
+          this.seoService.setDescription($localize`:@@meta.description.bitcoin.block:See size, weight, fee range, included transactions, audit (expected v actual), and more for Dash${seoDescriptionNetwork(this.stateService.network)} block ${block.height}:BLOCK_HEIGHT: (${block.id}:BLOCK_ID:).`);
         }
         this.isLoadingBlock = false;
         this.setBlockSubsidy();
         if (block?.extras?.reward !== undefined) {
-          this.fees = block.extras.reward / 100000000 - this.blockSubsidy;
+          this.fees = block.extras.totalFees == null ? undefined : block.extras.totalFees / 100000000;
         }
         this.isLoadingOverview = true;
         this.overviewError = null;

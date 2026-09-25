@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { StateService } from '@app/services/state.service';
 import { FeeRoundingPipe } from '@app/shared/pipes/fee-rounding/fee-rounding.pipe';
 
@@ -27,7 +27,7 @@ export class FeeRateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.rateUnits$ = this.stateService.rateUnits$;
+    this.rateUnits$ = of('vb'); // Dash fees are duffs per serialized byte; no witness weight unit.
   }
 
   getIntegerPart(rate: number): string {

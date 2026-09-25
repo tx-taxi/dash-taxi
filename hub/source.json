@@ -1,0 +1,6 @@
+{
+  "chain": "dash",
+  "commit": "6ba310edebe7fa33f4643ff4eecdbca3d1041fc7",
+  "status": "modified local DASH candidate, hash manifest is actual source authority",
+  "ancestor": "LTC 6ba310ede + hub2519326f9"
+}

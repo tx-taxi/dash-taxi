@@ -266,8 +266,8 @@
               "host": "0.0.0.0",
               "verbose": false
             },
-            "ltc": {
-              "proxyConfig": "proxy.conf.ltc.js",
+            "dash": {
+              "proxyConfig": "proxy.conf.dash.js",
               "buildTarget": "mempool:build"
             }
           }

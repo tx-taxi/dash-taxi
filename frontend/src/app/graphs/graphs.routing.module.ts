@@ -38,8 +38,7 @@ const routes: Routes = [
       },
       {
         path: 'mining/pool/:slug',
-        data: { networks: ['bitcoin'] },
-        component: PoolComponent,
+        redirectTo: 'mining',
       },
       {
         path: 'mining',
@@ -85,73 +84,7 @@ const routes: Routes = [
         path: 'graphs',
         data: { networks: ['bitcoin', 'liquid'] },
         component: GraphsComponent,
-        children: [
-          {
-            path: 'mempool',
-            data: { networks: ['bitcoin', 'liquid'] },
-            component: StatisticsComponent,
-          },
-          {
-            path: 'mining/hashrate-difficulty',
-            data: { networks: ['bitcoin'] },
-            component: HashrateChartComponent,
-          },
-          {
-            path: 'mining/pools-dominance',
-            data: { networks: ['bitcoin'] },
-            component: HashrateChartPoolsComponent,
-          },
-          {
-            path: 'mining/pools',
-            data: { networks: ['bitcoin'] },
-            component: PoolRankingComponent,
-          },
-          {
-            path: 'mining/block-fees',
-            data: { networks: ['bitcoin'] },
-            component: BlockFeesGraphComponent,
-          },
-          {
-            path: 'mining/block-fees-subsidy',
-            data: { networks: ['bitcoin'] },
-            component: BlockFeesSubsidyGraphComponent,
-          },
-          {
-            path: 'mining/block-rewards',
-            data: { networks: ['bitcoin'] },
-            component: BlockRewardsGraphComponent,
-          },
-          {
-            path: 'mining/block-fee-rates',
-            data: { networks: ['bitcoin'] },
-            component: BlockFeeRatesGraphComponent,
-          },
-          {
-            path: 'mining/block-sizes-weights',
-            data: { networks: ['bitcoin'] },
-            component: BlockSizesWeightsGraphComponent,
-          },
-          {
-            path: 'lightning',
-            data: { preload: true, networks: ['bitcoin'] },
-            loadChildren: () => import ('@app/graphs/lightning-graphs.module').then(m => m.LightningGraphsModule),
-          },
-          {
-            path: '',
-            pathMatch: 'full',
-            redirectTo: 'mempool',
-          },
-          {
-            path: 'mining/block-health',
-            data: { networks: ['bitcoin'] },
-            component: BlockHealthGraphComponent,
-          },
-          {
-            path: 'price',
-            data: { networks: ['bitcoin'], networkSpecific: true, onlySubnet: [''] },
-            component: PriceChartComponent,
-          },
-        ]
+        children: [{path:'mining/block-fees',component:BlockFeesGraphComponent},{path:'',pathMatch:'full',redirectTo:'mining/block-fees'},{path:'**',redirectTo:'mining/block-fees'}]
       },
       {
         path: '',
@@ -180,14 +113,14 @@ if (window['__env']?.OFFICIAL_MEMPOOL_SPACE) {
   });
 }
 
-// LTC local route contract: upstream write tools/services lack a Litecoin provider contract.
-function retainLitecoinRoutes(items: any[]): void {
+// DASH local route contract: upstream write tools/services lack a Dash provider contract.
+function retainDashRoutes(items: any[]): void {
   for (let i = items.length - 1; i >= 0; i--) {
     if (/^(tx\/(push|test)|pushtx|stratum|lightning|acceleration|monitoring|nodes|faucet|sp\/|wallet|widget\/wallet|status|treasuries)/.test(items[i].path || '') || items[i].path === 'mining/block-health') items.splice(i, 1);
-    else if (items[i].children) retainLitecoinRoutes(items[i].children);
+    else if (items[i].children) retainDashRoutes(items[i].children);
   }
 }
-retainLitecoinRoutes(routes);
+retainDashRoutes(routes);
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

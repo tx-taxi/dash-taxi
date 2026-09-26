@@ -1,38 +1,58 @@
-# The Mempool Open Source Project® [![mempool](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ry4br7/master&style=flat-square)](https://dashboard.cypress.io/projects/ry4br7/runs)
+<p align="center">
+  <img src="frontend/src/resources/branding/dash-favicon.svg" width="88" height="88" alt="dash.tx.taxi logo">
+</p>
 
-https://user-images.githubusercontent.com/93150691/226236121-375ea64f-b4a1-4cc0-8fad-a6fb33226840.mp4
+<h1 align="center">Dash Explorer · dash.tx.taxi</h1>
 
-<br>
+<p align="center">
+  A public Dash block explorer and API.<br>
+  <a href="https://dash.tx.taxi">Open dash.tx.taxi</a>
+</p>
 
-Mempool is the fully-featured mempool visualizer, explorer, and API service running at [mempool.space](https://mempool.space/). 
+## Overview
 
-It is an open-source project developed and operated for the benefit of the Bitcoin community, with a focus on the emerging transaction fee market that is evolving Bitcoin into a multi-layer ecosystem.
+Dash Explorer is the Dash mainnet explorer in the [tx.taxi](https://tx.taxi) network. It presents public chain data through a Dash-specific interface and a read-only API gateway.
 
-# Installation Methods
+## Features
 
-Mempool can be self-hosted on a wide variety of your own hardware, ranging from a simple one-click installation on a Raspberry Pi full-node distro all the way to a robust production instance on a powerful FreeBSD server. 
+- Search and inspect Dash blocks, transactions, and transparent-address history.
+- Browse recent blocks, transaction fees, mining data, and the current USD conversion supplied by the configured provider.
+- Show Dash-native values in DASH and duffs, including supported special-transaction details.
+- Surface a bounded sample of transactions observed by the connected Dash node feed; it is not a complete mempool or a confirmation forecast.
+- Provide a Dash-branded explorer, entity metadata, and public read-only API responses.
 
-Most people should use a <a href="#one-click-installation">one-click install method</a>.
+## Development
 
-Other install methods are meant for developers and others with experience managing servers. If you want support for your own production instance of Mempool, or if you'd like to have your own instance of Mempool run by the mempool.space team on their own global ISP infrastructure—check out <a href="https://mempool.space/enterprise" target="_blank">Mempool Enterprise®</a>.
+The checked local review commands start Angular on `127.0.0.1:4371`, the Dash adapter and gateway on `127.0.0.1:4370`, and expose the explorer at [http://127.0.0.1:4370](http://127.0.0.1:4370).
 
-<a id="one-click-installation"></a>
-## One-Click Installation
+```sh
+npm ci --prefix frontend
+npm ci --prefix adapter
+./scripts/local-start.sh
+```
 
-Mempool can be conveniently installed on the following full-node distros: 
-- [Umbrel](https://github.com/getumbrel/umbrel)
-- [RaspiBlitz](https://github.com/rootzoll/raspiblitz)
-- [RoninDojo](https://code.samourai.io/ronindojo/RoninDojo)
-- [myNode](https://github.com/mynodebtc/mynode)
-- [StartOS](https://github.com/Start9Labs/start-os)
-- [nix-bitcoin](https://github.com/fort-nix/nix-bitcoin/blob/a1eacce6768ca4894f365af8f79be5bbd594e1c3/examples/configuration.nix#L129)
+Stop only this checkout's local processes with:
 
-**We highly recommend you deploy your own Mempool instance this way.** No matter which option you pick, you'll be able to get your own fully-sovereign instance of Mempool up quickly without needing to fiddle with any settings.
+```sh
+./scripts/local-stop.sh
+```
 
-## Advanced Installation Methods
+Build the checked-in container configuration locally with:
 
-Mempool can be installed in other ways too, but we only recommend doing so if you're a developer, have experience managing servers, or otherwise know what you're doing.
+```sh
+docker build -t dash-explorer .
+```
 
-- See the [`docker/`](./docker/) directory for instructions on deploying Mempool with Docker.
-- See the [`backend/`](./backend/) and [`frontend/`](./frontend/) directories for manual install instructions oriented for developers.
-- See the [`production/`](./production/) directory for guidance on setting up a more serious Mempool instance designed for high performance at scale.
+The Docker image uses Node.js 24. The application does not bundle a Dash node or an indexer: the adapter uses `https://explorer.dash.org/insight-api` by default and needs outbound access to that compatible REST and WebSocket service. Set `DASH_PROVIDER` to use another compatible provider. A self-managed provider must supply synchronized Dash network data and the Insight-compatible transaction, block, address, and notification endpoints used by the adapter.
+
+## Attribution and license
+
+This repository adapts the [Mempool Open Source Project](https://github.com/mempool/mempool) for Dash in the tx.taxi network. The inherited root README is retained in [UPSTREAM_README.md](UPSTREAM_README.md) for provenance.
+
+The code is distributed under the terms in [LICENSE](LICENSE) and [COPYING.md](COPYING.md), including the GNU Affero General Public License v3 text and applicable trademark notices.
+
+## Links
+
+- [Live explorer](https://dash.tx.taxi)
+- [tx.taxi hub](https://tx.taxi)
+- [Telegram channel](https://t.me/txtaxi)

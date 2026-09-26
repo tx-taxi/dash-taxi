@@ -1,6 +1,6 @@
-<div class="container-xl py-4 docs-shell">
+<div class="container-xl docs-shell">
   <app-tx-taxi-docs-intro chainName="Dash" chainHost="dash.tx.taxi"></app-tx-taxi-docs-intro>
-  <h1>Dash documentation</h1>
+  <h2 class="docs-title">Documentation</h2>
   <ul class="nav nav-tabs docs-tabs" aria-label="Documentation sections"><li class="nav-item"><a class="nav-link" routerLink="/docs/faq" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Explorer guide</a></li><li class="nav-item"><a class="nav-link" routerLink="/docs/api/rest" routerLinkActive="active">REST API</a></li><li class="nav-item"><a class="nav-link" routerLink="/docs/api/websocket" routerLinkActive="active">WebSocket API</a></li></ul>
   <div class="docs-layout">
     <aside class="docs-sidebar" aria-label="On this page"><p class="sidebar-title">On this page</p><a *ngFor="let item of sections" [href]="'#' + item.id" (click)="scrollTo($event, item.id)">{{ item.label }}</a></aside>

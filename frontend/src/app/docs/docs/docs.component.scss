@@ -6,3 +6,20 @@
 section { scroll-margin-top: 1.5rem; margin: 0 0 3rem; } h2 { color: var(--title-fg, var(--fg)); font-size: 1.5rem; margin: 0 0 .9rem; } h3 { color: var(--title-fg, var(--fg)); font-size: 1.08rem; margin: 0 0 .6rem; } p { color: var(--fg); line-height: 1.65; } a { color: var(--info); } code { background: var(--bg); border-radius: 3px; color: var(--title-fg, var(--fg)); padding: .12rem .28rem; word-break: break-word; } pre { background: var(--bg); border: 1px solid var(--secondary); border-radius: 6px; margin: 1rem 0; overflow-x: auto; padding: 1rem; } pre code { padding: 0; }
 .endpoint { border-top: 1px solid var(--secondary); margin-top: 1.5rem; padding-top: 1.5rem; }.method { color: var(--info); font-weight: 700; }.callout { border-left: 3px solid var(--info); background: var(--bg); color: var(--fg); line-height: 1.55; margin: 1.25rem 0; padding: 1rem 1.1rem; }.facts { display: grid; gap: .8rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1.25rem; }.facts div { background: var(--bg); border: 1px solid var(--secondary); border-radius: 6px; padding: .9rem; }.facts span, .facts strong { display: block; }.facts span { color: var(--fg); font-size: .8rem; margin-bottom: .3rem; opacity: .75; }.facts strong { color: var(--title-fg, var(--fg)); font-size: .95rem; }
 @media (max-width: 767.98px) { .docs-page { padding: 1rem 1rem 3rem; }.docs-heading { margin-top: 1.5rem; }.docs-layout { display: block; }.docs-sidebar { position: static; max-height: none; border-bottom: 1px solid var(--secondary); display: flex; flex-wrap: wrap; gap: .2rem 1rem; margin: 0 0 1.75rem; padding-bottom: 1rem; }.sidebar-title { width: 100%; }.docs-sidebar a { padding: 0; }.facts { grid-template-columns: 1fr; } }
+
+/* Preserve the established Mempool docs shell while keeping Dash content local. */
+.docs-shell { max-width: none; padding-bottom: 2rem; }
+.docs-shell > h1 { color: var(--title-fg, var(--fg)); font-size: 1.75rem; margin: 2rem 0 1rem; text-align: center; }
+.docs-shell .docs-tabs { display: flex; gap: 0; margin-bottom: 1.5rem; overflow: visible; }
+.docs-shell .docs-tabs .nav-link { color: var(--fg); padding: .5rem 1rem; white-space: nowrap; }
+.docs-shell .docs-tabs .nav-link.active { background: var(--secondary); border-color: var(--secondary) var(--secondary) var(--active-bg); color: var(--title-fg, var(--fg)); }
+.docs-shell .docs-layout { grid-template-columns: 330px minmax(0, 1fr); gap: 10px; }
+.docs-shell .docs-sidebar { max-height: calc(100vh - 95px); padding: 0 20px 1rem 0; position: sticky; top: 80px; }
+.docs-shell section { margin-bottom: 2.5rem; scroll-margin-top: 80px; }
+.docs-shell h2 { background: var(--secondary); color: var(--title-fg, var(--fg)); font-size: 1.25rem; font-weight: 700; margin: 0 0 1rem; padding: .8rem 1rem; }
+.docs-shell pre { border-radius: 0; }
+.docs-shell table { border-collapse: collapse; color: var(--fg); margin: 1rem 0; width: 100%; }
+.docs-shell th, .docs-shell td { border: 1px solid var(--secondary); padding: .65rem .8rem; text-align: left; }
+.docs-shell th { color: var(--title-fg, var(--fg)); width: 36%; }
+.docs-shell .callout { background: var(--secondary); }
+@media (max-width: 992px) { .docs-shell .docs-layout { display: block; }.docs-shell .docs-sidebar { border-bottom: 1px solid var(--secondary); max-height: none; padding: 0 0 1rem; position: static; margin: 0 0 1.75rem; }.docs-shell .docs-sidebar a { display: inline-block; margin-right: 1rem; }.docs-shell section { scroll-margin-top: 120px; } }

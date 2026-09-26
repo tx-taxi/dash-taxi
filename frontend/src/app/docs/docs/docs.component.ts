@@ -38,7 +38,8 @@ export class DocsComponent implements OnInit, OnDestroy {
 
   scrollTo(event: Event, id: string): void {
     event.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const target = document.getElementById(id);
+    if (target) window.scrollTo({ top: target.offsetTop - (window.innerWidth <= 992 ? 120 : 80), behavior: 'smooth' });
     window.history.replaceState({}, '', `${this.router.url.split('#')[0]}#${id}`);
   }
 

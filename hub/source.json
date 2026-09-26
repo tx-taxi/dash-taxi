@@ -2,5 +2,7 @@
   "chain": "dash",
   "commit": "fe97dd024e9a62e6f17653d6e323043c050d408b",
   "status": "Independent recheck corrected local candidate; review/recheck-fixes and provider limits apply",
-  "ancestor": "LTC 6ba310ede + hub2519326f9"
+  "ancestor": "LTC 6ba310ede + hub2519326f9",
+  "formattingBaseline": "45ab759906c6941cccd797b1d8bc269adf61f574",
+  "formattingReconciliation": "2026-09-26: preserve deployed native source and approved extraction wrapper; compact display only, exact overlay tooltips, DOGE consistent ETA/count. Generated provenance records actual build commit and source hashes."
 }

@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="frontend/src/resources/branding/dash-favicon.svg" width="88" height="88" alt="dash.tx.taxi logo">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="frontend/src/resources/branding/dash-dark-full.svg">
+    <img src="frontend/src/resources/branding/dash-light-full.svg" width="360" alt="dash.tx.taxi banner logo">
+  </picture>
 </p>
 
 <h1 align="center">Dash Explorer · dash.tx.taxi</h1>

@@ -6,10 +6,12 @@ const path = require('node:path');
 const {WebSocket, WebSocketServer} = require('ws');
 const sharp = require('sharp');
 const {providerStatus} = require('./provider-health.cjs');
+const {createPoolLogoLoader} = require('./pool-logo.cjs');
 const STATIC_ROOT = process.env.DASH_STATIC_ROOT && path.resolve(process.env.DASH_STATIC_ROOT);
 const ROUTER_ORIGIN = process.env.DASH_ROUTER_ORIGIN || 'http://127.0.0.1:4330';
 const SITE_ORIGIN = process.env.DASH_SITE_ORIGIN || 'http://127.0.0.1:4370';
 const PRIMARY = process.env.DASH_PROVIDER || 'https://explorer.dash.org/insight-api';
+const loadPoolLogo = createPoolLogoLoader(path.join(__dirname, '../frontend/src/resources/mining-pools/default.svg'), {'discus-fish': 'f2pool'});
 const cache = new Map(), inflight = new Map(), failedPaths = new Map();
 const health = {primary: PRIMARY, lastSuccess: null, lastFailure: null, websocket: 'connecting'};
 const MAX_CACHE = 500;
@@ -104,7 +106,7 @@ const server=http.createServer(async(req,res)=>{
    const r=await api(u.pathname+u.search);
    return send(res,r.status,r.data,typeof r.data==='string'?'text/plain':'application/json',{...r.headers,'X-DASH-Source':r.source,'X-DASH-Stale':String(!!r.stale),'X-DASH-Observed-At':String(r.at)});
   }
-  if(u.pathname.startsWith('/resources/mining-pools/'))return send(res,200,fs.readFileSync(__dirname+'/../frontend/src/resources/mining-pools/default.svg'),'image/svg+xml');
+  if(u.pathname.startsWith('/resources/mining-pools/'))return send(res,200,await loadPoolLogo(u.pathname.slice('/resources/mining-pools/'.length)),'image/svg+xml',{'Cache-Control':'public, max-age=3600'});
   if(u.pathname==='/og.png') return send(res,200,await card(u.searchParams.get('path')||'/'),'image/png');
   if(u.pathname.startsWith('/source/')||u.pathname.endsWith('.map'))return send(res,404,{error:'Not found'});
   let r;

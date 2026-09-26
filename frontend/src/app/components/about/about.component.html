@@ -1,25 +1,25 @@
 <div class="container-xl about-page">
-  <div class="intro">
-    <h1 class="visually-hidden">About dash.tx.taxi</h1>
-    <img src="/resources/branding/dash-dark-full.svg" alt="dash.tx.taxi Dash explorer" class="mempool-logo">
-    <div class="version">
-      <span>dash.tx.taxi - Dash block and mempool explorer</span>
-      <span class="version-sub">A tx.taxi explorer built from <a href="https://github.com/mempool/mempool" target="_blank" rel="noopener noreferrer">mempool/mempool</a></span>
-    </div>
-  </div>
-
-  <div class="about-text">
-    <h5>About dash.tx.taxi</h5>
+  <app-tx-taxi-docs-intro chainName="Dash" chainHost="dash.tx.taxi" context="explorer"></app-tx-taxi-docs-intro>
+  <div class="about-layout">
+    <aside class="about-identity">
+      <img src="/resources/branding/dash-dark-full.svg" alt="dash.tx.taxi" class="about-logo">
+      <h1>About dash.tx.taxi</h1>
+      <p>The Dash explorer in the tx.taxi family.</p>
+      <nav class="about-links" aria-label="Project links">
+        <a routerLink="/docs">Dash documentation</a>
+        <a href="https://github.com/tx-taxi/dash-taxi" target="_blank" rel="noopener noreferrer">Explorer source</a>
+        <a href="https://t.me/hiss" target="_blank" rel="noopener noreferrer">Contact the maintainer</a>
+      </nav>
+    </aside>
+    <main class="about-text">
+      <h2>About dash.tx.taxi</h2>
     <p>Explore Dash blocks, transactions, addresses and mining activity with dash.tx.taxi.</p>
-    <h5>Dash</h5>
+    <h2>Dash</h2>
     <p>Amounts are shown in DASH, duffs or your selected fiat currency. One DASH equals 100,000,000 duffs. Transaction sizes use bytes and fee rates use duff/B.</p>
-
-  </div>
-
-  <div class="contributors" id="links">
-    <h5>Project links</h5>
-    <p><a [routerLink]="['/docs']">dash.tx.taxi documentation</a></p>
-    <p><a href="https://github.com/mempool/mempool" target="_blank" rel="noopener noreferrer">Upstream project and contributors</a></p>
-    <p><a href="https://t.me/hiss" target="_blank" rel="noopener noreferrer">Contact the tx.taxi maintainer</a></p>
+      <div class="about-attribution">
+        <h2>Built on open source</h2>
+        <p>This explorer builds on the <a href="https://github.com/mempool/mempool" target="_blank" rel="noopener noreferrer">Mempool Open Source Project</a>. See the explorer source for its license and <a href="/3rdpartylicenses.txt">third-party attribution</a>.</p>
+      </div>
+    </main>
   </div>
 </div>

@@ -161,6 +161,8 @@ ul.no-bull.block-audit code{
   scrollbar-color: var(--secondary) var(--active-bg);
   scrollbar-width: thin;
 }
+
+#doc-nav-desktop.sticky { position: sticky; top: 1.5rem; max-height: calc(100vh - 3rem); overflow-y: auto; }
 ::-webkit-scrollbar {
   width: 3px;
 }

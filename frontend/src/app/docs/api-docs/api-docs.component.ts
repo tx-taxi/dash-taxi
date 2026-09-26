@@ -23,7 +23,7 @@ export class ApiDocsComponent implements OnInit, AfterViewInit {
   code: any;
   baseNetworkUrl = '';
   @Input() whichTab: string;
-  desktopDocsNavPosition = 'relative';
+  desktopDocsNavPosition = 'sticky';
   faq: any[];
   restDocs: any[];
   wsDocs: any;
@@ -50,7 +50,6 @@ export class ApiDocsComponent implements OnInit, AfterViewInit {
     if (this.faqTemplates) {
       this.faqTemplates.forEach((x) => this.dict[x.type] = x.template);
     }
-    this.desktopDocsNavPosition = ( window.pageYOffset > 115 ) ? 'fixed' : 'relative';
     this.mobileViewport = window.innerWidth <= 992;
   }
 
@@ -133,9 +132,7 @@ export class ApiDocsComponent implements OnInit, AfterViewInit {
     this.timeLtrSubscription.unsubscribe();
   }
 
-  onDocScroll() {
-    this.desktopDocsNavPosition = ( window.pageYOffset > 115 ) ? 'fixed' : 'relative';
-  }
+  onDocScroll() {}
 
   anchorLinkClick( e ) {
     const targetId = e.fragment;
@@ -239,4 +236,3 @@ export class ApiDocsComponent implements OnInit, AfterViewInit {
   }
 
 }
-

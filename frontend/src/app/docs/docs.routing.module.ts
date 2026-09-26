@@ -43,12 +43,12 @@ if (browserWindowEnv.BASE_MODULE && browserWindowEnv.BASE_MODULE === 'liquid') {
     },
     {
       path: 'faq',
-      data: { networks: ['bitcoin'] },
       component: DocsComponent
     },
     {
       path: 'api',
-      redirectTo: 'api/rest'
+      redirectTo: 'api/rest',
+      pathMatch: 'full'
     },
     {
       path: '**',

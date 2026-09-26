@@ -1,9 +1,10 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Env, StateService } from '@app/services/state.service';
-import { WebsocketService } from '@app/services/websocket.service';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter, Subscription } from 'rxjs';
 import { SeoService } from '@app/services/seo.service';
 import { OpenGraphService } from '@app/services/opengraph.service';
+
+type DocsTab = 'guide' | 'rest' | 'websocket';
 
 @Component({
   selector: 'app-docs',
@@ -11,66 +12,47 @@ import { OpenGraphService } from '@app/services/opengraph.service';
   styleUrls: ['./docs.component.scss'],
   standalone: false,
 })
-export class DocsComponent implements OnInit {
-
-  activeTab = 0;
-  env: Env;
-  showWebSocketTab = true;
-  showFaqTab = true;
-  showElectrsTab = true;
+export class DocsComponent implements OnInit, OnDestroy {
+  activeTab: DocsTab = 'guide';
+  sections: { id: string; label: string }[] = [];
+  private navigationSubscription: Subscription;
 
   @HostBinding('attr.dir') dir = 'ltr';
 
   constructor(
-    private route: ActivatedRoute,
-    private stateService: StateService,
-    private websocket: WebsocketService,
-    private seoService: SeoService,
-    private ogService: OpenGraphService,
-  ) { }
+    private router: Router,
+    private seo: SeoService,
+    private og: OpenGraphService,
+  ) {}
 
   ngOnInit(): void {
-    this.websocket.want(['blocks']);
-    this.env = this.stateService.env;
-    this.showFaqTab = ( this.env.BASE_MODULE === 'mempool' ) ? true : false;
-    this.showElectrsTab = this.stateService.env.OFFICIAL_MEMPOOL_SPACE;
-
-    document.querySelector<HTMLElement>( 'html' ).style.scrollBehavior = 'smooth';
-  }
-
-  ngDoCheck(): void {
-
-    const url = this.route.snapshot.url;
-
-    if (url[0].path === 'faq' ) {
-      this.activeTab = 0;
-      this.seoService.setTitle($localize`:@@meta.title.docs.faq:FAQ`);
-      this.seoService.setDescription($localize`:@@meta.description.docs.faq:Get answers to common Dash questions, including mempool behavior, transaction confirmation, fees, and self-hosted explorers.`);
-      this.ogService.setManualOgImage('faq.jpg');
-    } else if( url[1].path === 'rest' ) {
-      this.activeTab = 1;
-      this.seoService.setTitle($localize`:@@meta.title.docs.rest:REST API`);
-      if (this.stateService.network === 'liquid' || this.stateService.network === 'liquidtestnet' ) {
-        this.seoService.setDescription($localize`:@@meta.description.docs.rest-liquid:Documentation for the liquid.network REST API service: get info on addresses, transactions, assets, blocks, and more.`);
-      } else {
-        this.seoService.setDescription($localize`:@@meta.description.docs.rest-bitcoin:Documentation for the dash.tx.taxi REST API: query Dash addresses, transactions, blocks, fees, mining, and network data.`);
-      }
-    } else if( url[1].path === 'websocket' ) {
-      this.activeTab = 2;
-      this.seoService.setTitle($localize`:@@meta.title.docs.websocket:WebSocket API`);
-      if( this.stateService.network === 'liquid' || this.stateService.network === 'liquidtestnet' ) {
-        this.seoService.setDescription($localize`:@@meta.description.docs.websocket-liquid:Documentation for the liquid.network WebSocket API service: get real-time info on blocks, mempools, transactions, addresses, and more.`);
-      } else {
-        this.seoService.setDescription($localize`:@@meta.description.docs.websocket-bitcoin:Documentation for the dash.tx.taxi WebSocket API: receive real-time Dash block, mempool, transaction, and address updates.`);
-      }
-    } else {
-      this.activeTab = 3;
-      this.seoService.setTitle($localize`:@@meta.title.docs.electrum:Electrum RPC`);
-      this.seoService.setDescription($localize`:@@meta.description.docs.electrumrpc:Documentation for our Electrum RPC interface: get instant, convenient, and reliable access to an Esplora instance.`);
-    }
+    this.updatePage();
+    this.navigationSubscription = this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => this.updatePage());
+    document.querySelector<HTMLElement>('html').style.scrollBehavior = 'smooth';
   }
 
   ngOnDestroy(): void {
-    document.querySelector<HTMLElement>( 'html' ).style.scrollBehavior = 'auto';
+    this.navigationSubscription?.unsubscribe();
+    document.querySelector<HTMLElement>('html').style.scrollBehavior = 'auto';
+  }
+
+  scrollTo(event: Event, id: string): void {
+    event.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.history.replaceState({}, '', `${this.router.url.split('#')[0]}#${id}`);
+  }
+
+  private updatePage(): void {
+    const url = this.router.url;
+    this.activeTab = url.includes('/api/websocket') ? 'websocket' : url.includes('/api') ? 'rest' : 'guide';
+    const pages = {
+      guide: { title: 'Dash Explorer Guide', description: 'Dash explorer coverage, confirmations, special transactions, and data limits.', sections: [['overview', 'Overview'], ['confirmations', 'Confirmations'], ['coverage', 'Coverage'], ['special-transactions', 'Special transactions'], ['sources', 'Sources']] },
+      rest: { title: 'Dash REST API', description: 'Read-only REST API documentation for dash.tx.taxi.', sections: [['rest-overview', 'Overview'], ['blocks', 'Blocks'], ['transactions', 'Transactions'], ['addresses', 'Addresses'], ['live-data', 'Live data']] },
+      websocket: { title: 'Dash WebSocket API', description: 'WebSocket documentation for observed Dash explorer updates.', sections: [['websocket-overview', 'Overview'], ['websocket-connect', 'Connect'], ['websocket-events', 'Events']] },
+    }[this.activeTab];
+    this.sections = pages.sections.map(([id, label]) => ({ id, label }));
+    this.seo.setTitle(pages.title);
+    this.seo.setDescription(pages.description);
+    this.og.setManualOgImage('dashboard.png');
   }
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://dash.tx.taxi/</loc></url>
+  <url><loc>https://dash.tx.taxi/about</loc></url>
+  <url><loc>https://dash.tx.taxi/privacy-policy</loc></url>
+  <url><loc>https://dash.tx.taxi/terms-of-service</loc></url>
+  <url><loc>https://dash.tx.taxi/trademark-policy</loc></url>
+  <url><loc>https://dash.tx.taxi/docs/faq</loc></url>
+  <url><loc>https://dash.tx.taxi/docs/api/rest</loc></url>
+  <url><loc>https://dash.tx.taxi/docs/api/websocket</loc></url>
+  <url><loc>https://dash.tx.taxi/blocks/1</loc></url>
+  <url><loc>https://dash.tx.taxi/txs</loc></url>
+  <url><loc>https://dash.tx.taxi/mining</loc></url>
+  <url><loc>https://dash.tx.taxi/tools/calculator</loc></url>
+  <url><loc>https://dash.tx.taxi/mempool-block/0</loc></url>
+  <url><loc>https://dash.tx.taxi/graphs/mining/block-fees</loc></url>
+</urlset>

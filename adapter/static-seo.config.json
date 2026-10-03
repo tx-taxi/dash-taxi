@@ -1,0 +1,146 @@
+{
+  "host": "dash.tx.taxi",
+  "chain": "Dash",
+  "symbol": "DASH",
+  "description": "Explore Dash blocks, transactions, addresses, fees and mining activity.",
+  "coverage": "Dash blocks, transactions and indexed transparent address history are supported. Pending data is a bounded provider notification sample. The read-only API does not expose authoritative InstantSend or ChainLock status, recommended fees, Electrum, Lightning, RBF or enterprise services. Prices are current USD observations.",
+  "poolPages": false,
+  "aliases": {
+    "/docs": "/docs/faq",
+    "/docs/api": "/docs/api/rest",
+    "/api": "/docs/api/rest",
+    "/api/api/rest": "/docs/api/rest",
+    "/api/api/websocket": "/docs/api/websocket",
+    "/api/faq": "/docs/faq",
+    "/blocks": "/blocks/1",
+    "/mining/blocks": "/blocks/1",
+    "/graphs": "/graphs/mining/block-fees",
+    "/llm.txt": "/llms.txt",
+    "/index.html": "/",
+    "/tx": "/",
+    "/tx/preview": "/docs/faq"
+  },
+  "routes": [
+    {
+      "path": "/",
+      "kind": "home",
+      "label": "Dash explorer",
+      "description": "Explore Dash blocks, transactions, addresses, fees and mining activity.",
+      "source": "src/app/components/about/about.component.html"
+    },
+    {
+      "path": "/about",
+      "kind": "document",
+      "label": "About dash.tx.taxi",
+      "description": "Learn about dash.tx.taxi, the Dash explorer in the tx.taxi family.",
+      "source": "src/app/components/about/about.component.html"
+    },
+    {
+      "path": "/privacy-policy",
+      "kind": "document",
+      "label": "Privacy policy",
+      "description": "Privacy notes for dash.tx.taxi, including public Dash data, browser preferences, server logs, and independent verification.",
+      "source": "src/app/components/privacy-policy/privacy-policy.component.html"
+    },
+    {
+      "path": "/terms-of-service",
+      "kind": "document",
+      "label": "Terms of service",
+      "description": "Terms for using dash.tx.taxi as an informational Dash block and mempool explorer.",
+      "source": "src/app/components/terms-of-service/terms-of-service.component.html"
+    },
+    {
+      "path": "/trademark-policy",
+      "kind": "document",
+      "label": "Trademark and attribution",
+      "description": "Trademark and attribution notes for dash.tx.taxi, including upstream mempool/mempool attribution and project independence.",
+      "source": "src/app/components/trademark-policy/trademark-policy.component.html"
+    },
+    {
+      "path": "/docs/faq",
+      "kind": "docs-faq",
+      "label": "Dash explorer guide",
+      "description": "Dash explorer coverage, amounts, fees, confirmations and data limits."
+    },
+    {
+      "path": "/docs/api/rest",
+      "kind": "docs-rest",
+      "label": "Dash REST API",
+      "description": "Read-only REST API documentation for dash.tx.taxi: blocks, transactions, addresses and supported observations."
+    },
+    {
+      "path": "/docs/api/websocket",
+      "kind": "docs-ws",
+      "label": "Dash WebSocket API",
+      "description": "WebSocket documentation for observed Dash explorer updates and supported subscriptions."
+    },
+    {
+      "path": "/blocks/1",
+      "kind": "live",
+      "label": "Dash blocks",
+      "description": "See the most recent Dash blocks along with basic stats such as block height, block reward, block size, and more.",
+      "context": "Dash blocks, transactions and indexed transparent address history are supported. Pending data is a bounded provider notification sample. The read-only API does not expose authoritative InstantSend or ChainLock status, recommended fees, Electrum, Lightning, RBF or enterprise services. Prices are current USD observations.",
+      "source": "src/app/components/blocks-list/blocks-list.component.ts"
+    },
+    {
+      "path": "/txs",
+      "kind": "live",
+      "label": "Dash recent transactions",
+      "description": "Recent pending Dash transaction observations shown by the explorer.",
+      "context": "Dash blocks, transactions and indexed transparent address history are supported. Pending data is a bounded provider notification sample. The read-only API does not expose authoritative InstantSend or ChainLock status, recommended fees, Electrum, Lightning, RBF or enterprise services. Prices are current USD observations.",
+      "source": "src/app/components/recent-transactions-list/recent-transactions-list.component.ts"
+    },
+    {
+      "path": "/mining",
+      "kind": "live",
+      "label": "Dash mining dashboard",
+      "description": "Dash mining observations: recent blocks, rewards, available fee data and supported difficulty or hashrate measurements.",
+      "context": "Dash blocks, transactions and indexed transparent address history are supported. Pending data is a bounded provider notification sample. The read-only API does not expose authoritative InstantSend or ChainLock status, recommended fees, Electrum, Lightning, RBF or enterprise services. Prices are current USD observations.",
+      "source": "src/app/components/mining-dashboard/mining-dashboard.component.ts"
+    },
+    {
+      "path": "/tools/calculator",
+      "kind": "live",
+      "label": "Dash calculator",
+      "description": "Convert DASH and its smallest units, with fiat conversion when the current price observation is available.",
+      "context": "Dash blocks, transactions and indexed transparent address history are supported. Pending data is a bounded provider notification sample. The read-only API does not expose authoritative InstantSend or ChainLock status, recommended fees, Electrum, Lightning, RBF or enterprise services. Prices are current USD observations.",
+      "source": "src/app/components/calculator/calculator.component.ts"
+    },
+    {
+      "path": "/mempool-block/0",
+      "kind": "live",
+      "label": "Dash pending transaction sample",
+      "description": "Inspect the explorer\u2019s observed Dash pending transaction sample and available fee-rate data.",
+      "context": "Dash blocks, transactions and indexed transparent address history are supported. Pending data is a bounded provider notification sample. The read-only API does not expose authoritative InstantSend or ChainLock status, recommended fees, Electrum, Lightning, RBF or enterprise services. Prices are current USD observations.",
+      "source": "src/app/components/mempool-block/mempool-block.component.ts"
+    },
+    {
+      "path": "/graphs/mining/block-fees",
+      "kind": "live",
+      "label": "Dash block fees",
+      "description": "See actual transaction fees for the latest observed Dash blocks, denominated in DASH.",
+      "context": "Dash blocks, transactions and indexed transparent address history are supported. Pending data is a bounded provider notification sample. The read-only API does not expose authoritative InstantSend or ChainLock status, recommended fees, Electrum, Lightning, RBF or enterprise services. Prices are current USD observations.",
+      "source": "src/app/components/block-fees-graph/block-fees-graph.component.ts"
+    }
+  ],
+  "socialScreenshot": {
+    "url": "https://tx.taxi/assets/screenshots/hub-c0f1a521a7ad.jpg",
+    "width": 1440,
+    "height": 2611,
+    "alt": "The tx.taxi hub showing its native blockchain explorer strips and external explorer blocks.",
+    "source": "https://tx.taxi/",
+    "capturedFrom": "https://tx.taxi/",
+    "capturedAt": "2026-09-27T22:31:45.077Z",
+    "fullPage": true,
+    "sha256": "c0f1a521a7adcba14748a0a3d0fb3bf67e3e9008b365422a15fe57322fe361ba",
+    "bytes": 405004,
+    "mime": "image/jpeg",
+    "key": "hub"
+  },
+  "noindexRoutes": [
+    "/blocks/stale",
+    "/rbf"
+  ],
+  "graphFallback": "/graphs/mining/block-fees",
+  "poolRedirect": "/mining"
+}

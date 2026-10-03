@@ -1,0 +1,150 @@
+{
+  "chain": "dash",
+  "routeCount": 14,
+  "priorBehavior": {
+    "docsRestCanonical": "https://dash.tx.taxi/",
+    "docsRootEmpty": true
+  },
+  "crawled": [
+    {
+      "path": "/",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/",
+      "title": "dash.tx.taxi - Dash Explorer",
+      "description": "Explore Dash blocks, transactions, addresses, fees and mining activity.",
+      "semanticBytes": 1145,
+      "markdownBytes": 351
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/about",
+      "title": "About dash.tx.taxi - dash.tx.taxi",
+      "description": "Learn about dash.tx.taxi, the Dash explorer in the tx.taxi family.",
+      "semanticBytes": 2775,
+      "markdownBytes": 1100
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/privacy-policy",
+      "title": "Privacy policy - dash.tx.taxi",
+      "description": "Privacy notes for dash.tx.taxi, including public Dash data, browser preferences, server logs, and independent verification.",
+      "semanticBytes": 2684,
+      "markdownBytes": 1480
+    },
+    {
+      "path": "/terms-of-service",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/terms-of-service",
+      "title": "Terms of service - dash.tx.taxi",
+      "description": "Terms for using dash.tx.taxi as an informational Dash block and mempool explorer.",
+      "semanticBytes": 2882,
+      "markdownBytes": 1574
+    },
+    {
+      "path": "/trademark-policy",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/trademark-policy",
+      "title": "Trademark and attribution - dash.tx.taxi",
+      "description": "Trademark and attribution notes for dash.tx.taxi, including upstream mempool/mempool attribution and project independence.",
+      "semanticBytes": 2254,
+      "markdownBytes": 1051
+    },
+    {
+      "path": "/docs/faq",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/docs/faq",
+      "title": "Dash explorer guide - dash.tx.taxi",
+      "description": "Dash explorer coverage, amounts, fees, confirmations and data limits.",
+      "semanticBytes": 3766,
+      "markdownBytes": 2578
+    },
+    {
+      "path": "/docs/api/rest",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/docs/api/rest",
+      "title": "Dash REST API - dash.tx.taxi",
+      "description": "Read-only REST API documentation for dash.tx.taxi: blocks, transactions, addresses and supported observations.",
+      "semanticBytes": 4864,
+      "markdownBytes": 2845
+    },
+    {
+      "path": "/docs/api/websocket",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/docs/api/websocket",
+      "title": "Dash WebSocket API - dash.tx.taxi",
+      "description": "WebSocket documentation for observed Dash explorer updates and supported subscriptions.",
+      "semanticBytes": 1856,
+      "markdownBytes": 954
+    },
+    {
+      "path": "/blocks/1",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/blocks/1",
+      "title": "Dash blocks - dash.tx.taxi",
+      "description": "See the most recent Dash blocks along with basic stats such as block height, block reward, block size, and more.",
+      "semanticBytes": 1209,
+      "markdownBytes": 493
+    },
+    {
+      "path": "/txs",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/txs",
+      "title": "Dash recent transactions - dash.tx.taxi",
+      "description": "Recent pending Dash transaction observations shown by the explorer.",
+      "semanticBytes": 1177,
+      "markdownBytes": 456
+    },
+    {
+      "path": "/mining",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/mining",
+      "title": "Dash mining dashboard - dash.tx.taxi",
+      "description": "Dash mining observations: recent blocks, rewards, available fee data and supported difficulty or hashrate measurements.",
+      "semanticBytes": 1226,
+      "markdownBytes": 508
+    },
+    {
+      "path": "/tools/calculator",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/tools/calculator",
+      "title": "Dash calculator - dash.tx.taxi",
+      "description": "Convert DASH and its smallest units, with fiat conversion when the current price observation is available.",
+      "semanticBytes": 1207,
+      "markdownBytes": 499
+    },
+    {
+      "path": "/mempool-block/0",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/mempool-block/0",
+      "title": "Dash pending transaction sample - dash.tx.taxi",
+      "description": "Inspect the explorer’s observed Dash pending transaction sample and available fee-rate data.",
+      "semanticBytes": 1211,
+      "markdownBytes": 502
+    },
+    {
+      "path": "/graphs/mining/block-fees",
+      "status": 200,
+      "canonical": "https://dash.tx.taxi/graphs/mining/block-fees",
+      "title": "Dash block fees - dash.tx.taxi",
+      "description": "See actual transaction fees for the latest observed Dash blocks, denominated in DASH.",
+      "semanticBytes": 1186,
+      "markdownBytes": 486
+    }
+  ],
+  "client": {
+    "constructorBaseTitle": "dash.tx.taxi",
+    "constructorBaseDescription": "Explore Dash blocks, transactions, addresses, fees and mining activity.",
+    "allStaticRouteMetadataConsistent": true,
+    "docsToAboutToHomeDefaultsPreserved": true,
+    "genuineScreenshotAfterClientNavigation": true
+  },
+  "staticProviderCalls": 0,
+  "handlerChecks": "passed",
+  "boundaries": [
+    "Actual server callback and metadata functions evaluated with static-file and response mocks",
+    "No providers, listeners, screenshots or images read",
+    "Entity response fixtures are fake and establish behavior only, not live chain data"
+  ]
+}

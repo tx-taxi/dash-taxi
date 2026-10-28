@@ -11591,6 +11591,10 @@
       <trans-unit id="tx-taxi.pool.logo" datatype="html"><source>Mining pool logo</source><target>Logo du groupe de minage</target></trans-unit>
       <trans-unit id="tx-taxi.pool.logo-named" datatype="html"><source>Logo of <x id="POOL_NAME" equiv-text="this.name" /> mining pool</source><target>Logo du groupe de minage <x id="POOL_NAME" equiv-text="this.name"/></target></trans-unit>
       <trans-unit id="tx-taxi.strip.dashboard" datatype="html"><source>Dash explorer dashboard</source><target>Tableau de bord de l’explorateur Dash</target></trans-unit>
+      <trans-unit id="tx-taxi.clipboard.copy" datatype="html"><source>Copy</source><target>Copier</target></trans-unit>
+      <trans-unit id="tx-taxi.clipboard.copied" datatype="html"><source>Copied</source><target>Copié</target></trans-unit>
+      <trans-unit id="tx-taxi.clipboard.copy-aria" datatype="html"><source>Copy to clipboard</source><target>Copier dans le presse-papiers</target></trans-unit>
+      <trans-unit id="tx-taxi.clipboard.copied-aria" datatype="html"><source>Copied to clipboard</source><target>Copié dans le presse-papiers</target></trans-unit>
     </body>
   </file>
 </xliff>

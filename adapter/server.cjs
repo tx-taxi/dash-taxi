@@ -44,7 +44,7 @@ function ttl(path) {
  return 5000;
 }
 const dashProvider=require('./dash-provider.cjs');dashProvider.startFeed();
-async function api(path) {try {const data=await dashProvider.api(path);if(/^\/api\/(?:blocks\/tip\/|v1\/blocks$|v1\/init-data$)/.test(path))health.lastSuccess=Date.now();failedPaths.delete(path);return result(data,'dash-insight');}catch(e){if(!/does not expose|exceeds the bounded|cursor expired|history changed/.test(e.message)){health.lastFailure={at:Date.now(),message:e.message};failedPaths.set(path,Date.now());}return result({error:e.message,retryable:e.status!==404},'dash-insight',e.status===404?404:503)}}
+async function api(path) {try {const data=await dashProvider.api(path);if(/^\/api\/(?:blocks\/tip\/|v1\/blocks$|v1\/init-data$)/.test(path))health.lastSuccess=Date.now();failedPaths.delete(path);return result(data,'dash-insight');}catch(e){if(e.status===404)failedPaths.delete(path);if(e.status!==404&&!/does not expose|exceeds the bounded|cursor expired|history changed/.test(e.message)){health.lastFailure={at:Date.now(),message:e.message};failedPaths.set(path,Date.now());}return result({error:e.message,retryable:e.status!==404},'dash-insight',e.status===404?404:503)}}
 
 function send(res,status,data,type='application/json',headers={}) {
  res.writeHead(status,{'Content-Type':type,'Cache-Control':'no-store',...headers});res.end(typeof data==='string'||Buffer.isBuffer(data)?data:JSON.stringify(data));

@@ -11886,6 +11886,7 @@
       <trans-unit id="tx-taxi.seo.terms.description" datatype="html"><source>Terms for using dash.tx.taxi as an informational Dash block and mempool explorer.</source><target>Términos para usar dash.tx.taxi como explorador informativo de bloques y de la mempool de Dash.</target></trans-unit>
       <trans-unit id="tx-taxi.seo.trademark.title" datatype="html"><source>Trademark &amp; Attribution</source><target>Marcas y atribuciones</target></trans-unit>
       <trans-unit id="tx-taxi.seo.trademark.description" datatype="html"><source>Trademark and attribution notes for dash.tx.taxi, including upstream mempool/mempool attribution and project independence.</source><target>Notas de marcas y atribuciones de dash.tx.taxi, incluida la atribución a mempool/mempool y la independencia del proyecto.</target></trans-unit>
+      <trans-unit id="tx-taxi.pending-observed-title" datatype="html"><source>Observed pending transactions — a node sample, not a next-block prediction</source><target>Transacciones pendientes observadas: una muestra del nodo, no una predicción del próximo bloque</target></trans-unit>
     </body>
   </file>
 </xliff>

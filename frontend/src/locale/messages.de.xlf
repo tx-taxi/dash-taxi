@@ -11603,6 +11603,8 @@
       <trans-unit id="tx-taxi.clipboard.copied" datatype="html"><source>Copied</source><target>Kopiert</target></trans-unit>
       <trans-unit id="tx-taxi.clipboard.copy-aria" datatype="html"><source>Copy to clipboard</source><target>In die Zwischenablage kopieren</target></trans-unit>
       <trans-unit id="tx-taxi.clipboard.copied-aria" datatype="html"><source>Copied to clipboard</source><target>In die Zwischenablage kopiert</target></trans-unit>
+      <trans-unit id="tx-taxi.pending-observed-label" datatype="html"><source>View observed pending transactions</source><target>Beobachtete ausstehende Transaktionen ansehen</target></trans-unit>
+      <trans-unit id="tx-taxi.pending-observed-title" datatype="html"><source>Observed pending transactions — a node sample, not a next-block prediction</source><target>Beobachtete ausstehende Transaktionen: Stichprobe eines Knotens, keine Vorhersage des nächsten Blocks</target></trans-unit>
     </body>
   </file>
 </xliff>

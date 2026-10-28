@@ -14,7 +14,7 @@ export class AboutComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.seoService.setTitle('About dash.tx.taxi');
-    this.seoService.setDescription('Learn about dash.tx.taxi, a Bitcoin block and mempool explorer in the tx.taxi multi-chain family.');
+    this.seoService.setTitle($localize`:@@tx-taxi.about-meta-title:About dash.tx.taxi`);
+    this.seoService.setDescription($localize`:@@tx-taxi.about-meta-description:Learn about dash.tx.taxi, a Dash block and mempool explorer in the tx.taxi multi-chain family.`);
   }
 }

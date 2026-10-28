@@ -3,6 +3,7 @@ import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { StorageService } from '@app/services/storage.service';
 import { fiatCurrencies } from '@app/app.constants';
 import { StateService } from '@app/services/state.service';
+import { writeSharedPreference } from '@app/services/shared-preferences';
 
 @Component({
   selector: 'app-fiat-selector',
@@ -13,6 +14,9 @@ import { StateService } from '@app/services/state.service';
 })
 export class FiatSelectorComponent implements OnInit {
   fiatForm: UntypedFormGroup;
+  referenceTitle = $localize`:@@tx-taxi.reference-title:ECB reference rate`;
+  staleTitle = $localize`:@@tx-taxi.reference-title-stale:ECB reference rate; update unavailable`;
+  reference$ = this.stateService.fiatReference$.asObservable();
   currencies = Object.entries(fiatCurrencies).sort((a: any, b: any) => {
     if (a[1].code < b[1].code) {
       return -1;
@@ -45,7 +49,9 @@ export class FiatSelectorComponent implements OnInit {
 
   changeFiat() {
     const newFiat = this.fiatForm.get('fiat')?.value;
+    if (!this.currencies.some(([key]) => key === newFiat)) { return; }
     this.storageService.setValue('fiat-preference', newFiat);
+    writeSharedPreference(document, 'txtaxi_currency', newFiat);
     this.stateService.fiatCurrency$.next(newFiat);
   }
 }

@@ -124,7 +124,7 @@
 
       <div class="box">
         <div class="graph-container" #graphContainer>
-          <p *ngIf="tx.dash?.type === 9" class="p-3">Platform credit pool withdrawal. This special transaction has no Core inputs; the outputs below receive funds unlocked from Platform.</p>
+          <p *ngIf="tx.dash?.type === 9" class="p-3" i18n="@@tx-taxi.platform-withdrawal">Platform credit pool withdrawal. This special transaction has no Core inputs; the outputs below receive funds unlocked from Platform.</p>
           <tx-bowtie-graph *ngIf="tx.dash?.type !== 9"
             [tx]="tx"
             [cached]="isCached"
@@ -200,7 +200,7 @@
             <tbody>
               <tr>
                 <td i18n="transaction.version">Version</td>
-                <td [innerHTML]="'&lrm;' + (tx.version | number)"></td></tr><tr *ngIf="tx.dash"><td class="wrap-cell">Dash transaction type</td><td class="wrap-cell">{{tx.dash.type === 9 ? 'Platform withdrawal' : tx.dash.type === 6 ? 'Quorum commitment' : tx.dash.type === 5 ? 'Coinbase' : tx.dash.type === 0 ? 'Classic transfer' : tx.dash.type}}</td></tr><tr *ngIf="tx.dash"><td>InstantSend</td><td class="wrap-cell">{{tx.dash.instantSend ? 'Locked' : 'Not reported'}}</td>
+                <td [innerHTML]="'&lrm;' + (tx.version | number)"></td></tr><tr *ngIf="tx.dash"><td class="wrap-cell" i18n="@@tx-taxi.dash-transaction-type">Dash transaction type</td><td class="wrap-cell"><ng-container [ngSwitch]="tx.dash.type"><ng-container *ngSwitchCase="9" i18n="@@tx-taxi.dash-platform-withdrawal">Platform withdrawal</ng-container><ng-container *ngSwitchCase="6" i18n="@@tx-taxi.dash-quorum-commitment">Quorum commitment</ng-container><ng-container *ngSwitchCase="5">Coinbase</ng-container><ng-container *ngSwitchCase="0" i18n="@@tx-taxi.dash-classic-transfer">Classic transfer</ng-container><ng-container *ngSwitchDefault>{{tx.dash.type}}</ng-container></ng-container></td></tr><tr *ngIf="tx.dash"><td>InstantSend</td><td class="wrap-cell"><ng-container *ngIf="tx.dash.instantSend; else dashInstantSendNotReported" i18n="@@tx-taxi.dash-locked">Locked</ng-container><ng-template #dashInstantSendNotReported><ng-container i18n="@@tx-taxi.dash-not-reported">Not reported</ng-container></ng-template></td>
               </tr>
               <tr>
                 <td i18n="transaction.locktime">Locktime</td>

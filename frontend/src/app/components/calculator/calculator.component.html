@@ -64,25 +64,25 @@
 
     <div class="row calculator-inline-row justify-content-center">
       <div class="fiat-text">
-        <app-fiat [value]="form.get('satoshis').value" digitsInfo="1.2-2" [blockConversion]="blockConversion"></app-fiat>
+        <app-fiat [value]="form.get('satoshis').value" digitsInfo="1.2-2" [blockConversion]="blockConversion" [forceBlockConversion]="!todaySelected"></app-fiat>
       </div>
     </div>
 
     <div class="row calculator-inline-row justify-content-center mt-3">
       <div class="symbol" *ngIf="{ value: (price$ | async) } as priceData">
         @if (todaySelected && priceData.value > 0) {
-          <span>Current fiat price <ng-container *ngIf="lastFiatPrice$ | async as updated">· received <app-time kind="since" [time]="updated" [fastRender]="true"></app-time></ng-container>: {{ priceData.value | fiatCurrency : '1.0-0' : (currency$ | async) }}</span>
+          <span><ng-container i18n="@@tx-taxi.calculator.current-price">Current fiat price </ng-container><ng-container *ngIf="lastFiatPrice$ | async as updated"><ng-container i18n="@@tx-taxi.calculator.received">· received </ng-container><app-time kind="since" [time]="updated" [fastRender]="true"></app-time></ng-container>: {{ priceData.value | fiatCurrency : '1.0-0' : (currency$ | async) }}</span>
         } @else if (priceData.value > 0) {
-          <span>Fiat daily closing price <app-time kind="since" [time]="timestamp$ | async" [fastRender]="true"></app-time>: {{ priceData.value | fiatCurrency : '1.0-0' : (currency$ | async) }}</span>
+          <span><ng-container i18n="@@tx-taxi.calculator.closing-price">Fiat daily closing price </ng-container><app-time kind="since" [time]="timestamp$ | async" [fastRender]="true"></app-time>: {{ priceData.value | fiatCurrency : '1.0-0' : (currency$ | async) }}</span>
         } @else {
-          <span>Fiat price not available for the selected date</span>
+          <span i18n="@@tx-taxi.calculator.price-unavailable">Fiat price not available for the selected date</span>
         }
       </div>
     </div>
   </ng-container>
 
   <ng-template #loading>
-    <div class="text-center">
+    <div class="text-center" i18n="@@tx-taxi.calculator.waiting-price">
       Waiting for price feed...
     </div>
   </ng-template>

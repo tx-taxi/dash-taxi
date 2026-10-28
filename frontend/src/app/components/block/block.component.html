@@ -116,6 +116,7 @@
             [orientation]="'top'"
             [flip]="false"
             [blockConversion]="blockConversion"
+            [forceBlockConversion]="true"
             [showFilters]="true"
             [excludeFilters]="['replacement']"
             [relativeTime]="block?.timestamp"
@@ -147,13 +148,13 @@
           <td *ngIf="network !== 'liquid' && network !== 'liquidtestnet'; else liquidTotalFees">
             <app-amount [satoshis]="block.extras.totalFees" digitsInfo="1.2-3" [noFiat]="true"></app-amount>
             <span class="fiat">
-              <app-fiat [blockConversion]="blockConversion" [value]="block.extras.totalFees" digitsInfo="1.0-0"></app-fiat>
+              <app-fiat [blockConversion]="blockConversion" [forceBlockConversion]="true" [value]="block.extras.totalFees" digitsInfo="1.0-0"></app-fiat>
             </span>
           </td>
           <ng-template #liquidTotalFees>
             <td>
               <app-amount [satoshis]="fees * 100000000" digitsInfo="1.2-2" [noFiat]="true"></app-amount>&nbsp; <app-fiat
-              [blockConversion]="blockConversion" [value]="fees * 100000000" digitsInfo="1.2-2"></app-fiat>
+              [blockConversion]="blockConversion" [forceBlockConversion]="true" [value]="fees * 100000000" digitsInfo="1.2-2"></app-fiat>
             </td>
           </ng-template>
         </tr>
@@ -162,7 +163,7 @@
           <td>
             <app-amount [satoshis]="block.extras.reward" digitsInfo="1.2-3" [noFiat]="true"></app-amount>
             <span class="fiat">
-              <app-fiat [blockConversion]="blockConversion" [value]="block.extras.reward" digitsInfo="1.0-0"></app-fiat>
+              <app-fiat [blockConversion]="blockConversion" [forceBlockConversion]="true" [value]="block.extras.reward" digitsInfo="1.0-0"></app-fiat>
             </span>
           </td>
         </tr>

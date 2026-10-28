@@ -8,7 +8,7 @@
           [style.right]="mempoolBlockStyles[i].right"
         ></div>
         <div @blockEntryTrigger [@.disabled]="i > 0 || !animateEntry" [attr.data-cy]="'mempool-block-' + i" class="bitcoin-block text-center mempool-block" [class.hide-block]="count && i >= count" id="mempool-block-{{ i }}" [ngStyle]="mempoolBlockStyles[i]" [class.blink-bg]="projectedBlock.blink" [style]="blockTransformation">
-          <a draggable="false" [routerLink]="['/' | relativeUrl]" fragment="pending-transactions" (click)="openObservedPending($event)" title="Observed pending transactions — a node sample, not a next-block prediction" aria-label="View observed pending transactions"
+          <a draggable="false" [routerLink]="['/' | relativeUrl]" fragment="pending-transactions" (click)="openObservedPending($event)" title="Observed pending transactions — a node sample, not a next-block prediction" aria-label="View observed pending transactions" i18n-aria-label="@@tx-taxi.pending-observed-label"
             [attr.title]="blockValueDetails(projectedBlock.totalFees, projectedBlock.medianFee, projectedBlock.feeRange?.[0], projectedBlock.feeRange?.[projectedBlock.feeRange.length - 1])" class="blockLink" [ngClass]="{'disabled': (this.stateService.blockScrolling$ | async)}">&nbsp;</a>
           <div class="block-body">
             <ng-container *ngIf="!minimal">

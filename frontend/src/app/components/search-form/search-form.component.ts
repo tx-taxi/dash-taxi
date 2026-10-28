@@ -1,5 +1,8 @@
+import { LanguageService } from '@app/services/language.service';
+import { readSharedPreference } from '@app/services/shared-preferences';
+import { localizedNativeUrl, refreshLocalizedCapabilities } from '@app/services/localized-native-url';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
-import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output, ViewChild, HostListener, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, Output, ViewChild, HostListener, ElementRef, Input } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { EventType, NavigationStart, Router } from '@angular/router';
 import { AssetsService } from '@app/services/assets.service';
@@ -42,7 +45,7 @@ export class SearchFormComponent implements OnInit {
   readonly defaultChainIconUrl = '/resources/chains/dash.png';
   readonly defaultChainIconAlt = 'Dash explorer';
   readonly defaultChainAccent = '#008ce7';
-  readonly defaultSearchPlaceholder = 'Wave a taxi, paste anything here.';
+  readonly defaultSearchPlaceholder = $localize`:@@tx-taxi.global.search-placeholder:Wave a taxi, paste anything here.`;
   env: Env;
   network = '';
   assets: object = {};
@@ -135,11 +138,25 @@ export class SearchFormComponent implements OnInit {
     private relativeUrlPipe: RelativeUrlPipe,
     private elementRef: ElementRef,
     private explorerRegistry: TxTaxiExplorerRegistryService,
+    private cdr: ChangeDetectorRef,
+    private languageService: LanguageService,
   ) {
     this.explorers$ = this.explorerRegistry.explorers$;
   }
 
+  private refreshLocales = (): void => {
+    void refreshLocalizedCapabilities(this.explorerRegistry.hubUrl).then(() => this.cdr.markForCheck());
+  };
+
+  ngOnDestroy(): void {
+    if (typeof window !== 'undefined') window.removeEventListener('focus', this.refreshLocales);
+  }
+
   ngOnInit(): void {
+    if (typeof window !== 'undefined') {
+      this.refreshLocales();
+      window.addEventListener('focus', this.refreshLocales);
+    }
     this.thirdPartyExplorers$ = this.explorerRegistry.thirdPartyExplorers$;
     this.env = this.stateService.env;
     this.stateService.networkChanged$.subscribe((network) => {
@@ -399,6 +416,21 @@ export class SearchFormComponent implements OnInit {
     return this.additionalExplorerIds.has(explorer.chainId);
   }
 
+  readonly foundLabel = $localize`:@@tx-taxi.search.found:Found`;
+  readonly possibleLabel = $localize`:@@tx-taxi.search.possible:Possible`;
+
+  openExplorerLabel(name: string): string { return $localize`:@@tx-taxi.search.open-explorer:Open ${name}:name:`; }
+  openExplorerNewTabLabel(name: string): string { return $localize`:@@tx-taxi.search.open-explorer-tab:Open ${name}:name: in a new tab`; }
+  switchExplorerLabel(name: string): string { return $localize`:@@tx-taxi.search.switch-explorer:Switch to ${name}:name:`; }
+  additionalGroupLabel(name: string): string { return $localize`:@@tx-taxi.search.additional-group:${name}:name: additional explorers`; }
+  additionalOptionsLabel(explorer: TxTaxiExplorer, count: number): string {
+    const name = explorer.name;
+    if (this.additionalExplorersExpanded(explorer)) {
+      return count === 1 ? $localize`:@@tx-taxi.search.hide-one:Hide ${count}:count: additional ${name}:name: option` : $localize`:@@tx-taxi.search.hide-many:Hide ${count}:count: additional ${name}:name: options`;
+    }
+    return count === 1 ? $localize`:@@tx-taxi.search.show-one:Show ${count}:count: additional ${name}:name: option` : $localize`:@@tx-taxi.search.show-many:Show ${count}:count: additional ${name}:name: options`;
+  }
+
   toggleAdditionalExplorers(explorer: TxTaxiExplorer): void {
     if (this.additionalExplorerIds.has(explorer.chainId)) this.additionalExplorerIds.delete(explorer.chainId);
     else this.additionalExplorerIds.add(explorer.chainId);
@@ -633,7 +665,16 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
+  localizedExplorerUrl(value: string): string {
+    if (typeof document === 'undefined') return value;
+    const preference = readSharedPreference(document, 'txtaxi_language');
+    const explicit = document.location.pathname.match(/^\/(ar|ca|cs|da|de|en(?:-US)?|es|fa|fi|fr|he|hi|hr|hu|it|ja|ka|ko|lt|mk|nb|ne|nl|pl|pt|ro|ru|sl|sv|th|tr|uk|vi|zh)(?:\/|$)/i)?.[1].toLowerCase();
+    const language = explicit ? (explicit.startsWith('en') ? 'en' : explicit) : preference || this.languageService.getLanguage();
+    return localizedNativeUrl(value, language);
+  }
+
   private assignDestination(value: string, destinationHint?: Pick<SearchTarget, 'chainId' | 'destinationId'>): void {
+    value = this.localizedExplorerUrl(value);
     let lightning = false;
     try {
       const url = new URL(value);
@@ -671,7 +712,7 @@ export class SearchFormComponent implements OnInit {
         this.navigate('/' + entity[1] + '/', entity[2]);
       } else if (entity && destination.protocol === 'https:' && ({bitcoin:'btc.tx.taxi',ethereum:'eth.tx.taxi',monero:'xmr.tx.taxi',litecoin:'ltc.tx.taxi',dogecoin:'doge.tx.taxi','bitcoin-cash':'bch.tx.taxi',dash:'dash.tx.taxi'}[target.chainId || ''] === destination.hostname)) {
         const local = {'dogecoin':'http://127.0.0.1:4351','bitcoin-cash':'http://127.0.0.1:4361',dash:'http://127.0.0.1:4370'}[target.chainId || ''];
-        window.location.assign(this.env.TX_TAXI_ROUTER_URL === 'http://127.0.0.1:4340' && local ? local + destination.pathname : destination.toString());
+        window.location.assign(this.localizedExplorerUrl(this.env.TX_TAXI_ROUTER_URL === 'http://127.0.0.1:4340' && local ? local + destination.pathname : destination.toString()));
         this.isSearching = false;
       } else {
         this.searchRouter(searchText);

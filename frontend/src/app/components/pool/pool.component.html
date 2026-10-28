@@ -277,7 +277,7 @@
                       <tr>
                         <th class="data-title clip text-center" [attr.colspan]="Math.max(job.merkleBranches.length, 12)">
                           <a class="title-link" href="" [routerLink]="['/stratum' | relativeUrl]">
-                            Merkle Branches
+                            <ng-container i18n="@@tx-taxi.mining.merkle-branches">Merkle Branches</ng-container>
                             <span>&nbsp;</span>
                             <fa-icon [icon]="['fas', 'external-link-alt']" [fixedWidth]="true" style="vertical-align: text-top; font-size: 13px; color: var(--title-fg)"></fa-icon>
                           </a>

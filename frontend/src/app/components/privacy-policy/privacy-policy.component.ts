@@ -13,7 +13,7 @@ export class PrivacyPolicyComponent {
   ) { }
 
   ngOnInit(): void {
-    this.seoService.setTitle('Privacy Policy');
-    this.seoService.setDescription('Privacy notes for dash.tx.taxi, including public Bitcoin data, browser preferences, server logs, and independent verification.');
+    this.seoService.setTitle($localize`:@@tx-taxi.seo.privacy.title:Privacy Policy`);
+    this.seoService.setDescription($localize`:@@tx-taxi.seo.privacy.description:Privacy notes for dash.tx.taxi, including public Dash data, browser preferences, server logs, and independent verification.`);
   }
 }

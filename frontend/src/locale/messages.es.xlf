@@ -11880,6 +11880,12 @@
       <trans-unit id="tx-taxi.clipboard.copy-aria" datatype="html"><source>Copy to clipboard</source><target>Copiar al portapapeles</target></trans-unit>
       <trans-unit id="tx-taxi.clipboard.copied-aria" datatype="html"><source>Copied to clipboard</source><target>Copiado al portapapeles</target></trans-unit>
       <trans-unit id="tx-taxi.filters.title" datatype="html"><source>Transaction filters</source><target>Filtros de transacciones</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.privacy.title" datatype="html"><source>Privacy Policy</source><target>Política de privacidad</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.privacy.description" datatype="html"><source>Privacy notes for dash.tx.taxi, including public Dash data, browser preferences, server logs, and independent verification.</source><target>Notas de privacidad de dash.tx.taxi sobre los datos públicos de Dash, las preferencias del navegador, los registros del servidor y la verificación independiente.</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.terms.title" datatype="html"><source>Terms of Service</source><target>Términos de servicio</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.terms.description" datatype="html"><source>Terms for using dash.tx.taxi as an informational Dash block and mempool explorer.</source><target>Términos para usar dash.tx.taxi como explorador informativo de bloques y de la mempool de Dash.</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.trademark.title" datatype="html"><source>Trademark &amp; Attribution</source><target>Marcas y atribuciones</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.trademark.description" datatype="html"><source>Trademark and attribution notes for dash.tx.taxi, including upstream mempool/mempool attribution and project independence.</source><target>Notas de marcas y atribuciones de dash.tx.taxi, incluida la atribución a mempool/mempool y la independencia del proyecto.</target></trans-unit>
     </body>
   </file>
 </xliff>

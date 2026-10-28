@@ -11581,6 +11581,16 @@
         <target>Politique de confidentialité</target></trans-unit>
       <trans-unit id="tx-taxi.global.trademark" datatype="html"><source>Trademark &amp; Attribution</source>
         <target>Marques et attribution</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.show-sizes" datatype="html"><source>Switch to displaying block sizes</source><target>Afficher la taille des blocs</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.show-fees" datatype="html"><source>Switch to displaying total fees per block</source><target>Afficher le total des frais par bloc</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.newest-right" datatype="html"><source>Switch to displaying newest blocks on the right</source><target>Afficher les blocs les plus récents à droite</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.newest-left" datatype="html"><source>Switch to displaying newest blocks on the left</source><target>Afficher les blocs les plus récents à gauche</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.number-locale" datatype="html"><source>en-US</source><target>fr-FR</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.median-fee-rate" datatype="html"><source>Median fee rate</source><target>Taux de frais médian</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.fee-range" datatype="html"><source>Fee range</source><target>Fourchette des taux de frais</target></trans-unit>
+      <trans-unit id="tx-taxi.pool.logo" datatype="html"><source>Mining pool logo</source><target>Logo du groupe de minage</target></trans-unit>
+      <trans-unit id="tx-taxi.pool.logo-named" datatype="html"><source>Logo of <x id="POOL_NAME" equiv-text="this.name" /> mining pool</source><target>Logo du groupe de minage <x id="POOL_NAME" equiv-text="this.name"/></target></trans-unit>
+      <trans-unit id="tx-taxi.strip.dashboard" datatype="html"><source>Dash explorer dashboard</source><target>Tableau de bord de l’explorateur Dash</target></trans-unit>
     </body>
   </file>
 </xliff>

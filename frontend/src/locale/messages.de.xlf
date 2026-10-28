@@ -11589,6 +11589,16 @@
         <target>Nutzungsbedingungen</target></trans-unit>
       <trans-unit id="tx-taxi.global.trademark" datatype="html"><source>Trademark &amp; Attribution</source>
         <target>Marken und Zuordnung</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.show-sizes" datatype="html"><source>Switch to displaying block sizes</source><target>Blockgrößen anzeigen</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.show-fees" datatype="html"><source>Switch to displaying total fees per block</source><target>Gesamte Gebühren pro Block anzeigen</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.newest-right" datatype="html"><source>Switch to displaying newest blocks on the right</source><target>Neueste Blöcke rechts anzeigen</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.newest-left" datatype="html"><source>Switch to displaying newest blocks on the left</source><target>Neueste Blöcke links anzeigen</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.number-locale" datatype="html"><source>en-US</source><target>de-DE</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.median-fee-rate" datatype="html"><source>Median fee rate</source><target>Mediane Gebührenrate</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.fee-range" datatype="html"><source>Fee range</source><target>Gebührenratenbereich</target></trans-unit>
+      <trans-unit id="tx-taxi.pool.logo" datatype="html"><source>Mining pool logo</source><target>Logo des Mining-Pools</target></trans-unit>
+      <trans-unit id="tx-taxi.pool.logo-named" datatype="html"><source>Logo of <x id="POOL_NAME" equiv-text="this.name" /> mining pool</source><target>Logo des Mining-Pools <x id="POOL_NAME" equiv-text="this.name"/></target></trans-unit>
+      <trans-unit id="tx-taxi.strip.dashboard" datatype="html"><source>Dash explorer dashboard</source><target>Dash-Explorer-Übersicht</target></trans-unit>
     </body>
   </file>
 </xliff>

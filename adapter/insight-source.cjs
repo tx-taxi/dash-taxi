@@ -26,7 +26,7 @@ function createSource({primary,store,fetchImpl=fetch,blockbook=process.env.DASH_
   if((m=path.match(/^\/tx\/([a-f0-9]{64})$/)))return transaction(m[1],u.searchParams.get('spending')==='true');
   if((m=path.match(/^\/rawtx\/([a-f0-9]{64})$/)))return{rawtx:(await transaction(m[1]))._hex};
   if((m=path.match(/^\/addr\/([^/]+)$/))){const a=await book('/address/'+m[1]+'?details=txids&pageSize=1',15000);return{addrStr:m[1],totalReceivedSat:Number(BigInt(a.totalReceived)),totalSentSat:Number(BigInt(a.totalSent)),txAppearances:a.txs,unconfirmedBalanceSat:Number(BigInt(a.unconfirmedBalance??'0')),unconfirmedAppearances:a.unconfirmedTxs};}
-  if(path==='/txs'&&u.searchParams.has('address')){const page=(Number(u.searchParams.get('pageNum'))||0)+1;const a=await book('/address/'+u.searchParams.get('address')+'?details=txids&pageSize=10&page='+page,15000);const txs=[];for(let i=0;i<(a.txids||[]).length;i+=4)txs.push(...await Promise.all(a.txids.slice(i,i+4).map(id=>transaction(id))));return{pagesTotal:a.totalPages,txs};}
+  if(path==='/txs'&&u.searchParams.has('address')){const page=(Number(u.searchParams.get('pageNum'))||0)+1;const a=await book('/address/'+u.searchParams.get('address')+'?details=txs&pageSize=10&page='+page,15000);if(!Array.isArray(a.transactions))throw Error('Incomplete Dash address history');return{pagesTotal:a.totalPages,txs:a.transactions.map(t=>insightTx(t))};}
   if(path==='/currency'){const d=await book('/tickers/?currency=usd',60000);if(!Number.isFinite(d.rates?.usd))throw Error('Dash price unavailable');return{data:{dash_usd:d.rates.usd}};}
   throw Object.assign(Error('No equivalent Dash provider capability'),{status:503});
  }

@@ -189,8 +189,10 @@
       scheduled = false;
       const dashboard = isDashboard();
       const root = dashboardPath();
-      const spanish = document.documentElement.lang.toLowerCase().startsWith('es');
-      const label = dashboard ? (spanish ? 'Volver a tx.taxi' : 'Back to tx.taxi') : (spanish ? `Panel de ${sourceName}` : `${sourceName} dashboard`);
+      const language = document.documentElement.lang.toLowerCase().split('-')[0];
+      const hubLabels = { es: 'Volver a tx.taxi', fr: 'Retour à tx.taxi', de: 'Zurück zu tx.taxi' };
+      const dashboardLabels = { es: `Panel de ${sourceName}`, fr: `Tableau de bord ${sourceName}`, de: `${sourceName}-Übersicht` };
+      const label = dashboard ? (hubLabels[language] || 'Back to tx.taxi') : (dashboardLabels[language] || `${sourceName} dashboard`);
       document.querySelectorAll('a.navbar-brand, a.chain-divider-mark').forEach(link => {
         link.href = dashboard ? hubOrigin + localizedHubPath() : root;
         link.setAttribute('aria-label', label);

@@ -11874,7 +11874,7 @@
       <trans-unit id="tx-taxi.provider.retry" datatype="html"><source>Unavailable. Retrying.</source><target>No disponible. Reintentando.</target></trans-unit>
       <trans-unit id="tx-taxi.pool.logo" datatype="html"><source>Mining pool logo</source><target>Logotipo del grupo de minería</target></trans-unit>
       <trans-unit id="tx-taxi.pool.logo-named" datatype="html"><source>Logo of <x id="POOL_NAME" equiv-text="this.name"/> mining pool</source><target>Logotipo del grupo de minería <x id="POOL_NAME" equiv-text="this.name"/></target></trans-unit>
-      <trans-unit id="tx-taxi.difficulty.block-tooltip" datatype="html"><source>Block <x id="INTERPOLATION" equiv-text="{{s.height}}"/> · <x id="INTERPOLATION_1" equiv-text="{{s.difficulty | number:'1.0-0'}}"/></source><target>Bloque <x id="INTERPOLATION" equiv-text="{{s.height}}"/> · <x id="INTERPOLATION_1" equiv-text="{{s.difficulty | number:'1.0-0'}}"/></target></trans-unit>
+      <trans-unit id="tx-taxi.difficulty.block-tooltip" datatype="html"><source>Block <x id="HEIGHT" equiv-text="height"/> · <x id="DIFFICULTY" equiv-text="difficulty"/></source><target>Bloque <x id="HEIGHT" equiv-text="height"/> · <x id="DIFFICULTY" equiv-text="difficulty"/></target></trans-unit>
       <trans-unit id="tx-taxi.clipboard.copy" datatype="html"><source>Copy</source><target>Copiar</target></trans-unit>
       <trans-unit id="tx-taxi.clipboard.copied" datatype="html"><source>Copied</source><target>Copiado</target></trans-unit>
       <trans-unit id="tx-taxi.clipboard.copy-aria" datatype="html"><source>Copy to clipboard</source><target>Copiar al portapapeles</target></trans-unit>

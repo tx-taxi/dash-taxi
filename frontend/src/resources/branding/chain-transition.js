@@ -182,10 +182,12 @@
       scheduled = false;
       const dashboard = isDashboard();
       const root = dashboardPath();
+      const spanish = document.documentElement.lang.toLowerCase().startsWith('es');
+      const label = dashboard ? (spanish ? 'Volver a tx.taxi' : 'Back to tx.taxi') : (spanish ? `Panel de ${sourceName}` : `${sourceName} dashboard`);
       document.querySelectorAll('a.navbar-brand, a.chain-divider-mark').forEach(link => {
         link.href = dashboard ? hubOrigin + localizedHubPath() : root;
-        link.setAttribute('aria-label', dashboard ? 'Back to tx.taxi' : sourceName + ' dashboard');
-        link.title = dashboard ? 'Back to tx.taxi' : sourceName + ' dashboard';
+        link.setAttribute('aria-label', label);
+        link.title = label;
       });
     };
     const observer = new MutationObserver(() => {

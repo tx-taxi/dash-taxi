@@ -15,6 +15,10 @@ export class ClipboardComponent {
   @Input() leftPadding = true;
   copiedMessage: string = $localize`:@@clipboard.copied-message:Copied!`;
   showMessage = false;
+  readonly copyLabel = $localize`:@@tx-taxi.clipboard.copy:Copy`;
+  readonly copiedLabel = $localize`:@@tx-taxi.clipboard.copied:Copied`;
+  readonly copyAria = $localize`:@@tx-taxi.clipboard.copy-aria:Copy to clipboard`;
+  readonly copiedAria = $localize`:@@tx-taxi.clipboard.copied-aria:Copied to clipboard`;
 
   widths = {
     small: '10',

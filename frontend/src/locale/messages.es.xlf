@@ -1659,7 +1659,7 @@
       </trans-unit>
       <trans-unit id="cf2ec414465d65ab24b354663d94d051a67e26e9" datatype="html">
         <source>Total vSize</source>
-        <target>Total vSize</target>
+        <target>Tamaño virtual total</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/acceleration/acceleration-stats/acceleration-stats.component.html</context>
           <context context-type="linenumber">20</context>
@@ -1800,7 +1800,7 @@
       </trans-unit>
       <trans-unit id="e70fcca5a99575cffef3ff8cbd5e69f06ffd0f1c" datatype="html">
         <source>Pool</source>
-        <target>Pool</target>
+        <target>Grupo</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/acceleration/accelerations-list/accelerations-list.component.html</context>
           <context context-type="linenumber">19</context>
@@ -2721,7 +2721,7 @@
       </trans-unit>
       <trans-unit id="d06e27f7453fcf29134f9e61533ea4eb4b890f5f" datatype="html">
         <source>Featured</source>
-        <target>Featured</target>
+        <target>Destacado</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/assets/assets-nav/assets-nav.component.html</context>
           <context context-type="linenumber">9</context>
@@ -3690,7 +3690,7 @@
       </trans-unit>
       <trans-unit id="07193288a0312875e18f38c3a2486b927a15520a" datatype="html">
         <source>Timestamp</source>
-        <target>Timestamp</target>
+        <target>Fecha y hora</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/block/block-preview.component.html</context>
           <context context-type="linenumber">26</context>
@@ -4077,7 +4077,7 @@
       </trans-unit>
       <trans-unit id="1da6d9283e3222148d76c10c8e37abeeb66c93cb" datatype="html">
         <source>Actual</source>
-        <target>Actual</target>
+        <target>Real</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/block/block.component.html</context>
           <context context-type="linenumber">248</context>
@@ -4216,7 +4216,7 @@
       </trans-unit>
       <trans-unit id="cbfb79ff517493268a49acffa81ecc02336d8372" datatype="html">
         <source>Block Header Hex</source>
-        <target>Block Header Hex</target>
+        <target>Encabezado del bloque en hexadecimal</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/block/block.component.html</context>
           <context context-type="linenumber">357</context>
@@ -5710,7 +5710,7 @@
       </trans-unit>
       <trans-unit id="7a080851e25a41e898776a9c90cf8dbe81027f9a" datatype="html">
         <source>Output</source>
-        <target>Output</target>
+        <target>Salida</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/liquid-reserves-audit/federation-utxos-list/federation-utxos-list.component.html</context>
           <context context-type="linenumber">8</context>
@@ -8451,7 +8451,7 @@
       </trans-unit>
       <trans-unit id="3e242f213dd1a0754aad9164aa80887d67708500" datatype="html">
         <source>Input</source>
-        <target>Input</target>
+        <target>Entrada</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tx-bowtie-graph-tooltip/tx-bowtie-graph-tooltip.component.html</context>
           <context context-type="linenumber">42</context>
@@ -11356,7 +11356,7 @@
       </trans-unit>
       <trans-unit id="2259944601214794924" datatype="html">
         <source>Sighash Flags</source>
-        <target>Sighash Flags</target>
+        <target>Indicadores de sighash</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/filters.utils.ts</context>
           <context context-type="linenumber">125</context>
@@ -11863,6 +11863,22 @@
       <trans-unit id="tx-taxi.strip.fee-range" datatype="html"><source>Fee range</source><target>Rango de tasas de comisión</target></trans-unit>
       <trans-unit id="tx-taxi.pending-observed-label" datatype="html"><source>View observed pending transactions</source><target>Ver transacciones pendientes observadas</target></trans-unit>
       <trans-unit id="tx-taxi.strip.number-locale" datatype="html"><source>en-US</source><target>es-ES</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.show-sizes" datatype="html"><source>Switch to displaying block sizes</source><target>Cambiar a la vista de tamaños de bloque</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.show-fees" datatype="html"><source>Switch to displaying total fees per block</source><target>Cambiar a la vista de comisiones totales por bloque</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.newest-right" datatype="html"><source>Switch to displaying newest blocks on the right</source><target>Mostrar los bloques más recientes a la derecha</target></trans-unit>
+      <trans-unit id="tx-taxi.strip.newest-left" datatype="html"><source>Switch to displaying newest blocks on the left</source><target>Mostrar los bloques más recientes a la izquierda</target></trans-unit>
+      <trans-unit id="tx-taxi.difficulty.recent-aria" datatype="html"><source>Recent block difficulty</source><target>Dificultad de bloques recientes</target></trans-unit>
+      <trans-unit id="tx-taxi.provider.delayed" datatype="html"><source>Updates delayed.</source><target>Actualizaciones retrasadas.</target></trans-unit>
+      <trans-unit id="tx-taxi.provider.partial" datatype="html"><source>Some data is unavailable.</source><target>Algunos datos no están disponibles.</target></trans-unit>
+      <trans-unit id="tx-taxi.provider.retry" datatype="html"><source>Unavailable. Retrying.</source><target>No disponible. Reintentando.</target></trans-unit>
+      <trans-unit id="tx-taxi.pool.logo" datatype="html"><source>Mining pool logo</source><target>Logotipo del grupo de minería</target></trans-unit>
+      <trans-unit id="tx-taxi.pool.logo-named" datatype="html"><source>Logo of <x id="POOL_NAME" equiv-text="this.name"/> mining pool</source><target>Logotipo del grupo de minería <x id="POOL_NAME" equiv-text="this.name"/></target></trans-unit>
+      <trans-unit id="tx-taxi.difficulty.block-tooltip" datatype="html"><source>Block <x id="INTERPOLATION" equiv-text="{{s.height}}"/> · <x id="INTERPOLATION_1" equiv-text="{{s.difficulty | number:'1.0-0'}}"/></source><target>Bloque <x id="INTERPOLATION" equiv-text="{{s.height}}"/> · <x id="INTERPOLATION_1" equiv-text="{{s.difficulty | number:'1.0-0'}}"/></target></trans-unit>
+      <trans-unit id="tx-taxi.clipboard.copy" datatype="html"><source>Copy</source><target>Copiar</target></trans-unit>
+      <trans-unit id="tx-taxi.clipboard.copied" datatype="html"><source>Copied</source><target>Copiado</target></trans-unit>
+      <trans-unit id="tx-taxi.clipboard.copy-aria" datatype="html"><source>Copy to clipboard</source><target>Copiar al portapapeles</target></trans-unit>
+      <trans-unit id="tx-taxi.clipboard.copied-aria" datatype="html"><source>Copied to clipboard</source><target>Copiado al portapapeles</target></trans-unit>
+      <trans-unit id="tx-taxi.filters.title" datatype="html"><source>Transaction filters</source><target>Filtros de transacciones</target></trans-unit>
     </body>
   </file>
 </xliff>

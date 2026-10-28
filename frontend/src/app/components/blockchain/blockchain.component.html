@@ -16,11 +16,11 @@
           class="block-display-toggle"
           (click)="toggleBlockDisplayMode()"
           [attr.aria-label]="blockDisplayMode === 'fees'
-            ? 'Switch to displaying block sizes'
-            : 'Switch to displaying total fees per block'"
+            ? showBlockSizes
+            : showBlockFees"
           [attr.title]="blockDisplayMode === 'fees'
-            ? 'Switch to displaying block sizes'
-            : 'Switch to displaying total fees per block'">
+            ? showBlockSizes
+            : showBlockFees">
           <fa-icon [icon]="['fas', 'exchange-alt']" [fixedWidth]="true"></fa-icon>
         </button>
 
@@ -29,11 +29,11 @@
           class="time-toggle"
           (click)="toggleTimeDirection()"
           [attr.aria-label]="timeLtr
-            ? 'Switch to displaying newest blocks on the right'
-            : 'Switch to displaying newest blocks on the left'"
+            ? newestBlocksRight
+            : newestBlocksLeft"
           [attr.title]="timeLtr
-            ? 'Switch to displaying newest blocks on the right'
-            : 'Switch to displaying newest blocks on the left'">
+            ? newestBlocksRight
+            : newestBlocksLeft">
           <fa-icon [icon]="['fas', 'exchange-alt']" [fixedWidth]="true"></fa-icon>
         </button>
       </div>

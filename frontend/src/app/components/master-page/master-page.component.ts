@@ -24,9 +24,9 @@ export class MasterPageComponent implements OnInit, OnDestroy {
   checkProvider(): void {
     this.http.get<any>('/api/provider-health').subscribe({
       next: h => this.providerWarning = h.stale
-        ? 'Updates delayed.'
-        : h.degraded ? 'Some data is unavailable.' : '',
-      error: () => this.providerWarning = 'Unavailable. Retrying.'
+        ? $localize`:@@tx-taxi.provider.delayed:Updates delayed.`
+        : h.degraded ? $localize`:@@tx-taxi.provider.partial:Some data is unavailable.` : '',
+      error: () => this.providerWarning = $localize`:@@tx-taxi.provider.retry:Unavailable. Retrying.`
     });
   }
   env: Env;

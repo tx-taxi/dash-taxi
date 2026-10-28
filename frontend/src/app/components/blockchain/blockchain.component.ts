@@ -29,6 +29,10 @@ export class BlockchainComponent implements OnInit, OnDestroy, OnChanges {
   loadingTip: boolean = true;
   connected: boolean = true;
   blockDisplayMode: 'size' | 'fees';
+  readonly showBlockSizes = $localize`:@@tx-taxi.strip.show-sizes:Switch to displaying block sizes`;
+  readonly showBlockFees = $localize`:@@tx-taxi.strip.show-fees:Switch to displaying total fees per block`;
+  readonly newestBlocksRight = $localize`:@@tx-taxi.strip.newest-right:Switch to displaying newest blocks on the right`;
+  readonly newestBlocksLeft = $localize`:@@tx-taxi.strip.newest-left:Switch to displaying newest blocks on the left`;
 
   dividerOffset: number | null = null;
   mempoolOffset: number | null = 0;

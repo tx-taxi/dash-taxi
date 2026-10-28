@@ -11489,6 +11489,111 @@
           <context context-type="linenumber">173</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="graphs.blockFeesSubsidy.fees" datatype="html"><source>Fees</source>
+        <target>Siirtomaksut</target>
+      </trans-unit>
+      <trans-unit id="35214e7a6aec1b0317e0fa1eb32e8caf6757b147" datatype="html"><source>Size</source>
+        <target>Koko</target>
+      </trans-unit>
+      <trans-unit id="32fba724df729afb840693b40e3f8869356f4e33" datatype="html"><source>Size</source>
+        <target>Koko</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.difficulty.block-rewards" datatype="html"><source>Block Rewards</source>
+        <target>Lohkopalkkiot</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.difficulty.difficulty" datatype="html"><source>difficulty</source>
+        <target>vaikeus</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.block-fees" datatype="html"><source>Block Fees</source>
+        <target>Lohkopalkkiot</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.nav-docs" datatype="html"><source>Documentation</source>
+        <target>Dokumentaatio</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.mining.height" datatype="html"><source>Height</source>
+        <target>Järjestysnumero</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.mining.fees" datatype="html"><source>Fees</source>
+        <target>Siirtomaksut</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.legal.privacy-title" datatype="html"><source>Privacy Policy</source>
+        <target>Tietosuojakäytäntö</target>
+      </trans-unit>
+      <trans-unit id="recent-transactions-title" datatype="html"><source>Recent Transactions</source>
+        <target>Viimeaikaiset siirtotapahtumat</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.legal.terms-title" datatype="html"><source>Terms of Service</source>
+        <target>Käyttöehdot</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.transactions.show-more" datatype="html"><source>Show more</source>
+        <target>Näytä enemmän</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.transactions.show-less" datatype="html"><source>Show less</source>
+        <target>Näytä vähemmän</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.total-fees" datatype="html"><source>Total fees</source>
+        <target>Siirtomaksut yhteensä</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.incoming-transactions" datatype="html"><source>Incoming Transactions</source>
+        <target>Saapuvat siirtotapahtumat</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.recent-transactions" datatype="html"><source>Recent Transactions</source>
+        <target>Viimeaikaiset siirtotapahtumat</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.docs.title" datatype="html"><source>Documentation</source>
+        <target>Dokumentaatio</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.docs.blocks" datatype="html"><source>Blocks</source>
+        <target>Lohkot</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.docs.transactions" datatype="html"><source>Transactions</source>
+        <target>Siirtotapahtumat</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.docs.connect" datatype="html"><source>Connect</source>
+        <target>Yhdistä</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.docs.side-blocks" datatype="html"><source>Blocks</source>
+        <target>Lohkot</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.docs.side-transactions" datatype="html"><source>Transactions</source>
+        <target>Siirtotapahtumat</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.docs.side-addresses" datatype="html"><source>Addresses</source>
+        <target>Osoitteet</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.docs.side-connect" datatype="html"><source>Connect</source>
+        <target>Yhdistä</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.strip.total-fees" datatype="html"><source>Total fees</source>
+        <target>Siirtomaksut yhteensä</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.global.explore" datatype="html"><source>Explore</source>
+        <target>Tutki</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.global.recent-blocks" datatype="html"><source>Recent Blocks</source>
+        <target>Viimeisimmät lohkot</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.global.calculator" datatype="html"><source>Calculator</source>
+        <target>Laskin</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.global.api-docs" datatype="html"><source>API Documentation</source>
+        <target>API-dokumentaatio</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.global.about" datatype="html"><source>About</source>
+        <target>Tietoja</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.global.status" datatype="html"><source>Status</source>
+        <target>Tila</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.global.legal" datatype="html"><source>Legal</source>
+        <target>Lainsäädäntö</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.global.terms" datatype="html"><source>Terms of Service</source>
+        <target>Käyttöehdot</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.global.privacy" datatype="html"><source>Privacy Policy</source>
+        <target>Tietosuojakäytäntö</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

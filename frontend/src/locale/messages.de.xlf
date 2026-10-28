@@ -11489,6 +11489,106 @@
           <context context-type="linenumber">173</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="graphs.blockFeesSubsidy.fees" datatype="html"><source>Fees</source>
+        <target>Gebühren</target>
+      </trans-unit>
+      <trans-unit id="35214e7a6aec1b0317e0fa1eb32e8caf6757b147" datatype="html"><source>Size</source>
+        <target>Größe</target>
+      </trans-unit>
+      <trans-unit id="32fba724df729afb840693b40e3f8869356f4e33" datatype="html"><source>Size</source>
+        <target>Größe</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.difficulty.block-rewards" datatype="html"><source>Block Rewards</source>
+        <target>Blockbelohnungen</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.difficulty.difficulty" datatype="html"><source>difficulty</source>
+        <target>Schwierigkeit</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.block-fees" datatype="html"><source>Block Fees</source>
+        <target>Blockgebühren</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.nav-docs" datatype="html"><source>Documentation</source>
+        <target>Dokumentation</target></trans-unit>
+      <trans-unit id="tx-taxi.mining.height" datatype="html"><source>Height</source>
+        <target>Höhe</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.mining.fees" datatype="html"><source>Fees</source>
+        <target>Gebühren</target>
+      </trans-unit>
+      <trans-unit id="recent-transactions-title" datatype="html"><source>Recent Transactions</source>
+        <target>Kürzliche Transaktionen</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.legal.terms-title" datatype="html"><source>Terms of Service</source>
+        <target>Nutzungsbedingungen</target></trans-unit>
+      <trans-unit id="tx-taxi.legal.trademark-title" datatype="html"><source>Trademark &amp; Attribution</source>
+        <target>Marken und Zuordnung</target></trans-unit>
+      <trans-unit id="tx-taxi.transactions.show-more" datatype="html"><source>Show more</source>
+        <target>Mehr anzeigen</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.transactions.show-less" datatype="html"><source>Show less</source>
+        <target>Weniger anzeigen</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.total-fees" datatype="html"><source>Total fees</source>
+        <target>Gesamtgebühren</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.incoming-transactions" datatype="html"><source>Incoming Transactions</source>
+        <target>Eingehende Transaktionen</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.reconnecting" datatype="html"><source>Reconnecting…</source>
+        <target>Verbindung wird wiederhergestellt…</target></trans-unit>
+      <trans-unit id="tx-taxi.recent-transactions" datatype="html"><source>Recent Transactions</source>
+        <target>Kürzliche Transaktionen</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.docs.title" datatype="html"><source>Documentation</source>
+        <target>Dokumentation</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.blocks" datatype="html"><source>Blocks</source>
+        <target>Blöcke</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.docs.transactions" datatype="html"><source>Transactions</source>
+        <target>Transaktionen</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.docs.connect" datatype="html"><source>Connect</source>
+        <target>Verbinden</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.docs.side-blocks" datatype="html"><source>Blocks</source>
+        <target>Blöcke</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.docs.side-transactions" datatype="html"><source>Transactions</source>
+        <target>Transaktionen</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.docs.side-addresses" datatype="html"><source>Addresses</source>
+        <target>Adressen</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.docs.side-connect" datatype="html"><source>Connect</source>
+        <target>Verbinden</target>
+        </trans-unit>
+      <trans-unit id="tx-taxi.strip.total-fees" datatype="html"><source>Total fees</source>
+        <target>Gesamtgebühren</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.global.explore" datatype="html"><source>Explore</source>
+        <target>Erkunden</target></trans-unit>
+      <trans-unit id="tx-taxi.global.recent-blocks" datatype="html"><source>Recent Blocks</source>
+        <target>Aktuelle Blöcke</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.global.calculator" datatype="html"><source>Calculator</source>
+        <target>Taschenrechner</target>
+      </trans-unit>
+      <trans-unit id="tx-taxi.global.api-docs" datatype="html"><source>API Documentation</source>
+        <target>API-Dokumentation</target></trans-unit>
+      <trans-unit id="tx-taxi.global.about" datatype="html"><source>About</source>
+        <target>Über</target></trans-unit>
+      <trans-unit id="tx-taxi.global.source-code" datatype="html"><source>Source code</source>
+        <target>Quellcode</target></trans-unit>
+      <trans-unit id="tx-taxi.global.status" datatype="html"><source>Status</source>
+        <target>Status</target></trans-unit>
+      <trans-unit id="tx-taxi.global.contact" datatype="html"><source>Contact Us</source>
+        <target>Kontakt</target></trans-unit>
+      <trans-unit id="tx-taxi.global.legal" datatype="html"><source>Legal</source>
+        <target>Rechtliches</target></trans-unit>
+      <trans-unit id="tx-taxi.global.terms" datatype="html"><source>Terms of Service</source>
+        <target>Nutzungsbedingungen</target></trans-unit>
+      <trans-unit id="tx-taxi.global.trademark" datatype="html"><source>Trademark &amp; Attribution</source>
+        <target>Marken und Zuordnung</target></trans-unit>
     </body>
   </file>
 </xliff>

@@ -11771,6 +11771,81 @@
       <trans-unit id="cd5cc2df88b93ea511b92b6991888c15e498671d" datatype="html"><source>Dash Price</source><target>Prix du Dash</target></trans-unit>
       <trans-unit id="8c0cf6b640fcebca1958a22df6ebe52aee9f2fc5" datatype="html"><source>DASH/block</source><target>DASH/bloc</target></trans-unit>
       <trans-unit id="tx-taxi.global.tagline" datatype="html"><source>Dash blocks, fees, and mempool activity</source><target>Blocs, frais et activité du mempool Dash</target></trans-unit>
+      <trans-unit id="tx-taxi.about-description" datatype="html"><source>Explore Dash blocks, transactions, addresses and mining activity with dash.tx.taxi.</source><target>Explorez les blocs, transactions, adresses et activités de minage Dash avec dash.tx.taxi.</target></trans-unit>
+      <trans-unit id="tx-taxi.about-units" datatype="html"><source>Amounts are shown in DASH, duffs or your selected fiat currency. One DASH equals 100,000,000 duffs. Transaction sizes use bytes and fee rates use duff/B.</source><target>Les montants sont affichés en DASH, en duffs ou dans la devise choisie. Un DASH équivaut à 100 000 000 duffs. Les tailles de transaction sont en octets et les taux de frais en duff/B.</target></trans-unit>
+      <trans-unit id="tx-taxi.filters.title" datatype="html"><source>Transaction filters</source><target>Filtres de transactions</target></trans-unit>
+      <trans-unit id="tx-taxi.calculator.current-price" datatype="html"><source>Current fiat price </source><target>Prix fiduciaire actuel </target></trans-unit>
+      <trans-unit id="tx-taxi.calculator.received" datatype="html"><source>· received </source><target>· reçu </target></trans-unit>
+      <trans-unit id="tx-taxi.calculator.closing-price" datatype="html"><source>Fiat daily closing price </source><target>Cours de clôture quotidien en devise </target></trans-unit>
+      <trans-unit id="tx-taxi.calculator.waiting-price" datatype="html"><source> Waiting for price feed... </source><target> En attente du flux de prix… </target></trans-unit>
+      <trans-unit id="tx-taxi.difficulty.dash-network" datatype="html"><source>Dash Network</source><target>Réseau Dash</target></trans-unit>
+      <trans-unit id="tx-taxi.difficulty.recent-aria" datatype="html"><source>Recent block difficulty</source><target>Difficulté des blocs récents</target></trans-unit>
+      <trans-unit id="tx-taxi.difficulty.current-difficulty" datatype="html"><source>Current difficulty</source><target>Difficulté actuelle</target></trans-unit>
+      <trans-unit id="tx-taxi.difficulty.recent-block-interval" datatype="html"><source>Recent block interval</source><target>Intervalle récent entre les blocs</target></trans-unit>
+      <trans-unit id="tx-taxi.difficulty.coinbase-outputs" datatype="html"><source>Coinbase outputs</source><target>Sorties Coinbase</target></trans-unit>
+      <trans-unit id="tx-taxi.difficulty.annual-subsidy-reduction" datatype="html"><source>Annual subsidy reduction</source><target>Réduction annuelle de la subvention</target></trans-unit>
+      <trans-unit id="tx-taxi.difficulty.waiting-blocks" datatype="html"><source>Waiting for block data</source><target>En attente des données de blocs</target></trans-unit>
+      <trans-unit id="tx-taxi.currency-label" datatype="html"><source>Currency</source><target>Devise</target></trans-unit>
+      <trans-unit id="tx-taxi.language-label" datatype="html"><source>Language</source><target>Langue</target></trans-unit>
+      <trans-unit id="tx-taxi.provider.delayed" datatype="html"><source>Updates delayed.</source><target>Mises à jour retardées.</target></trans-unit>
+      <trans-unit id="tx-taxi.provider.partial" datatype="html"><source>Some data is unavailable.</source><target>Certaines données sont indisponibles.</target></trans-unit>
+      <trans-unit id="tx-taxi.provider.retry" datatype="html"><source>Unavailable. Retrying.</source><target>Indisponible. Nouvelle tentative.</target></trans-unit>
+      <trans-unit id="tx-taxi.mining.coinbase-outputs" datatype="html"><source>Coinbase outputs</source><target>Sorties Coinbase</target></trans-unit>
+      <trans-unit id="tx-taxi.mining.merkle-branches" datatype="html"><source>Merkle Branches</source><target>Branches de Merkle</target></trans-unit>
+      <trans-unit id="tx-taxi.platform-withdrawal" datatype="html"><source>Platform credit pool withdrawal. This special transaction has no Core inputs; the outputs below receive funds unlocked from Platform.</source><target>Retrait du pool de crédits Platform. Cette transaction spéciale ne comporte aucune entrée Core ; les sorties ci-dessous reçoivent les fonds débloqués depuis Platform.</target></trans-unit>
+      <trans-unit id="tx-taxi.dash-transaction-type" datatype="html"><source>Dash transaction type</source><target>Type de transaction Dash</target></trans-unit>
+      <trans-unit id="tx-taxi.dash-platform-withdrawal" datatype="html"><source>Platform withdrawal</source><target>Retrait Platform</target></trans-unit>
+      <trans-unit id="tx-taxi.dash-quorum-commitment" datatype="html"><source>Quorum commitment</source><target>Engagement de quorum</target></trans-unit>
+      <trans-unit id="tx-taxi.dash-classic-transfer" datatype="html"><source>Classic transfer</source><target>Transfert classique</target></trans-unit>
+      <trans-unit id="tx-taxi.dash-locked" datatype="html"><source>Locked</source><target>Verrouillé</target></trans-unit>
+      <trans-unit id="tx-taxi.dash-not-reported" datatype="html"><source>Not reported</source><target>Non communiqué</target></trans-unit>
+      <trans-unit id="tx-taxi.median-rate" datatype="html"><source>Median rate</source><target>Taux médian</target></trans-unit>
+      <trans-unit id="tx-taxi.view-transactions" datatype="html"><source>View transactions</source><target>Voir les transactions</target></trans-unit>
+      <trans-unit id="tx-taxi.no-recent" datatype="html"><source>No recent transactions.</source><target>Aucune transaction récente.</target></trans-unit>
+      <trans-unit id="tx-taxi.retrying" datatype="html"><source>Unavailable. Retrying…</source><target>Indisponible. Nouvelle tentative…</target></trans-unit>
+      <trans-unit id="tx-taxi.loading-blocks" datatype="html"><source>Loading blocks…</source><target>Chargement des blocs…</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.sections-aria" datatype="html"><source>Documentation sections</source><target>Sections de la documentation</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.on-page" datatype="html"><source>On this page</source><target>Sur cette page</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.overview" datatype="html"><source>What this explorer covers</source><target>Contenu de cet explorateur</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.denomination" datatype="html"><source>Denomination</source><target>Dénomination</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.fee-display" datatype="html"><source>Fee display</source><target>Affichage des frais</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.interval" datatype="html"><source>Target block interval</source><target>Intervalle cible des blocs</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.interval-value" datatype="html"><source>about 2.5 minutes</source><target>environ 2,5 minutes</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.confirmations" datatype="html"><source>Confirmations, InstantSend, and ChainLocks</source><target>Confirmations, InstantSend et ChainLocks</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.coverage" datatype="html"><source>Data coverage and limits</source><target>Couverture et limites des données</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.special" datatype="html"><source>Dash special transactions</source><target>Transactions spéciales Dash</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.sources" datatype="html"><source>Protocol references</source><target>Références du protocole</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.core-features" datatype="html"><source>Dash Core features</source><target>Fonctionnalités de Dash Core</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.sources-instant" datatype="html"><source> describes InstantSend and ChainLocks. </source><target> décrit InstantSend et ChainLocks. </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.core-transactions" datatype="html"><source>Dash Core transaction reference</source><target>Référence des transactions Dash Core</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.sources-formats" datatype="html"><source> covers transaction formats and special transaction data.</source><target> décrit les formats et données de transactions spéciales.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.rest-intro" datatype="html"><source>The API is available on the same origin at </source><target>L’API est disponible sur la même origine à </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.headers-intro" datatype="html"><source>Responses include </source><target>Les réponses comprennent </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.tip" datatype="html"><source>Get the current tip</source><target>Obtenir le sommet actuel</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.height-hash" datatype="html"><source>Get a block hash from a height</source><target>Obtenir le hash d’un bloc à partir de sa hauteur</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.block-details" datatype="html"><source>Get block data and transactions</source><target>Obtenir les données et transactions d’un bloc</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.outspends" datatype="html"><source>Get outspends for several transactions</source><target>Obtenir les dépenses de sorties pour plusieurs transactions</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.batch-limit" datatype="html"><source>The gateway accepts at most 25 transaction IDs in this batch.</source><target>La passerelle accepte au maximum 25 identifiants de transaction par lot.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.addresses" datatype="html"><source>Addresses and indexed history</source><target>Adresses et historique indexé</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.address-history" datatype="html"><source>Page through address transactions</source><target>Parcourir les transactions d’une adresse</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.live" datatype="html"><source>Observed live data</source><target>Données observées en direct</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.recent" datatype="html"><source>Recent notification sample</source><target>Échantillon récent de notifications</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.snapshots" datatype="html"><source>Snapshots, prices, and health</source><target>Instantanés, prix et état</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.ws" datatype="html"><source>WebSocket stream</source><target>Flux WebSocket</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.ws-events" datatype="html"><source>What the stream can contain</source><target>Contenu possible du flux</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.guide-title" datatype="html"><source>Dash Explorer Guide</source><target>Guide de l’explorateur Dash</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.guide-description" datatype="html"><source>Dash explorer coverage, confirmations, special transactions, and data limits.</source><target>Couverture de l’explorateur Dash, confirmations, transactions spéciales et limites des données.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.side-overview" datatype="html"><source>Overview</source><target>Vue d’ensemble</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.side-confirmations" datatype="html"><source>Confirmations</source><target>Confirmations</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.side-coverage" datatype="html"><source>Coverage</source><target>Couverture</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.side-special" datatype="html"><source>Special transactions</source><target>Transactions spéciales</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.side-sources" datatype="html"><source>Sources</source><target>Sources</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.rest-title" datatype="html"><source>Dash REST API</source><target>API REST Dash</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.rest-description" datatype="html"><source>Read-only REST API documentation for dash.tx.taxi.</source><target>Documentation de l’API REST en lecture seule de dash.tx.taxi.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.side-live" datatype="html"><source>Live data</source><target>Données en direct</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.ws-title" datatype="html"><source>Dash WebSocket API</source><target>API WebSocket Dash</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.ws-description" datatype="html"><source>WebSocket documentation for observed Dash explorer updates.</source><target>Documentation WebSocket des mises à jour observées par l’explorateur Dash.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.side-events" datatype="html"><source>Events</source><target>Événements</target></trans-unit>
     </body>
   </file>
 </xliff>

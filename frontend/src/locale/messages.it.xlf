@@ -13272,6 +13272,7 @@
       <trans-unit id="tx-taxi.legal.dash" datatype="html"><source>Dash</source><target>Dash</target></trans-unit>
       <trans-unit id="ebd9ce73cf9f3c00c181f3f40d2614c848595604" datatype="html"><source>duff/B</source><target>duff/B</target></trans-unit>
       <trans-unit id="19fcdf824e2b1d8fe6b891cad79ca1f369a15e55" datatype="html"><source>duff/B</source><target>duff/B</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.denomination-value" datatype="html"><source>1 DASH = 100,000,000 duffs</source><target>1 DASH = 100.000.000 duff</target></trans-unit>
     </body>
   </file>
 </xliff>

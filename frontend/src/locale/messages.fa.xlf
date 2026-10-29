@@ -11594,6 +11594,11 @@
       <trans-unit id="tx-taxi.global.privacy" datatype="html"><source>Privacy Policy</source>
         <target>سیاست حریم‌خصوصی</target>
       </trans-unit>
+      <trans-unit id="tx-taxi.seo.privacy.title" datatype="html"><source>Privacy Policy</source><target>سیاست حریم‌خصوصی</target></trans-unit>
+      <trans-unit id="tx-taxi.global.open" datatype="html"><source>Open</source><target>باز</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.terms.title" datatype="html"><source>Terms of Service</source><target>شرایط خدمات</target></trans-unit>
+      <trans-unit id="tx-taxi.footer-mining" datatype="html"><source>Mining Dashboard</source><target>پیشخوان استخراج</target></trans-unit>
+      <trans-unit id="taxi.filter.inscription" datatype="html"><source>Inscription</source><target>کتیبه</target></trans-unit>
     </body>
   </file>
 </xliff>

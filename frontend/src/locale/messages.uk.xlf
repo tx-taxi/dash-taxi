@@ -11408,6 +11408,10 @@
       <trans-unit id="tx-taxi.global.privacy" datatype="html"><source>Privacy Policy</source>
         <target>Політика конфіденційності</target>
       </trans-unit>
+      <trans-unit id="tx-taxi.seo.privacy.title" datatype="html"><source>Privacy Policy</source><target>Політика конфіденційності</target></trans-unit>
+      <trans-unit id="tx-taxi.global.open" datatype="html"><source>Open</source><target>Відкритий</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.terms.title" datatype="html"><source>Terms of Service</source><target>Умови використання</target></trans-unit>
+      <trans-unit id="tx-taxi.footer-mining" datatype="html"><source>Mining Dashboard</source><target>Панель майнінгу</target></trans-unit>
     </body>
   </file>
 </xliff>

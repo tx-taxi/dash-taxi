@@ -10797,6 +10797,7 @@
       <trans-unit id="tx-taxi.global.terms" datatype="html"><source>Terms of Service</source>
         <target>Condicions del servei</target>
       </trans-unit>
+      <trans-unit id="tx-taxi.seo.terms.title" datatype="html"><source>Terms of Service</source><target>Condicions del servei</target></trans-unit>
     </body>
   </file>
 </xliff>

@@ -11078,6 +11078,9 @@
       <trans-unit id="tx-taxi.global.privacy" datatype="html"><source>Privacy Policy</source>
         <target>Კონფიდენციალურობის პოლიტიკა</target>
       </trans-unit>
+      <trans-unit id="tx-taxi.seo.privacy.title" datatype="html"><source>Privacy Policy</source><target>Კონფიდენციალურობის პოლიტიკა</target></trans-unit>
+      <trans-unit id="tx-taxi.global.open" datatype="html"><source>Open</source><target>გახსნა</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.terms.title" datatype="html"><source>Terms of Service</source><target>Მომსახურების პირობები</target></trans-unit>
     </body>
   </file>
 </xliff>

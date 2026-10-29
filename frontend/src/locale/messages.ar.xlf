@@ -11583,6 +11583,11 @@
       <trans-unit id="tx-taxi.global.privacy" datatype="html"><source>Privacy Policy</source>
         <target>سياسة الخصوصية</target>
       </trans-unit>
+      <trans-unit id="tx-taxi.seo.privacy.title" datatype="html"><source>Privacy Policy</source><target>سياسة الخصوصية</target></trans-unit>
+      <trans-unit id="tx-taxi.global.open" datatype="html"><source>Open</source><target>مفتوحة</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.terms.title" datatype="html"><source>Terms of Service</source><target>شروط الخدمة</target></trans-unit>
+      <trans-unit id="tx-taxi.footer-mining" datatype="html"><source>Mining Dashboard</source><target>لوحة التعدين</target></trans-unit>
+      <trans-unit id="taxi.filter.inscription" datatype="html"><source>Inscription</source><target>نقش</target></trans-unit>
     </body>
   </file>
 </xliff>

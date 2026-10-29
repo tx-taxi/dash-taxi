@@ -11092,6 +11092,9 @@
       <trans-unit id="tx-taxi.global.privacy" datatype="html"><source>Privacy Policy</source>
         <target>Полиса за Приватност</target>
       </trans-unit>
+      <trans-unit id="tx-taxi.seo.privacy.title" datatype="html"><source>Privacy Policy</source><target>Полиса за Приватност</target></trans-unit>
+      <trans-unit id="tx-taxi.global.open" datatype="html"><source>Open</source><target>Отворен</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.terms.title" datatype="html"><source>Terms of Service</source><target>Услови на Користење</target></trans-unit>
     </body>
   </file>
 </xliff>

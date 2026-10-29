@@ -10795,6 +10795,8 @@
       <trans-unit id="tx-taxi.global.privacy" datatype="html"><source>Privacy Policy</source>
         <target>Pravila o Privatnosti</target>
         </trans-unit>
+      <trans-unit id="tx-taxi.seo.privacy.title" datatype="html"><source>Privacy Policy</source><target>Pravila o Privatnosti</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.terms.title" datatype="html"><source>Terms of Service</source><target>Uslovi Korišćenja</target></trans-unit>
     </body>
   </file>
 </xliff>

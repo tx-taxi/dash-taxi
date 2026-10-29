@@ -11359,6 +11359,10 @@
       <trans-unit id="tx-taxi.global.privacy" datatype="html"><source>Privacy Policy</source>
         <target>นโยบายความเป็นส่วนตัว</target>
       </trans-unit>
+      <trans-unit id="tx-taxi.seo.privacy.title" datatype="html"><source>Privacy Policy</source><target>นโยบายความเป็นส่วนตัว</target></trans-unit>
+      <trans-unit id="tx-taxi.global.open" datatype="html"><source>Open</source><target>เปิด</target></trans-unit>
+      <trans-unit id="tx-taxi.seo.terms.title" datatype="html"><source>Terms of Service</source><target>เงื่อนไขการให้บริการ</target></trans-unit>
+      <trans-unit id="tx-taxi.footer-mining" datatype="html"><source>Mining Dashboard</source><target>แดชบอร์ดการขุด</target></trans-unit>
     </body>
   </file>
 </xliff>

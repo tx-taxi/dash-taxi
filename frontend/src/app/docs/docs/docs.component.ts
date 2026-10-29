@@ -36,11 +36,16 @@ export class DocsComponent implements OnInit, OnDestroy {
     document.querySelector<HTMLElement>('html').style.scrollBehavior = 'auto';
   }
 
-  scrollTo(event: Event, id: string): void {
+  anchorHref(id: string): string {
+    return `${document.location.pathname}${document.location.search}#${id}`;
+  }
+
+  scrollTo(event: MouseEvent, id: string): void {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     const target = document.getElementById(id);
     if (target) window.scrollTo({ top: target.offsetTop - (window.innerWidth <= 992 ? 120 : 80), behavior: 'smooth' });
-    window.history.replaceState({}, '', `${this.router.url.split('#')[0]}#${id}`);
+    window.history.replaceState({}, '', this.anchorHref(id));
   }
 
   private updatePage(): void {

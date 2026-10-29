@@ -49,9 +49,9 @@ export class SeoService {
     });
   }
 
-  private activeLocale(): 'es' | 'fr' | 'de' | undefined {
-    const match = window.location.pathname.match(/^\/(es|fr|de)(?:\/|$)/);
-    return match?.[1] as 'es' | 'fr' | 'de' | undefined;
+  private activeLocale(): 'es' | 'fr' | 'de' | 'it' | undefined {
+    const match = window.location.pathname.match(/^\/(es|fr|de|it)(?:\/|$)/);
+    return match?.[1] as 'es' | 'fr' | 'de' | 'it' | undefined;
   }
 
   private documentMetadata() {
@@ -116,7 +116,7 @@ export class SeoService {
 
   getTitle(): string {
     const locale = this.activeLocale();
-    if (locale && !this.network) return this.baseTitle + ' - ' + ({es:'Explorador de Dash',fr:'Explorateur Dash',de:'Dash-Explorer'}[locale]);
+    if (locale && !this.network) return this.baseTitle + ' - ' + ({es:'Explorador de Dash',fr:'Explorateur Dash',de:'Dash-Explorer',it:'Esploratore Dash'}[locale]);
     if (this.network === 'testnet')
       {return this.baseTitle + ' - Bitcoin Testnet3';}
     if (this.network === 'testnet4')
@@ -132,7 +132,7 @@ export class SeoService {
 
   getDescription(): string {
     const locale = this.activeLocale();
-    if (locale) return ({es:'Explora bloques, transacciones, direcciones, comisiones y actividad de minería de Dash.',fr:'Explorez les blocs, transactions, adresses, frais et activités de minage Dash.',de:'Erkunden Sie Dash-Blöcke, Transaktionen, Adressen, Gebühren und Mining-Aktivität.'})[locale];
+    if (locale) return ({es:'Explora bloques, transacciones, direcciones, comisiones y actividad de minería de Dash.',fr:'Explorez les blocs, transactions, adresses, frais et activités de minage Dash.',de:'Erkunden Sie Dash-Blöcke, Transaktionen, Adressen, Gebühren und Mining-Aktivität.',it:'Esplora blocchi, transazioni, indirizzi, commissioni e attività di mining Dash.'})[locale];
     return this.documentMetadata()?.description || this.baseDescription;
   }
 

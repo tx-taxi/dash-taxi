@@ -35,13 +35,13 @@
     hubLocaleLoad = fetch(hubOrigin + '/api/v1/locale-capabilities', { credentials: 'omit', redirect: 'error', signal: controller.signal })
       .then(response => response.ok ? response.json() : null)
       .then(data => {
-        hubAvailableLocales = data?.version === 1 && Array.isArray(data?.hosts?.['tx.taxi']) ? data.hosts['tx.taxi'].filter(locale => ['es', 'fr', 'de'].includes(locale)) : [];
+        hubAvailableLocales = data?.version === 1 && Array.isArray(data?.hosts?.['tx.taxi']) ? data.hosts['tx.taxi'].filter(locale => ['es', 'fr', 'de', 'it'].includes(locale)) : [];
         if (hubAvailableLocales.length) window.dispatchEvent(new Event('txTaxiLocaleCapabilities'));
       }).catch(() => {}).finally(() => clearTimeout(timeout));
   } catch {}
   // Keep the explicit locale when the hub advertises it.
   const localizedHubPath = () => {
-    const explicit = location.pathname.match(/^\/(en|es|fr|de)(?:\/|$)/i)?.[1]?.toLowerCase();
+    const explicit = location.pathname.match(/^\/(en|es|fr|de|it)(?:\/|$)/i)?.[1]?.toLowerCase();
     let saved = '';
     try { saved = decodeURIComponent(document.cookie.split(';').map(item => item.trim()).find(item => item.startsWith('txtaxi_language='))?.slice('txtaxi_language='.length) || ''); } catch {}
     const locale = explicit || saved;
@@ -192,8 +192,8 @@
       const dashboard = isDashboard();
       const root = dashboardPath();
       const language = document.documentElement.lang.toLowerCase().split('-')[0];
-      const hubLabels = { es: 'Volver a tx.taxi', fr: 'Retour à tx.taxi', de: 'Zurück zu tx.taxi' };
-      const dashboardLabels = { es: `Panel de ${sourceName}`, fr: `Tableau de bord ${sourceName}`, de: `${sourceName}-Übersicht` };
+      const hubLabels = { es: 'Volver a tx.taxi', fr: 'Retour à tx.taxi', de: 'Zurück zu tx.taxi', it: 'Torna a tx.taxi' };
+      const dashboardLabels = { es: `Panel de ${sourceName}`, fr: `Tableau de bord ${sourceName}`, de: `${sourceName}-Übersicht`, it: `Dashboard ${sourceName}` };
       const label = dashboard ? (hubLabels[language] || 'Back to tx.taxi') : (dashboardLabels[language] || `${sourceName} dashboard`);
       document.querySelectorAll('a.navbar-brand, a.chain-divider-mark').forEach(link => {
         link.href = dashboard ? hubOrigin + localizedHubPath() : root;

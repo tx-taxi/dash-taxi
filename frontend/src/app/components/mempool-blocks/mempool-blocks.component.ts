@@ -29,6 +29,7 @@ import { ThemeService } from '@app/services/theme.service';
 })
 export class MempoolBlocksComponent implements OnInit, OnChanges, OnDestroy {
   blockValueDetails = blockValueDetails;
+  pendingTitle = $localize`:@@tx-taxi.pending-observed-title:Observed pending transactions — a node sample, not a next-block prediction`;
   @Input() minimal: boolean = false;
   @Input() blockWidth: number = 125;
   @Input() containerWidth: number = null;

@@ -11915,6 +11915,8 @@
       <trans-unit id="taxi.timezone.plus13" datatype="html"><source>Tonga Time (TOT)</source><target>Hora de Tonga (TOT)</target></trans-unit>
       <trans-unit id="taxi.timezone.plus14" datatype="html"><source>Line Islands Time (LINT)</source><target>Hora de las islas de la Línea (LINT)</target></trans-unit>
       <trans-unit id="taxi.filter.inscription" datatype="html"><source>Inscription</source><target>Inscripción</target></trans-unit>
+      <trans-unit id="tx-taxi.intro-eyebrow-explorer" datatype="html"><source><x id="CHAIN" equiv-text="this.chainName"/> explorer</source><target>Explorador de <x id="CHAIN" equiv-text="this.chainName"/></target></trans-unit>
+      <trans-unit id="tx-taxi.intro-eyebrow-docs" datatype="html"><source><x id="CHAIN" equiv-text="this.chainName"/> documentation</source><target>Documentación de <x id="CHAIN" equiv-text="this.chainName"/></target></trans-unit>
     </body>
   </file>
 </xliff>

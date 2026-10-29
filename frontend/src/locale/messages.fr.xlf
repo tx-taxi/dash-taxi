@@ -2936,8 +2936,8 @@
         <note priority="1" from="description">mining.avg-block-fee-1m</note>
       </trans-unit>
       <trans-unit id="meta.description.bitcoin.graphs.block-fee-rates" datatype="html">
-        <source>See Bitcoin feerates visualized over time, including minimum and maximum feerates per block along with feerates at various percentiles.</source>
-        <target>Consultez les tarifs Bitcoin visualisés au fil du temps, y compris les tarifs minimum et maximum par bloc ainsi que les tarifs à différents centiles.</target>
+        <source>See Dash feerates visualized over time, including minimum and maximum feerates per block along with feerates at various percentiles.</source>
+        <target>Consultez l’évolution des taux de frais Dash, y compris les taux minimaux et maximaux par bloc ainsi que différents centiles.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/block-fee-rates-graph/block-fee-rates-graph.component.ts</context>
           <context context-type="linenumber">74</context>
@@ -2977,8 +2977,8 @@
         <note priority="1" from="description">mining.block-fees</note>
       </trans-unit>
       <trans-unit id="meta.description.bitcoin.graphs.block-fees" datatype="html">
-        <source>See the average mining fees earned per Bitcoin block visualized in BTC and USD over time.</source>
-        <target>Consultez les frais de minage moyens gagnés par bloc Bitcoin visualisés en BTC et en USD au fil du temps.</target>
+        <source>See actual transaction fees for the latest observed Dash blocks, denominated in DASH.</source>
+        <target>Consultez les frais de transaction réels des derniers blocs Dash observés, exprimés en DASH.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/block-fees-graph/block-fees-graph.component.ts</context>
           <context context-type="linenumber">71</context>
@@ -3042,8 +3042,8 @@
         <note priority="1" from="description">mining.block-fees-subsidy-subsidy</note>
       </trans-unit>
       <trans-unit id="meta.description.bitcoin.graphs.block-fees-subsidy" datatype="html">
-        <source>See the mining fees earned per Bitcoin block compared to the Bitcoin block subsidy, visualized in BTC and USD over time.</source>
-        <target>Consultez les frais par bloc Bitcoin par rapport à la subvention du bloc Bitcoin, visualisés en BTC et en USD au fil du temps.</target>
+        <source>See the mining fees earned per Dash block compared to the Dash block subsidy, visualized in DASH and USD over time.</source>
+        <target>Comparez les frais de minage gagnés par bloc Dash à la subvention de bloc Dash, représentés en DASH et USD au fil du temps.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/block-fees-subsidy-graph/block-fees-subsidy-graph.component.ts</context>
           <context context-type="linenumber">80</context>
@@ -3480,8 +3480,8 @@
         <note priority="1" from="description">mining.block-rewards</note>
       </trans-unit>
       <trans-unit id="meta.description.bitcoin.graphs.block-rewards" datatype="html">
-        <source>See Bitcoin block rewards in BTC and USD visualized over time. Block rewards are the total funds miners earn from the block subsidy and fees.</source>
-        <target>Consultez les récompenses des blocs Bitcoin en BTC et en USD visualisées au fil du temps. Les récompenses globales correspondent au total des fonds que les mineurs gagnent grâce à la récompense de bloc et aux frais.</target>
+        <source>See Dash block rewards in DASH and USD visualized over time. Block rewards are the total funds miners earn from the block subsidy and fees.</source>
+        <target>Consultez l’évolution des récompenses de bloc Dash en DASH et USD. Elles correspondent au total de la subvention de bloc et des frais gagnés par les mineurs.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/block-rewards-graph/block-rewards-graph.component.ts</context>
           <context context-type="linenumber">69</context>
@@ -3505,8 +3505,8 @@
         <note priority="1" from="description">mining.block-sizes-weights</note>
       </trans-unit>
       <trans-unit id="meta.description.bitcoin.graphs.block-sizes" datatype="html">
-        <source>See Bitcoin block sizes (MB) and block weights (weight units) visualized over time.</source>
-        <target>Consultez la taille des blocs Bitcoin (Mo) et le poids des blocs (unités de poids) visualisés au fil du temps.</target>
+        <source>See Dash block sizes (MB) and block weights (weight units) visualized over time.</source>
+        <target>Consultez l’évolution des tailles des blocs Dash (Mo) et de leur poids (unités de poids).</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/block-sizes-weights-graph/block-sizes-weights-graph.component.ts</context>
           <context context-type="linenumber">66</context>
@@ -3661,8 +3661,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="meta.description.bitcoin.block" datatype="html">
-        <source>See size, weight, fee range, included transactions, audit (expected v actual), and more for Bitcoin<x id="PH" equiv-text="seoDescriptionNetwork(this.stateService.network)"/> block <x id="BLOCK_HEIGHT" equiv-text="block.height"/> (<x id="BLOCK_ID" equiv-text="block.id"/>).</source>
-        <target>Consultez la taille, le poids, la fourchette de frais, les transactions incluses, l'audit (attendu et réel) et bien plus encore pour le bloc Bitcoin<x id="PH" equiv-text="seoDescriptionNetwork(this.stateService.network)"/> <x id="BLOCK_HEIGHT" equiv-text="block.height"/> ( <x id="BLOCK_ID" equiv-text="block.id"/>).</target>
+        <source>See size, weight, fee range, included transactions, audit (expected v actual), and more for Dash<x id="PH" equiv-text="seoDescriptionNetwork(this.stateService.network)" /> block <x id="BLOCK_HEIGHT" equiv-text="block.height" /> (<x id="BLOCK_ID" equiv-text="block.id" />).</source>
+        <target>Consultez la taille, le poids, la fourchette des frais, les transactions incluses, l’audit (attendu ou réel) et plus encore pour le bloc Dash<x id="PH" equiv-text="seoDescriptionNetwork(this.stateService.network)" /> <x id="BLOCK_HEIGHT" equiv-text="block.height" /> (<x id="BLOCK_ID" equiv-text="block.id" />).</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/block-view/block-view.component.ts</context>
           <context context-type="linenumber">115</context>
@@ -6098,8 +6098,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="meta.description.mining.dashboard" datatype="html">
-        <source>Get real-time Bitcoin mining stats like hashrate, difficulty adjustment, block rewards, pool dominance, and more.</source>
-        <target>Obtenez des statistiques minières Bitcoin en temps réel telles que le taux de hachage, l'ajustement de la difficulté, les récompenses de bloc, la domination du pool, etc.</target>
+        <source>Inspect recent Dash block rewards, reported mining pools, difficulty, and transaction fees.</source>
+        <target>Consultez les récompenses des blocs Dash récents, les pools de minage signalés, la difficulté et les frais de transaction.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/mining-dashboard/mining-dashboard.component.ts</context>
           <context context-type="linenumber">31</context>
@@ -6698,16 +6698,16 @@
         <note priority="1" from="description">price-chart.percent-change</note>
       </trans-unit>
       <trans-unit id="price-chart.title" datatype="html">
-        <source>Bitcoin Price</source>
-        <target>Prix du Bitcoin</target>
+        <source>Dash Price</source>
+        <target>Prix du Dash</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/price-chart/price-chart.component.ts</context>
           <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="price-chart.description" datatype="html">
-        <source>See the Bitcoin price in USD visualized over time.</source>
-        <target>Consultez le prix du Bitcoin en USD visualisé au fil du temps.</target>
+        <source>See the Dash price in USD visualized over time.</source>
+        <target>Consultez l’évolution du prix du Dash en USD.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/price-chart/price-chart.component.ts</context>
           <context context-type="linenumber">78</context>
@@ -6737,7 +6737,7 @@
       </trans-unit>
       <trans-unit id="7e93f7285e22e5a3c58cdde2205d4d2b5bfc079c" datatype="html">
         <source>Transaction hex</source>
-        <target>Transaction hex</target>
+        <target>Transaction hexadécimale</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/push-transaction/push-transaction.component.html</context>
           <context context-type="linenumber">6</context>
@@ -11846,6 +11846,116 @@
       <trans-unit id="tx-taxi.docs.ws-title" datatype="html"><source>Dash WebSocket API</source><target>API WebSocket Dash</target></trans-unit>
       <trans-unit id="tx-taxi.docs.ws-description" datatype="html"><source>WebSocket documentation for observed Dash explorer updates.</source><target>Documentation WebSocket des mises à jour observées par l’explorateur Dash.</target></trans-unit>
       <trans-unit id="tx-taxi.docs.side-events" datatype="html"><source>Events</source><target>Événements</target></trans-unit>
+      <trans-unit id="ae86a84f4a64e55f68dfcc7e7c45da21181dcba4" datatype="html"><source>duffs</source>
+        <target>duffs</target></trans-unit>
+      <trans-unit id="graphs.blockFees.feesFiat" datatype="html"><source>Fees <x id="currency" equiv-text="this.currency" /></source>
+        <target>Frais <x id="currency" equiv-text="this.currency" /></target></trans-unit>
+      <trans-unit id="graphs.blockFees.avgBlock" datatype="html"><source>* On average around block <x id="block" equiv-text="data[0].data[2]" /></source>
+        <target>* En moyenne autour du bloc <x id="block" equiv-text="data[0].data[2]" /></target></trans-unit>
+      <trans-unit id="073d34e9f2d089f425595cf29279e5858fdeb67a" datatype="html"><source>Coinbase outputs</source>
+        <target>Sorties coinbase</target></trans-unit>
+      <trans-unit id="7c3923eac2a686c5860459636998622055d1583e" datatype="html"><source> The entered amount exceeds this calculator’s supported range. </source>
+        <target> Le montant saisi dépasse la plage prise en charge par cette calculatrice. </target></trans-unit>
+      <trans-unit id="tx-taxi.difficulty.block-tooltip" datatype="html"><source>Block <x id="HEIGHT" equiv-text="height" /> · <x id="DIFFICULTY" equiv-text="difficulty ?? ''" /></source>
+        <target>Bloc <x id="HEIGHT" equiv-text="height" /> · <x id="DIFFICULTY" equiv-text="difficulty ?? ''" /></target></trans-unit>
+      <trans-unit id="490cfb3ab44eb8f287ad00d379f64d77aab5a537" datatype="html"><source>Maximum fee rate (duff/B)</source>
+        <target>Taux de frais maximal (duff/B)</target></trans-unit>
+      <trans-unit id="a5c3bb57620832141bf6c51d7344e69af366c7e8" datatype="html"><source><x id="INTERPOLATION" equiv-text="new transactions&lt;/span&gt; &lt;/button&gt;  &lt;div [class.container-xl]=&quot;!widget&quot; [cla" /> new transactions</source>
+        <target><x id="INTERPOLATION" equiv-text="new transactions&lt;/span&gt; &lt;/button&gt;  &lt;div [class.container-xl]=&quot;!widget&quot; [cla" /> nouvelles transactions</target></trans-unit>
+      <trans-unit id="meta.description.recent-transactions" datatype="html"><source>See the most recent transactions on the Dash<x id="PH" equiv-text="seoDescriptionNetwork(this.stateService.network)" /> network, updated in real-time.</source>
+        <target>Consultez les dernières transactions du réseau Dash<x id="PH" equiv-text="seoDescriptionNetwork(this.stateService.network)" />, actualisées en temps réel.</target></trans-unit>
+      <trans-unit id="281eecfb5f2b3af763ab501804ed5f1824d25358" datatype="html"><source>duffs/tx</source>
+        <target>duffs/tx</target></trans-unit>
+      <trans-unit id="tx-taxi.search.direct-example" datatype="html"><source>tx.taxi/[your search]</source>
+        <target>tx.taxi/[votre recherche]</target></trans-unit>
+      <trans-unit id="tx-taxi.search.open-explorer" datatype="html"><source>Open <x id="name" equiv-text="name" /></source>
+        <target>Ouvrir <x id="name" equiv-text="name" /></target></trans-unit>
+      <trans-unit id="tx-taxi.search.open-explorer-tab" datatype="html"><source>Open <x id="name" equiv-text="name" /> in a new tab</source>
+        <target>Ouvrir <x id="name" equiv-text="name" /> dans un nouvel onglet</target></trans-unit>
+      <trans-unit id="tx-taxi.search.switch-explorer" datatype="html"><source>Switch to <x id="name" equiv-text="name" /></source>
+        <target>Passer à <x id="name" equiv-text="name" /></target></trans-unit>
+      <trans-unit id="tx-taxi.search.additional-group" datatype="html"><source><x id="name" equiv-text="name" /> additional explorers</source>
+        <target>Explorateurs supplémentaires de <x id="name" equiv-text="name" /></target></trans-unit>
+      <trans-unit id="tx-taxi.search.hide-one" datatype="html"><source>Hide <x id="count" equiv-text="count" /> additional <x id="name" equiv-text="name" /> option</source>
+        <target>Masquer <x id="count" equiv-text="count" /> option supplémentaire pour <x id="name" equiv-text="name" /></target></trans-unit>
+      <trans-unit id="tx-taxi.search.hide-many" datatype="html"><source>Hide <x id="count" equiv-text="count" /> additional <x id="name" equiv-text="name" /> options</source>
+        <target>Masquer <x id="count" equiv-text="count" /> options supplémentaires pour <x id="name" equiv-text="name" /></target></trans-unit>
+      <trans-unit id="tx-taxi.search.show-one" datatype="html"><source>Show <x id="count" equiv-text="count" /> additional <x id="name" equiv-text="name" /> option</source>
+        <target>Afficher <x id="count" equiv-text="count" /> option supplémentaire pour <x id="name" equiv-text="name" /></target></trans-unit>
+      <trans-unit id="tx-taxi.search.show-many" datatype="html"><source>Show <x id="count" equiv-text="count" /> additional <x id="name" equiv-text="name" /> options</source>
+        <target>Afficher <x id="count" equiv-text="count" /> options supplémentaires pour <x id="name" equiv-text="name" /></target></trans-unit>
+      <trans-unit id="e150d2dcf64710470c7601ca10771997ea2039d2" datatype="html"><source>Mempool by vBytes (duff/Byte)</source>
+        <target>Mempool par vBytes (duff/Byte)</target></trans-unit>
+      <trans-unit id="tx-taxi.legal.dash-desc" datatype="html"><source>Dash is an open network and protocol. References to Dash, DASH, duffs, blocks, transactions, addresses, mining, and InstantSend describe the network data presented by this explorer.</source>
+        <target>Dash est un réseau et un protocole ouverts. Les références à Dash, DASH, duffs, blocs, transactions, adresses, minage et InstantSend décrivent les données réseau présentées par cet explorateur.</target></trans-unit>
+      <trans-unit id="66d4d9dece5ca136e9f81b9ec3198b20d413b6f4" datatype="html"><source>This transaction belongs to a chunk of 1 transaction, with combined effective fee rate <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" /><x id="INTERPOLATION" equiv-text="s.chunkFeerate | feeRounding }}" /> duff/B<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />.</source>
+        <target>Cette transaction appartient à un segment de 1 transaction, au taux effectif de frais combiné de <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" /><x id="INTERPOLATION" equiv-text="s.chunkFeerate | feeRounding }}" /> duff/B<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />.</target></trans-unit>
+      <trans-unit id="33e02343162d357c2de599882cec17d43167fe80" datatype="html"><source>This transaction belongs to a chunk of <x id="INTERPOLATION" equiv-text="{{ clusterPreviewStats.chunkSize }}" /> transactions, with combined effective fee rate <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" /><x id="INTERPOLATION_1" equiv-text="s.chunkFeerate | feeRounding }}" /> duff/B<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />.</source>
+        <target>Cette transaction appartient à un segment de <x id="INTERPOLATION" equiv-text="{{ clusterPreviewStats.chunkSize }}" /> transactions, au taux effectif de frais combiné de <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;" /><x id="INTERPOLATION_1" equiv-text="s.chunkFeerate | feeRounding }}" /> duff/B<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;" />.</target></trans-unit>
+      <trans-unit id="acf9470007b6c76f037bf8aec23fc8d2ba2267a4" datatype="html"><source>In a mempool cluster containing <x id="INTERPOLATION" equiv-text="{{ clusterPreviewStats.otherChunks }}" /> other chunks.</source>
+        <target>Dans un cluster du mempool contenant <x id="INTERPOLATION" equiv-text="{{ clusterPreviewStats.otherChunks }}" /> autres segments.</target></trans-unit>
+      <trans-unit id="eade019a056e158741947f9d4cbe80f888ae575e" datatype="html"><source>Only ~<x id="INTERPOLATION" equiv-text="{{ medianFeeNeeded | feeRounding }}" /> duff/B was needed to get into this block</source>
+        <target>Environ <x id="INTERPOLATION" equiv-text="{{ medianFeeNeeded | feeRounding }}" /> duff/B suffisaient pour entrer dans ce bloc</target></trans-unit>
+      <trans-unit id="42c4e7e707dd271b218de2e925ce05347141ef33" datatype="html"><source><x id="START_PARAGRAPH" ctype="x-p" equiv-text="For those request" /><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="dash.tx.taxi only" />dash.tx.taxi only displays public data about the Dash network.<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;" /> It cannot retrieve funds, resolve wallet issues, reverse transactions, or change confirmation priority.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;" /><x id="START_PARAGRAPH" ctype="x-p" equiv-text="For those request" />For those requests, contact the wallet, exchange, or payment service that created the transaction.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;" /></source>
+        <target><x id="START_PARAGRAPH" ctype="x-p" equiv-text="For those request" /><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="dash.tx.taxi only" />dash.tx.taxi n’affiche que les données publiques du réseau Dash.<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;" /> Il ne peut pas récupérer des fonds, résoudre des problèmes de portefeuille, annuler des transactions ni modifier leur priorité de confirmation.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;" /><x id="START_PARAGRAPH" ctype="x-p" equiv-text="For those request" />Pour ces demandes, contactez le portefeuille, la plateforme d’échange ou le service de paiement qui a créé la transaction.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;" /></target></trans-unit>
+      <trans-unit id="tx-taxi.docs.overview-desc" datatype="html"><source>Search a Dash block height or hash, transaction ID, transparent Dash address, or a supported explorer URL. A 64-character hash can be a block or a transaction, so the search flow keeps a manual chain choice when a result is not uniquely confirmed.</source>
+        <target>Recherchez une hauteur ou une empreinte de bloc Dash, un identifiant de transaction, une adresse Dash transparente ou une URL d’explorateur prise en charge. Une empreinte de 64 caractères peut désigner un bloc ou une transaction ; le choix manuel de la chaîne reste donc disponible lorsqu’un résultat n’est pas confirmé de manière unique.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.confirmations-desc" datatype="html"><source>A confirmation means the transaction is included in a block. Dash targets roughly one block every 2.5 minutes; actual intervals vary. The explorer’s pending list is an observed notification sample, so it does not estimate a confirmation time.</source>
+        <target>Une confirmation signifie que la transaction est incluse dans un bloc. Dash vise environ un bloc toutes les 2,5 minutes ; les intervalles réels varient. La liste des transactions en attente est un échantillon de notifications observées et n’est donc pas une estimation du délai de confirmation.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.instant-desc" datatype="html"><source>InstantSend is a Dash protocol that can lock eligible transactions through quorum consensus before block confirmation. ChainLocks are quorum signatures for blocks that protect the accepted chain against reorganizations. These are protocol concepts: this public API does not expose an authoritative InstantSend or ChainLock status endpoint. Where a transaction page shows an InstantSend label, it is a provider observation, not a substitute for wallet verification.</source>
+        <target>InstantSend est un protocole Dash qui peut verrouiller les transactions éligibles par consensus de quorum avant leur confirmation dans un bloc. Les ChainLocks sont des signatures de quorum pour les blocs qui protègent la chaîne acceptée contre les réorganisations. Ce sont des notions du protocole : cette API publique ne fournit pas de point de terminaison faisant autorité sur l’état InstantSend ou ChainLock. Lorsqu’une page de transaction affiche une étiquette InstantSend, il s’agit d’une observation du fournisseur, qui ne remplace pas la vérification par le portefeuille.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.coverage-desc" datatype="html"><source>Blocks, transactions, address balances, and indexed history come from the configured Dash providers. Address history is cursor-paginated in pages of 25. Transaction values and fees are integer duffs; fees are byte-based because Dash does not use a SegWit weight discount.</source>
+        <target>Les blocs, transactions, soldes d’adresses et historiques indexés proviennent des fournisseurs Dash configurés. L’historique des adresses est paginé par curseur, à raison de 25 éléments par page. Les montants et frais de transaction sont des nombres entiers de duffs ; les frais sont calculés par octet car Dash n’utilise pas la réduction de poids SegWit.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.coverage-pending" datatype="html"><source>The pending panel only includes transactions observed from the provider notification stream after this explorer connected. It is intentionally not represented as the network-wide mempool. Current fiat values use market quotes and, where necessary, daily reference rates; historical values may be unavailable. Provider failures return </source>
+        <target>Le panneau des transactions en attente n’inclut que les transactions observées dans le flux de notifications du fournisseur depuis la connexion de cet explorateur. Il ne représente pas le mempool de l’ensemble du réseau. Les valeurs fiduciaires actuelles utilisent les cours du marché et, si nécessaire, les taux de référence quotidiens ; les valeurs historiques peuvent être indisponibles. En cas de défaillance du fournisseur, la réponse est </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.coverage-missing" datatype="html"><source>; a missing entity returns </source>
+        <target> ; une entité absente renvoie </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.special-desc" datatype="html"><source>Dash Core supports special transactions, including masternode and quorum-related records and Platform withdrawals. A Platform withdrawal can carry its fee in the special payload, so calculating input value minus output value is not reliable for every special transaction. This explorer reads the documented payload fee when it is available and otherwise leaves the fee unavailable.</source>
+        <target>Dash Core prend en charge des transactions spéciales, notamment les enregistrements liés aux masternodes et aux quorums ainsi que les retraits de Platform. Les frais d’un retrait de Platform peuvent figurer dans sa charge utile spéciale ; soustraire les sorties des entrées n’est donc pas fiable pour toutes les transactions spéciales. Cet explorateur lit les frais documentés dans la charge utile lorsqu’ils sont disponibles ; sinon, il les indique comme indisponibles.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.rest-readonly" datatype="html"><source>. It is read-only: it does not broadcast transactions, accept packages, or provide Electrum, Lightning, RBF, or enterprise endpoints.</source>
+        <target>. Elle est en lecture seule : elle ne diffuse pas de transactions, n’accepte pas de paquets et ne fournit pas de points de terminaison Electrum, Lightning, RBF ou entreprise.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.headers-and" datatype="html"><source>, and </source>
+        <target> et </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.headers-end" datatype="html"><source> headers. Treat an observation timestamp as freshness information, not a blockchain timestamp.</source>
+        <target>. Un horodatage d’observation indique la fraîcheur des données, et non l’heure d’un bloc.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.use" datatype="html"><source>Use </source>
+        <target>Utilisez </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.ids-for" datatype="html"><source> for transaction IDs and </source>
+        <target> pour les identifiants de transaction et </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.summary-for" datatype="html"><source> for a bounded complete summary. A summary above 500 transactions reports unavailable instead of returning a partial result as complete.</source>
+        <target> pour un résumé complet limité. Un résumé de plus de 500 transactions est signalé comme indisponible au lieu de présenter un résultat partiel comme complet.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.values" datatype="html"><source>Values, fees, and output amounts are integer duffs. Optional suffixes are </source>
+        <target>Les valeurs, frais et montants des sorties sont des nombres entiers de duffs. Les suffixes facultatifs sont </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.values-and" datatype="html"><source>, and </source>
+        <target> et </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.utxo-desc" datatype="html"><source>The returned confirmed and unconfirmed totals are in duffs. UTXO counts are unavailable from this provider and are returned as </source>
+        <target>Les totaux confirmés et non confirmés renvoyés sont en duffs. Ce fournisseur ne fournit pas le nombre d’UTXO, qui est renvoyé comme </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.cursor" datatype="html"><source>Each page has up to 25 indexed transactions. A cursor that has expired or no longer matches provider history is an error, rather than silently restarting at the first page.</source>
+        <target>Chaque page contient jusqu’à 25 transactions indexées. Un curseur expiré ou qui ne correspond plus à l’historique du fournisseur génère une erreur au lieu de redémarrer silencieusement à la première page.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.recent-intro" datatype="html"><source>Returns up to 100 pending transactions observed since the latest notification connection. It returns </source>
+        <target>Renvoie jusqu’à 100 transactions en attente observées depuis la dernière connexion aux notifications. Renvoie </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.recent-unavailable" datatype="html"><source> while the provider notification stream is unavailable.</source>
+        <target> lorsque le flux de notifications du fournisseur est indisponible.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.prices" datatype="html"><source>Prices are current USD observations. Health describes gateway and provider freshness; it does not attest to transaction finality. The service does not provide a recommended-fee endpoint; use the observed transaction fee rates shown in the explorer without treating them as a confirmation forecast.</source>
+        <target>Les prix sont des observations actuelles en USD. L’état décrit la fraîcheur de la passerelle et des fournisseurs ; il ne garantit pas la finalité des transactions. Le service ne fournit pas de point de terminaison de frais recommandés : utilisez les taux de frais observés dans l’explorateur sans les considérer comme une prévision de confirmation.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.ws-connect-intro" datatype="html"><source>Connect to </source>
+        <target>Connectez-vous à </target></trans-unit>
+      <trans-unit id="tx-taxi.docs.ws-connect-end" datatype="html"><source>. The explorer uses this stream for a bounded initial snapshot and subsequent Dash provider observations. It is not a general Dash Core RPC socket.</source>
+        <target>. L’explorateur utilise ce flux pour un état initial limité et les observations ultérieures du fournisseur Dash. Ce n’est pas un socket RPC Dash Core général.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.ws-reconnect" datatype="html"><source>Reconnect with backoff after a close. A connection may initially report a snapshot or reconnecting state while upstream notifications are unavailable.</source>
+        <target>Reconnectez-vous avec un délai croissant après une fermeture. La connexion peut d’abord signaler un état initial ou une reconnexion lorsque les notifications du fournisseur sont indisponibles.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.ws-events-desc" datatype="html"><source>Messages may include the initial block snapshot, refreshed block data, observed pending transactions, and connection state. Observed pending transactions are bounded and are removed when later observations show them confirmed.</source>
+        <target>Les messages peuvent contenir l’état initial des blocs, des données de blocs actualisées, des transactions en attente observées et l’état de connexion. Les transactions en attente observées sont limitées et supprimées lorsque des observations ultérieures les indiquent comme confirmées.</target></trans-unit>
+      <trans-unit id="tx-taxi.docs.ws-warning" datatype="html"><source>Do not derive a global mempool count, projected block template, InstantSend state, or ChainLock state from this stream.</source>
+        <target>Ne déduisez pas de ce flux le nombre global de transactions en attente, un modèle de bloc projeté, l’état InstantSend ou l’état ChainLock.</target></trans-unit>
+      <trans-unit id="ebd9ce73cf9f3c00c181f3f40d2614c848595604" datatype="html"><source>duff/B</source>
+        <target>duff/B</target></trans-unit>
+      <trans-unit id="19fcdf824e2b1d8fe6b891cad79ca1f369a15e55" datatype="html"><source>duff/B</source>
+        <target>duff/B</target></trans-unit>
+      <trans-unit id="tx-taxi.intro-explore" datatype="html"><source>Explore <x id="INTERPOLATION" equiv-text="{{ chainName }}" /></source>
+        <target>Explorer <x id="INTERPOLATION" equiv-text="{{ chainName }}" /></target></trans-unit>
+      <trans-unit id="tx-taxi.intro-open-chain" datatype="html"><source>Open <x id="chainHost" equiv-text="this.chainHost" /></source>
+        <target>Ouvrir <x id="chainHost" equiv-text="this.chainHost" /></target></trans-unit>
     </body>
   </file>
 </xliff>

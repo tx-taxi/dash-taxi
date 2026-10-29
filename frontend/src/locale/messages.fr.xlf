@@ -11956,6 +11956,7 @@
         <target>Explorer <x id="INTERPOLATION" equiv-text="{{ chainName }}" /></target></trans-unit>
       <trans-unit id="tx-taxi.intro-open-chain" datatype="html"><source>Open <x id="chainHost" equiv-text="this.chainHost" /></source>
         <target>Ouvrir <x id="chainHost" equiv-text="this.chainHost" /></target></trans-unit>
+      <trans-unit id="tx-taxi.docs.denomination-value" datatype="html"><source>1 DASH = 100,000,000 duffs</source><target>1 DASH = 100 000 000 duffs</target></trans-unit>
     </body>
   </file>
 </xliff>
